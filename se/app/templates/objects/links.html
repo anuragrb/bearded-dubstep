@@ -1,13 +1,18 @@
 {% extends 'pages/base.html' %}
 
+{% block title %}Click on one of the links{% endblock %}
+
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <a href='/somepage'>Some other page</a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <a href='/se'>Search engine</a>
+        </div>
+        <div class="col-md-4">
+            <a href='/se_alt'>Search engine with pictures</a>
         </div>
     </div>
 </div>

@@ -1,47 +1,12 @@
 {% extends 'pages/base.html' %}
 
-<script>
-  (function() {
-
-        var cx = '000248085842428281046:dgcmn_4tj-k';
-        var gcse = document.createElement('script');
-        gcse.type = 'text/javascript';
-        gcse.async = true;
-        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-            '//www.google.com/cse/cse.js?cx=' + cx;
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(gcse, s);
-  })();
-
-  function search() {
-
-        var url = window.location.href;
-        var flag = 0;
-        var newurl = ''
-        for (i = 0;i < url.length ; i = i + 1) {
-
-            if (url[i] != '?') {
-
-                newurl = newurl + url[i];
-            }
-            else {
-
-                break;
-            }
-        }
-        newurl = newurl + '?q=' + $('#q').val();
-        window.open(newurl)
-    }
-  
-    window.setInterval(function() {
-        $('.gsc-above-wrapper-area').remove();
-        $('.gcsc-branding').remove();
-        $('.gsc-orderby').remove();
-    }, 1);
-
-</script>
+{% block title %}Welcome to this super awesome search engine that's totally not a copy of google{% endblock %}
 
 {% block content %}
+    {% if page == 'se_alt' %}
+        {% include "objects/image.html" %}
+    {% endif %}
+
     <form id="search" onsubmit="search()" class='form-inline' style='width:800px; padding:20px;' class='text-left'>
         <div class='form-group'>
             <input type="text" class='form-control' placeholder='Search' style='width:500px;' id="q" />
