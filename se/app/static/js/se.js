@@ -1,7 +1,4 @@
-{% extends 'pages/base.html' %}
-
-<script>
-  (function() {
+(function() {
 
         var cx = '000248085842428281046:dgcmn_4tj-k';
         var gcse = document.createElement('script');
@@ -38,23 +35,3 @@
         $('.gcsc-branding').remove();
         $('.gsc-orderby').remove();
     }, 1);
-
-</script>
-
-{% block content %}
-    <form id="search" onsubmit="search()" class='form-inline' style='width:800px; padding:20px;' class='text-left'>
-        <div class='form-group'>
-            <input type="text" class='form-control' placeholder='Search' style='width:500px;' id="q" />
-        </div>
-        <div class='form-group'>
-            <input type="submit" class='btn btn-default' value="Search"/>
-        </div>
-    </form>
-    <div id='main'>
-        <gcse:searchresults-only></gcse:searchresults-only>
-    </div>
-{% endblock %}
-
-<style>
-    .gsc-branding, .gsc-orderby, .gsc-above-wrapper-area { display: none; height: 0; }
-</style>
