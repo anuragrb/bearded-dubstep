@@ -10,28 +10,34 @@
         s.parentNode.insertBefore(gcse, s);
   })();
 
-  function search() {
+function search() {
 
-        var url = window.location.href;
-        var flag = 0;
-        var newurl = ''
-        for (i = 0;i < url.length ; i = i + 1) {
+    var url = window.location.href;
+    var flag = 0;
+    var newurl = ''
+    for (i = 0;i < url.length ; i = i + 1) {
 
-            if (url[i] != '?') {
+        if (url[i] != '?') {
 
-                newurl = newurl + url[i];
-            }
-            else {
-
-                break;
-            }
+            newurl = newurl + url[i];
         }
+        else {
+
+            break;
+        }
+    }
+    if ($('#q').val().length > 2) {
+
         newurl = newurl + '?q=' + $('#q').val();
         window.open(newurl)
     }
-  
-    window.setInterval(function() {
-        $('.gsc-above-wrapper-area').remove();
-        $('.gcsc-branding').remove();
-        $('.gsc-orderby').remove();
-    }, 1);
+    else {
+        return false;
+    }
+}
+
+window.setInterval(function() {
+    $('.gsc-above-wrapper-area').remove();
+    $('.gcsc-branding').remove();
+    $('.gsc-orderby').remove();
+}, 1);
