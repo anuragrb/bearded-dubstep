@@ -29,6 +29,6 @@ window.setInterval(function() {
 
 $(document).ready(function() {
     $('#results').on('click', 'a', function (event) {
-        //perform action
+        alert($(this).attr('href'));
     });
 });

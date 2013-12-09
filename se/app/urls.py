@@ -7,6 +7,7 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
                        url(r'^somepage$', 'app.views.somepage'),
                        url(r'^se_alt$', 'app.views.se_alt'),
+                       url(r'^se_annoying$', 'app.views.se_annoying'),
                        url(r'^se$', 'app.views.se'),
                        url(r'^$', 'app.views.home'),
                        )
