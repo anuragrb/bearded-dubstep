@@ -26,3 +26,9 @@ window.setInterval(function() {
     $('.gcsc-branding').remove();
     $('.gsc-orderby').remove();
 }, 1);
+
+$(document).ready(function() {
+    $('#results').on('click', 'a', function (event) {
+        //perform action
+    });
+});
