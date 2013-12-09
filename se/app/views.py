@@ -26,3 +26,8 @@ def se_alt(request):
 def se_annoying(request):
     context = {'page': 'se_annoying'}
     return render(request, "objects/se.html", context)
+
+
+def se_informal(request):
+    context = {'page': 'se_informal'}
+    return render(request, "objects/se.html", context)
