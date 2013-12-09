@@ -10,30 +10,15 @@
         s.parentNode.insertBefore(gcse, s);
   })();
 
-function search() {
-
-    var url = window.location.href;
-    var flag = 0;
-    var newurl = ''
-    for (i = 0;i < url.length ; i = i + 1) {
-
-        if (url[i] != '?') {
-
-            newurl = newurl + url[i];
-        }
-        else {
-
-            break;
-        }
+function executeQuery() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
     }
-    if ($('#q').val().length > 2) {
-
-        newurl = newurl + '?q=' + $('#q').val();
-        window.open(newurl)
-    }
-    else {
-        return false;
-    }
+    return false;
 }
 
 window.setInterval(function() {

@@ -6,20 +6,38 @@
     {% if page == 'se_alt' %}
         {% include "objects/image.html" %}
     {% endif %}
-
-    <form id="search" onsubmit="search()" class='form-inline' style='width:800px; padding:20px;' class='text-left'>
+    <form onsubmit="return executeQuery();" id="cse-search-box-form-id" class='form-inline' style='width:800px; padding:20px;' class='text-left'>
         <div class='form-group'>
-            <input type="text" class='form-control' placeholder='Search' style='width:500px;' id="q" />
+            <input type="text" class='form-control' placeholder='Search' style='width:500px;' id="cse-search-input-box-id" size="25" autocomplete="off"/>
         </div>
         <div class='form-group'>
-            <input type="submit" class='btn btn-default' value="Search"/>
+            <input type="submit" class="btn btn-default" value="Search"/>
         </div>
     </form>
-    <div id='main'>
-        <gcse:searchresults-only></gcse:searchresults-only>
-    </div>
+   
+    <script type="text/javascript">
+      
+    </script>
+    <gcse:searchresults-only></gcse:searchresults-only>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-46289964-1', 'customsearchtest.s3-website-us-east-1.amazonaws.com');
+      ga('send', 'pageview');
+
+    </script>
 {% endblock %}
 
 <style>
     .gsc-branding, .gsc-orderby, .gsc-above-wrapper-area { display: none; height: 0; }
 </style>
+ <script type="text/javascript">
+    $('.gs-title').on( 'click', function () {
+
+        alert('here');
+    });
+</script>
