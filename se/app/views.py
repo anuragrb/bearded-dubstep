@@ -31,3 +31,8 @@ def se_annoying(request):
 def se_informal(request):
     context = {'page': 'se_informal'}
     return render(request, "objects/se.html", context)
+
+
+def privacy(request):
+    context = {'page': 'privacy'}
+    return render(request, "objects/privacy.html")
