@@ -2,6 +2,10 @@
 
 {% block title %}Welcome to this super awesome search engine that's totally not a copy of google{% endblock %}
 
+{% block navbar %}
+    {% include 'objects/navbar.html' %}
+{% endblock %}
+
 {% block content %}
     {% if page == 'se_alt' %}
         {% include "objects/image.html" %}
@@ -10,13 +14,14 @@
     {% if page == 'se_informal' %}
         <style type="text/css">
             body {
+                
                 font-family: "Comic Sans MS";
                 background-color: yellow;
             }
         </style>
     {% endif %}
 
-    {% if page == 'se_annoying' %}
+    {% if page == 'se_anthropomorphic' %}
         <script language="JavaScript" type="text/javascript" src="http://vhss-d.oddcast.com/vhost_embed_functions_v2.php?acc=4113933&js=1"></script><script language="JavaScript" type="text/javascript">AC_VHost_Embed(4113933,300,400,'',1,1, 2342800, 0,1,0,'7a9a6dbb53cd597407f61aea404eb175',9);</script>
     {% endif %}
     <form onsubmit="return executeQuery();" id="cse-search-box-form-id" class='form-inline' style='width:800px; padding:20px;' class='text-left'>

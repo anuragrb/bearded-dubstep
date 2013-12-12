@@ -2,15 +2,14 @@ from django.shortcuts import render
 
 # Create your views here.
 
-
 def home(request):
     context = {'page': 'home'}
+    return render(request, "objects/landing.html", context)
+
+
+def links(request):
+    context = {'page': 'links'}
     return render(request, "objects/links.html", context)
-
-
-def somepage(request):
-    context = {'page': 'somepage'}
-    return render(request, "objects/somepage.html", context)
 
 
 def se(request):
@@ -23,8 +22,8 @@ def se_alt(request):
     return render(request, "objects/se.html", context)
 
 
-def se_annoying(request):
-    context = {'page': 'se_annoying'}
+def se_anthropomorphic(request):
+    context = {'page': 'se_anthropomorphic'}
     return render(request, "objects/se.html", context)
 
 

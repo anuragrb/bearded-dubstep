@@ -2,26 +2,24 @@
 
 {% block title %}Click on one of the links{% endblock %}
 
+{% block navbar %}
+    {% include 'objects/navbar.html' %}
+{% endblock %}
+
 {% block content %}
+
 <div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <a href='/somepage'>Some other page</a>
-        </div>
-        <div class="col-md-3">
+        <div class="row">
             <a href='/se'>Search engine</a>
         </div>
-        <div class="col-md-3">
+        <div class="row">
             <a href='/se_alt'>Search engine with pictures</a>
         </div>
-        <div class="col-md-3">
+        <div class="row">
             <a href='/se_informal'>Informal search engine</a>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-            <a href='/se_annoying'>Search engine with speaking character</a>
+        <div class="row">
+            <a href='/se_anthropomorphic'>Search engine with speaking character</a>
         </div>
-    </div>
 </div>
 {% endblock %}
