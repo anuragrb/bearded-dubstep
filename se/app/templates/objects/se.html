@@ -1,16 +1,12 @@
 {% extends 'pages/base.html' %}
 
-{% block title %}Welcome to this super awesome search engine that's totally not a copy of google{% endblock %}
+{% block title %}Welcome to Research Engine{% endblock %}
 
 {% block navbar %}
     {% include 'objects/navbar.html' %}
 {% endblock %}
 
 {% block content %}
-    {% if page == 'se_alt' %}
-        {% include "objects/image.html" %}
-    {% endif %}
-
     {% if page == 'se_informal' %}
         <style type="text/css">
             body {
@@ -36,3 +32,9 @@
         <gcse:searchresults-only></gcse:searchresults-only>
     </div>
 {% endblock %}
+
+{% if page != 'se_control' %}
+    {% block footer %}
+        {% include 'objects/footer.html' %}
+    {% endblock %}
+{% endif %}

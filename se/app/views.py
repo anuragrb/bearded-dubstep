@@ -12,13 +12,13 @@ def links(request):
     return render(request, "objects/links.html", context)
 
 
-def se(request):
-    context = {'page': 'se'}
+def se_control(request):
+    context = {'page': 'se_control'}
     return render(request, "objects/se.html", context)
 
 
-def se_alt(request):
-    context = {'page': 'se_alt'}
+def se_traditional(request):
+    context = {'page': 'se_traditional'}
     return render(request, "objects/se.html", context)
 
 

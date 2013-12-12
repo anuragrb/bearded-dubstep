@@ -3,17 +3,17 @@
 {% block title %}Click on one of the links{% endblock %}
 
 {% block navbar %}
-    {% include 'objects/navbar.html' %}
+{% include 'objects/navbar.html' %}
 {% endblock %}
 
 {% block content %}
 
 <div class="container">
     <div class="row">
-        <a href='/se'>Search engine</a>
+        <a href='/se_control'>Control condition</a>
     </div>
     <div class="row">
-        <a href='/se_alt'>Search engine with pictures</a>
+        <a href='/se_traditional'>Traditional Condition</a>
     </div>
     <div class="row">
         <a href='/se_informal'>Informal search engine</a>
@@ -22,4 +22,8 @@
         <a href='/se_anthropomorphic'>Search engine with speaking character</a>
     </div>
 </div>
+{% endblock %}
+
+{% block footer %}
+{% include 'objects/footer.html' %}
 {% endblock %}
