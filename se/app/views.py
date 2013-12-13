@@ -32,6 +32,11 @@ def se_informal(request):
     return render(request, "objects/se.html", context)
 
 
+def se_ip(request):
+    context = {'page': 'se_ip'}
+    return render(request, "objects/se.html", context)
+
+
 def privacy(request):
     context = {'page': 'privacy'}
     return render(request, "objects/privacy.html")
