@@ -47,14 +47,14 @@
                     });
                 </script>
             {% endif %}
+            {% if page == 'se_control' %}
+            {% else %}
+                {% include 'objects/footer.html' %}
+            {% endif %}
         </div>
     </div>
 {% endblock %}
 
 {% block footer %}
-{% if page == 'se_control' %}
 
-{% else %}
-    {% include 'objects/footer.html' %}
-{% endif %}
 {% endblock %}

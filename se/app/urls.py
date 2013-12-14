@@ -13,6 +13,6 @@ urlpatterns = patterns('',
                        url(r'^se_ip$', 'app.views.se_ip'),
                        url(r'^se_tracking$', 'app.views.se_tracking'),
                        url(r'^privacy$', 'app.views.privacy'),
-                       url(r'^links$', 'app.views.links'),
-                       url(r'^$', 'app.views.home'),
+                       url(r'^landing$', 'app.views.landing'),
+                       url(r'^$', 'app.views.links'),
                        )

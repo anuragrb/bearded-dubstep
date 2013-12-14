@@ -4,8 +4,10 @@ from django.http import HttpRequest
   
 # Create your views here.
 
-def home(request):
-    context = {'page': 'home'}
+def landing(request):
+    context = {'page': 'landing'}
+    condition = request.GET['q']
+    context['condition'] = condition
     return render(request, "objects/landing.html", context)
 
 
