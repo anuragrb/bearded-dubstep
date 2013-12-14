@@ -34,6 +34,11 @@ def se_informal(request):
     return render(request, "objects/se.html", context)
 
 
+def se_tracking(request):
+    context = {'page': 'se_tracking'}
+    return render(request, "objects/se.html", context)
+
+
 def se_ip(request):
     context = {'page': 'se_ip'}
     context['client_address'] = request.META.get('REMOTE_ADDR')

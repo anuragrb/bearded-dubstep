@@ -37,6 +37,16 @@
             {% if page == 'se_ip' %}
                 <p>Your IP address is {{ client_address }}</p>
             {% endif %}
+            {% if page == 'se_tracking' %}
+                <p>You visited:</p>
+                <script>
+                    $(document).ready(function() {
+                        $('#results').on('click', 'a', function (event) {
+                            document.getElementById('condition').innerHTML += '\n' + $(this).text();
+                        });
+                    });
+                </script>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

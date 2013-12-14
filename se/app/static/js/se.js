@@ -27,9 +27,3 @@ window.setInterval(function() {
     $('.gsc-orderby').remove();
     $('#results').find('a').className = 'informal';
 }, 1);
-
-$(document).ready(function() {
-    $('#results').on('click', 'a', function (event) {
-        alert($(this).attr('href'));
-    });
-});
