@@ -35,11 +35,7 @@
             <script language="JavaScript" type="text/javascript" src="http://vhss-d.oddcast.com/vhost_embed_functions_v2.php?acc=4113933&js=1"></script><script language="JavaScript" type="text/javascript">AC_VHost_Embed(4113933,300,400,'',1,1, 2342800, 0,1,0,'7a9a6dbb53cd597407f61aea404eb175',9);</script>
             {% endif %}
             {% if page == 'se_ip' %}
-                <script type='text/javascript'>
-                $.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
-                   document.getElementById('condition').innerHTML = 'Your IP address is ' + data.host;
-                });
-                </script>
+                <p>Your IP address is {{ client_address }}</p>
             {% endif %}
         </div>
     </div>

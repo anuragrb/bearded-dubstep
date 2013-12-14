@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from django.http import HttpRequest  
+  
 # Create your views here.
 
 def home(request):
@@ -34,6 +36,7 @@ def se_informal(request):
 
 def se_ip(request):
     context = {'page': 'se_ip'}
+    context['client_address'] = request.META.get('REMOTE_ADDR')
     return render(request, "objects/se.html", context)
 
 
