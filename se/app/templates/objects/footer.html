@@ -1,5 +1,9 @@
 <div id="footer">
     <div class="container" style="padding-top: 20px">
-        <p class="muted credit"><a href='/privacy'>Privacy Policy</a></p>
+        {% if page == 'se_traditional' %}
+            <p class="muted credit"><a href='/privacy'>Privacy Policy</a></p>
+        {% elif page == 'se_simplified' %}
+            <p class="muted credit"><a href='/privacy'>Simple Privacy Policy</a></p>
+        {% endif %}
     </div>
 </div>

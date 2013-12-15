@@ -21,7 +21,9 @@
             $('.gs-snippet').css('font-family', 'Comic Sans MS');
             $('.gsc-url-bottom').css('font-family', 'Comic Sans MS');
             $('.gsc-cursor-page').css('font-family', 'Comic Sans MS');
-            $('.gsc-results').css('background-color', 'yellow');
+            $('.gsc-control-cse').css('background-color', 'yellow');
+            $('#results').css('background-color', 'yellow');
+            $('#___gsce_0').css('background-color', 'yellow');
         }, 1);
     </script>
 {% endif %}
@@ -61,10 +63,7 @@
             {% if page == 'se_static' %}
                 <img src='/static/avatar.png' />
             {% endif %}
-            {% if page == 'se_control' %}
-            {% else %}
-                {% include 'objects/footer.html' %}
-            {% endif %}
+            {% include 'objects/footer.html' %}
         </div>
     </div>
 {% endblock %}

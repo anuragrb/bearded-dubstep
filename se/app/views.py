@@ -52,6 +52,16 @@ def se_ip(request):
     return render(request, "objects/se.html", context)
 
 
+def se_simplified(request):
+    context = {'page': 'se_simplified'}
+    return render(request, "objects/se.html", context)
+
+
 def privacy(request):
+    context = {'page': 'privacy'}
+    return render(request, "objects/privacy.html")
+
+
+def privacy_simplified(request):
     context = {'page': 'privacy'}
     return render(request, "objects/privacy.html")
