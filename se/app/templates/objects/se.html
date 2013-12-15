@@ -7,15 +7,7 @@
 {% endblock %}
 
 {% block content %}
-    {% if page == 'se_informal' %}
-        <style type="text/css">
-            body {
-                
-                font-family: "Comic Sans MS";
-                background-color: yellow;
-            }
-        </style>
-    {% endif %}
+
     <div class='row'>
         <div class='col-md-9'>
             <form onsubmit="return executeQuery();" id="cse-search-box-form-id" class='form-inline' style='width:800px; padding:20px;' class='text-left'>
@@ -47,12 +39,29 @@
                     });
                 </script>
             {% endif %}
+            {% if page == 'se_static' %}
+                <img src='/static/avatar.png' />
+            {% endif %}
             {% if page == 'se_control' %}
             {% else %}
                 {% include 'objects/footer.html' %}
             {% endif %}
         </div>
     </div>
+    {% if page == 'se_informal' %}
+        <style type="text/css">
+            .informal {
+                
+                font-family: "Comic Sans MS";
+                background-color: yellow;
+            }
+        </style>
+        <script type='text/javascript'>
+            window.setInterval(function() {
+                document.body.className='informal';
+            }, 1);
+        </script>
+    {% endif %}
 {% endblock %}
 
 {% block footer %}

@@ -25,5 +25,4 @@ window.setInterval(function() {
     $('.gsc-above-wrapper-area').remove();
     $('.gcsc-branding').remove();
     $('.gsc-orderby').remove();
-    $('#results').find('a').className = 'informal';
 }, 1);
