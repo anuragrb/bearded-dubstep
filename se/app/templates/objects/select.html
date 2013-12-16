@@ -1,0 +1,28 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}Choose your question{% endblock %}
+
+{% block navbar %}
+    {% include 'objects/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class='row'>
+    <div class='col-md-9'>
+        <div class='form-group'>
+            <h4>Select one of the questions below</h4>
+            <br>
+            </div>
+            <div class="btn-group" data-toggle="buttons">
+                {% for q in question %}
+                    <a href='/{{ page }}?index={{ index|add:"3" }}&question={{ q }}'>{{q}}</a>
+                    <br>
+                {% endfor %}
+            </div>
+    </div>
+    <div class='col-md-3'>
+    </div>
+</div>
+
+{% endblock %}

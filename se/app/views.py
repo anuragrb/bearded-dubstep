@@ -20,59 +20,139 @@ def links(request):
 
 def se_control(request):
     context = {'page': 'se_control'}
-    question = generate_question()
+    index = request.GET['index']
+    context['index'] = index
+    if 'question' in request.GET:
+        context['question'] = request.GET['question']
+        return render(request, 'objects/se.html', context)
+    question = generate_question(index)
     context['question'] = question
-    return render(request, "objects/se.html", context)
+    if question == 'Done':
+        return render(request, 'objects/questionnaire.html', context)
+    if type(question) == list:
+        return render(request, 'objects/select.html', context)
+    else:    
+        return render(request, "objects/se.html", context)
 
 
 def se_traditional(request):
     context = {'page': 'se_traditional'}
-    question = generate_question()
+    index = request.GET['index']
+    context['index'] = index
+    if 'question' in request.GET:
+        context['question'] = request.GET['question']
+        return render(request, 'objects/se.html', context)
+    question = generate_question(index)
     context['question'] = question
-    return render(request, "objects/se.html", context)
+    if question == 'Done':
+        return render(request, 'objects/questionnaire.html', context)
+    if type(question) == list:
+        return render(request, 'objects/select.html', context)
+    else:    
+        return render(request, "objects/se.html", context)
 
 
 def se_anthropomorphic(request):
     context = {'page': 'se_anthropomorphic'}
-    question = generate_question()
+    index = request.GET['index']
+    context['index'] = index
+    if 'question' in request.GET:
+        context['question'] = request.GET['question']
+        return render(request, 'objects/se.html', context)
+    question = generate_question(index)
     context['question'] = question
-    return render(request, "objects/se.html", context)
+    if question == 'Done':
+        return render(request, 'objects/questionnaire.html', context)
+    if type(question) == list:
+        return render(request, 'objects/select.html', context)
+    else:    
+        return render(request, "objects/se.html", context)
 
 
 def se_informal(request):
     context = {'page': 'se_informal'}
-    question = generate_question()
+    index = request.GET['index']
+    context['index'] = index
+    if 'question' in request.GET:
+        context['question'] = request.GET['question']
+        return render(request, 'objects/se.html', context)
+    question = generate_question(index)
     context['question'] = question
-    return render(request, "objects/se.html", context)
+    if question == 'Done':
+        return render(request, 'objects/questionnaire.html', context)
+    if type(question) == list:
+        return render(request, 'objects/select.html', context)
+    else:    
+        return render(request, "objects/se.html", context)
 
 
 def se_tracking(request):
     context = {'page': 'se_tracking'}
-    question = generate_question()
+    index = request.GET['index']
+    context['index'] = index
+    if 'question' in request.GET:
+        context['question'] = request.GET['question']
+        return render(request, 'objects/se.html', context)
+    question = generate_question(index)
     context['question'] = question
-    return render(request, "objects/se.html", context)
+    if question == 'Done':
+        return render(request, 'objects/questionnaire.html', context)
+    if type(question) == list:
+        return render(request, 'objects/select.html', context)
+    else:    
+        return render(request, "objects/se.html", context)
 
 
 def se_static(request):
     context = {'page': 'se_static'}
-    question = generate_question()
+    index = request.GET['index']
+    context['index'] = index
+    if 'question' in request.GET:
+        context['question'] = request.GET['question']
+        return render(request, 'objects/se.html', context)
+    question = generate_question(index)
     context['question'] = question
-    return render(request, "objects/se.html", context)
+    if question == 'Done':
+        return render(request, 'objects/questionnaire.html', context)
+    if type(question) == list:
+        return render(request, 'objects/select.html', context)
+    else:    
+        return render(request, "objects/se.html", context)
 
 
 def se_ip(request):
     context = {'page': 'se_ip'}
-    question = generate_question()
+    index = request.GET['index']
+    context['index'] = index
+    if 'question' in request.GET:
+        context['question'] = request.GET['question']
+        return render(request, 'objects/se.html', context)
+    question = generate_question(index)
     context['question'] = question
-    context['client_address'] = request.META.get('REMOTE_ADDR')
+    if question == 'Done':
+        return render(request, 'objects/questionnaire.html', context)
+    if type(question) == list:
+        return render(request, 'objects/select.html', context)
+    else:    
+        context['client_address'] = request.META.get('REMOTE_ADDR')
     return render(request, "objects/se.html", context)
 
 
 def se_simplified(request):
     context = {'page': 'se_simplified'}
-    question = generate_question()
+    index = request.GET['index']
+    context['index'] = index
+    if 'question' in request.GET:
+        context['question'] = request.GET['question']
+        return render(request, 'objects/se.html', context)
+    question = generate_question(index)
     context['question'] = question
-    return render(request, "objects/se.html", context)
+    if question == 'Done':
+        return render(request, 'objects/questionnaire.html', context)
+    if type(question) == list:
+        return render(request, 'objects/select.html', context)
+    else:    
+        return render(request, "objects/se.html", context)
 
 
 def privacy(request):
