@@ -29,12 +29,13 @@
 {% endif %}
     <div class='row'>
         <div class='col-md-9'>
-            <form class='form' style='width:800px; padding:20px;' class='text-left'>
+            <form class='form' id='answer' style='width:800px; padding:20px;' class='text-left'>
                 <div class='form-group'>
                 <h4>{{ question }}</h4>
+                <br>
                 </div>
                 <div class='input-group' style='width:500px;'>
-                    <input type="text" class='form-control' placeholder='Your answer' autocomplete="off"/><span class="input-group-addon"><a href='#'>Submit</a></span>
+                    <input type="text" class='form-control' placeholder='Your answer' autocomplete="off"/><span class="input-group-addon"><a href='#' onclick='document.getElementById("answer").submit();'>Submit</a></span>
                 </div>
             </form>
         </div>
@@ -68,7 +69,7 @@
                 <script>
                     $(document).ready(function() {
                         $('#results').on('click', 'a', function (event) {
-                            document.getElementById('condition').innerHTML += '<br>' + $(this).text();
+                            document.getElementById('condition').innerHTML += '<br><br><h5>' + $(this).text() + '</h5>';
                         });
                     });
                 </script>
