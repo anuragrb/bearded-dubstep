@@ -35,7 +35,7 @@
                 <br>
                 </div>
                 <div class='input-group' style='width:500px;'>
-                    <input type="text" class='form-control' placeholder='Your answer' autocomplete="off"/><span class="input-group-addon"><a href='/{{ page }}?index={% if index|add:"0" < 4 %}{{ index|add:"1"}}{% else %}{{ index }}{% endif %}'>Submit</a></span>
+                    <input type="text" class='form-control' placeholder='Your answer' autocomplete="off"/><span class="input-group-addon"><a href='/se?page={{ page }}&index={% if index|add:"0" < 4 %}{{ index|add:"1"}}{% else %}{{ index }}{% endif %}'>Submit</a></span>
                 </div>
             </form>
         </div>
