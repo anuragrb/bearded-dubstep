@@ -47,7 +47,6 @@
         <div class='col-md-9'>
             <h4>Answer the question using the search engine below</h4>
             <br>
-            <img src='/static/logo.png' />
             <form onsubmit="return executeQuery();" id="cse-search-box-form-id" class='form-inline' style='width:800px; padding:20px;' class='text-left'>
                 <div class='input-group' style='width:500px;'>
                     <input type="text" class='form-control' placeholder='Search' id="cse-search-input-box-id" size="25" autocomplete="off"/><span class="input-group-addon"><a href="#" onclick="return executeQuery();">Search</a></span>
@@ -58,6 +57,7 @@
             </div>
         </div>
         <div class='col-md-3' id='condition'>
+            <img src='/static/logo.png' style='width: 400;'/>
             {% if page == 'se_anthropomorphic' %}
                 <script language="JavaScript" type="text/javascript" src="http://vhss-d.oddcast.com/vhost_embed_functions_v2.php?acc=4170425&js=1"></script><script language="JavaScript" type="text/javascript">AC_VHost_Embed(4170425,300,400,'',1,1, 2347563, 0,1,0,'dfdb49e086948c5e42ec6322413625cb',9);</script>
             {% endif %}
