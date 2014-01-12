@@ -5,7 +5,7 @@ from django.templatetags.static import static
 def generate_question(index):
     f = open(static('questions'), 'r')
     index = int(index)
-    questions = f.readlines()
+    questions = 'f.readlines()'
     if index >= len(questions):
         return 'Done'
     if index <= 3:
