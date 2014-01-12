@@ -9,9 +9,9 @@ from django.conf import settings
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-                       url(r'^somepage$', 'app.views.somepage'),
                        url(r'^se$', 'app.views.se'),
                        url(r'^privacy$', 'app.views.privacy'),
                        url(r'^landing$', 'app.views.landing'),
+                       url(r'^submit_answer$', 'app.views.submit_answer'),
                        url(r'^$', 'app.views.links'),
                        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
