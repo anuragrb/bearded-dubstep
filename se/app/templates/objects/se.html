@@ -1,5 +1,7 @@
 {% extends 'pages/base.html' %}
 
+{% load staticfiles %}
+
 {% block title %}Welcome to Research Engine{% endblock %}
 
 {% block navbar %}
@@ -57,7 +59,7 @@
             </div>
         </div>
         <div class='col-md-3' id='condition'>
-            <img src='/static/logo.png' style='width: 400;'/>
+            <img src='{{ STATIC_URL }}logo.png' style='width: 400;'/>
             {% if page == 'se_anthropomorphic' %}
                 <script language="JavaScript" type="text/javascript" src="http://vhss-d.oddcast.com/vhost_embed_functions_v2.php?acc=4170425&js=1"></script><script language="JavaScript" type="text/javascript">AC_VHost_Embed(4170425,300,400,'',1,1, 2347563, 0,1,0,'dfdb49e086948c5e42ec6322413625cb',9);</script>
             {% endif %}
@@ -75,7 +77,7 @@
                 </script>
             {% endif %}
             {% if page == 'se_static' %}
-                <img src='/static/avatar.png' />
+                <img src='{{ STATIC_URL }}avatar.png' />
             {% endif %}
             {% include 'objects/footer.html' %}
         </div>

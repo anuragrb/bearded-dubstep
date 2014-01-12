@@ -1,7 +1,9 @@
 import random
 
+from django.templatetags.static import static
+
 def generate_question(index):
-    f = open('app/static/questions', 'r')
+    f = open(static('questions'), 'r')
     index = int(index)
     questions = f.readlines()
     if index >= len(questions):

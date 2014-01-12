@@ -1,15 +1,9 @@
-"""
-Django settings for se project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
-"""
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
+from os import path, environ
+
+import boto
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -17,14 +11,21 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'somecrappysecretkey'
+SECRET_KEY = environ.get('DJANGO_SECRET_KEY')
+
+PROJECT_ROOT = path.realpath(path.dirname(__file__)) + '/'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+AWS_ACCESS_KEY_ID = environ.get('AWS_ACCESS_KEY_ID', '')
+AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY', '')
+AWS_STORAGE_BUCKET_NAME = 'eu-project'
+AWS_PRELOAD_METADATA = True
 
 # Application definition
 
@@ -78,8 +79,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/static/'
-
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -89,6 +88,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'app',
+    'storages',
     'gunicorn',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
@@ -124,3 +124,12 @@ LOGGING = {
         },
     }
 }
+
+S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+STATIC_URL = S3_URL
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATIC_ROOT = S3_URL
+STATICFILES_DIRS = (
+    path.join(PROJECT_ROOT, 'static'),
+)
+
