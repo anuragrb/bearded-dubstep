@@ -1,22 +1,24 @@
 import random
 
+from app.models import *
+
 from django.templatetags.static import static
 
 def generate_question(index):
-    f = open(static('questions'), 'r')
+    questions = Question.objects.filter()
     index = int(index)
-    questions = 'f.readlines()'
-    if index >= len(questions):
+    if index >= len(Question.objects.filter()):
         return 'Done'
     if index <= 3:
-        question = questions[index]
+        question = questions[index].text
+        print questions[index]
         index = index + 1
         return question
     else:
         list_of_questions = []
         f = 0
         while f < 3:
-            question = questions[index]
+            question = questions[index].text
             list_of_questions.append(question)
             index = index + 1
             f = f + 1
