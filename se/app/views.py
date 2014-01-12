@@ -3,19 +3,33 @@ from django.shortcuts import render
 from django.http import HttpRequest  
 
 from generate_question import generate_question
+
+from app.models import *
+
+from django.contrib.auth import authenticate, login, logout
   
 # Create your views here.
 
 def landing(request):
     context = {'page': 'landing'}
     condition = request.GET['q']
+
     context['condition'] = condition
-    client_address = get_client_ip(request)
     return render(request, "objects/landing.html", context)
 
 
 def links(request):
     context = {'page': 'links'}
+    if 'tick' in request.GET:
+        if User.objects.filter(username=request.GET['tick']):
+            context['error'] = 'A user with this tick has already taken this survey.'
+        else:
+            new_user = User.objects.create_user(username=request.GET['tick'], password='')
+            new_user.save()
+            user = authenticate(username=request.GET['tick'], password='')
+            login(request, user)
+            new_profile = User_Profile(user=new_user, tick=request.GET['tick'], ip_address=get_client_ip(request))
+            new_profile.save()
     return render(request, "objects/links.html", context)
 
 

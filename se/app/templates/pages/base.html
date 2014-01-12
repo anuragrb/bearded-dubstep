@@ -16,10 +16,14 @@
       {% block navbar %}
       {% endblock %}
       <div class="container">
+      {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+      {% else %}
           {% block content %}
           
           {% endblock %}
       </div>
+      {% endif %}
       <div id="push"></div>
     </div>
     {% block footer %}

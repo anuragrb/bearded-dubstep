@@ -22,6 +22,3 @@ def generate_question(index):
             index = index + 1
             f = f + 1
         return list_of_questions
-    #index = random.randint(0, (len(questions) - 1))
-    # question = questions[index]
-    # return question

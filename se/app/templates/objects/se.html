@@ -8,6 +8,10 @@
     {% include 'objects/navbar.html' %}
 {% endblock %}
 
+{% if error %}
+
+{% else %}
+
 {% block content %}
 
 {% if page == 'se_informal' %}
@@ -83,6 +87,8 @@
         </div>
     </div>
 {% endblock %}
+
+{% endif %}
 
 {% block footer %}
 
