@@ -43,8 +43,9 @@ def se(request):
 
     context = {'page': request.session['condition']}
     if request.user.is_authenticated():
-        
+
         user_profile = User_Profile.objects.get(user=request.user)
+        context['client_address'] = user_profile.ip_address
         if 'qid' in request.GET:
             question = Question.objects.get(id=request.GET['qid'])
             context['question'] = question
