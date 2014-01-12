@@ -11,7 +11,6 @@ def generate_question(index):
         return 'Done'
     if index <= 3:
         question = questions[index].text
-        print questions[index]
         index = index + 1
         return question
     else:
