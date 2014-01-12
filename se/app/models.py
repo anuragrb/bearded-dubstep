@@ -10,14 +10,24 @@ class Question(models.Model):
         ('ES', 'Spanish'),
         ('IT', 'Italian')
     )
+    GROUP_CHOICES = (
+        ('0', '0'),
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4')
+    )
     language = models.CharField(max_length=15, choices=LANGUAGE_CHOICES)
     text = models.CharField(max_length=500)
+    group = models.CharField(max_length=1, choices=GROUP_CHOICES)
+
 
 class Answer(models.Model):
 
     text = models.CharField(max_length=150)
     user = models.ForeignKey(User)
     question = models.ForeignKey(Question)
+
 
 class User_Profile(models.Model):
 
