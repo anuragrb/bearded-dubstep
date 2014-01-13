@@ -24,7 +24,7 @@ def landing(request):
             'IN': 'se_informal',
             'SI': 'se_simplified'
         }
-        conditions = dict((map[k], k) for k in EXPERIMENTAL_CONDITIONS)
+        conditions = dict((EXPERIMENTAL_CONDITIONS[k], k) for k in EXPERIMENTAL_CONDITIONS)
         user_profile = User_Profile.objects.get(user=request.user)
         condition = request.GET['q']
         context['condition'] = condition
