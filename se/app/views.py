@@ -18,7 +18,7 @@ def landing(request):
         condition = request.GET['q']
         context['condition'] = condition
         request.session['condition'] = condition
-        user_profile.condition = condition
+        user_profile.experimental_condition = condition
         user_profile.resolution = request.session['resolution']
         user_profile.save()
         return render(request, "objects/landing.html", context)
