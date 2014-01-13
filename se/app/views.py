@@ -51,6 +51,7 @@ def se(request):
     if request.user.is_authenticated():
 
         user_profile = User_Profile.objects.get(user=request.user)
+        
         context['client_address'] = user_profile.ip_address
         if 'qid' in request.GET:
             question = Question.objects.get(id=request.GET['qid'])
@@ -63,16 +64,15 @@ def se(request):
         if not 'answered_group' in request.session or request.session['answered_index'] <= 4:
             request.session['answered_group'] = 0
             question = Question.objects.get(id=request.session['answered_index'])
-            request.session['answered_index'] = request.session['answered_index'] + 1
+            #request.session['answered_index'] = request.session['answered_index'] + 1
             context['question'] = question
             return render(request, 'objects/se.html', context)
 
         elif request.session['answered_index'] > 4:
-            request.session['answered_group'] = request.session['answered_group'] + 1
+            #request.session['answered_group'] = request.session['answered_group'] + 1
             questions = Question.objects.filter(group=request.session['answered_group'])
             context['questions'] = questions
-            return render(request, 'objects/select.html', context)     
-
+            return render(request, 'objects/select.html', context)
     else:
         return redirect('/')
 
@@ -93,7 +93,19 @@ def submit_answer(request):
             return redirect('/')
         new_answer = Answer(question=question, user=request.user, text=answer)
         new_answer.save()
-        return redirect('/se')
+        if not 'answered_group' in request.session or request.session['answered_index'] < 4:
+            request.session['answered_group'] = 0
+            request.session['answered_index'] = request.session['answered_index'] + 1
+            return redirect('/se')
+
+        if request.session['answered_index'] == 4:
+            request.session['answered_group'] = request.session['answered_group'] + 1
+            request.session['answered_index'] = request.session['answered_index'] + 1
+            return redirect('/se')
+
+        elif request.session['answered_index'] > 4:
+            request.session['answered_group'] = request.session['answered_group'] + 1
+            return redirect('/se')
 
 
 def privacy(request):
