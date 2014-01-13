@@ -13,11 +13,13 @@ from django.contrib.auth import authenticate, login, logout
 def landing(request):
     context = {'page': 'landing'}
     if request.user.is_authenticated():
+
         user_profile = User_Profile.objects.get(user=request.user)
         condition = request.GET['q']
         context['condition'] = condition
         request.session['condition'] = condition
         user_profile.condition = condition
+        user_profile.resolution = request.session['resolution']
         user_profile.save()
         return render(request, "objects/landing.html", context)
     else:
@@ -26,7 +28,15 @@ def landing(request):
 
 def links(request):
     context = {'page': 'links'}
+    if request.is_ajax:
+        if not 'resolution' in request.POST:
+            pass
+        else:
+            resolution = request.POST['resolution']
+            request.session['resolution'] = resolution
+
     if 'tick' in request.GET:
+
         if User.objects.filter(username=request.GET['tick']):
             context['error'] = 'A better way to handle returning users is coming.'
             return render(request, "objects/links.html", context)
@@ -64,12 +74,10 @@ def se(request):
         if not 'answered_group' in request.session or request.session['answered_index'] <= 4:
             request.session['answered_group'] = 0
             question = Question.objects.get(id=request.session['answered_index'])
-            #request.session['answered_index'] = request.session['answered_index'] + 1
             context['question'] = question
             return render(request, 'objects/se.html', context)
 
         elif request.session['answered_index'] > 4:
-            #request.session['answered_group'] = request.session['answered_group'] + 1
             questions = Question.objects.filter(group=request.session['answered_group'])
             context['questions'] = questions
             return render(request, 'objects/select.html', context)

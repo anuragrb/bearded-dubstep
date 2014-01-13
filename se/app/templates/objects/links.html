@@ -6,6 +6,12 @@
 {% include 'objects/navbar.html' %}
 {% endblock %}
 
+{% block head %}
+<script src='{{ STATIC_URL }}js/ajax_submit.js'></script>
+
+{% endblock %}
+
+
 {% block content %}
 
 <div class="container">
