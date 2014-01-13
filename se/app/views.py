@@ -14,11 +14,22 @@ def landing(request):
     context = {'page': 'landing'}
     if request.user.is_authenticated():
 
+        EXPERIMENTAL_CONDITIONS = {
+            'TR': 'se_traditional',
+            'CO': 'se_control',
+            'AN': 'se_anthropomorphic',
+            'ST': 'se_static',
+            'IP': 'se_ip',
+            'CL': 'se_tracking',
+            'IN': 'se_informal',
+            'SI': 'se_simplified'
+        }
+        conditions = {v:k for k, v in EXPERIMENTAL_CONDITIONS.items()}
         user_profile = User_Profile.objects.get(user=request.user)
         condition = request.GET['q']
-        context['condition'] = condition
-        request.session['condition'] = condition
-        user_profile.experimental_condition = condition
+        context['condition'] = conditions[condition]
+        request.session['condition'] = conditions[condition]
+        user_profile.experimental_condition = conditions[condition]
         user_profile.resolution = request.session['resolution']
         user_profile.save()
         return render(request, "objects/landing.html", context)
