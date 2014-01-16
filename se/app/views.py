@@ -26,7 +26,10 @@ def landing(request):
         }
         conditions = dict((EXPERIMENTAL_CONDITIONS[k], k) for k in EXPERIMENTAL_CONDITIONS)
         user_profile = User_Profile.objects.get(user=request.user)
-        condition = request.GET['q']
+        if 'q' in request.GET:
+            condition = request.GET['q']
+        else:
+            return redirect('/')
         context['condition'] = condition
         request.session['condition'] = condition
         user_profile.experimental_condition = conditions[condition]
@@ -76,6 +79,9 @@ def links(request):
 
 def se(request):
 
+    if not 'condition' in request.session:
+        context = {'page': 'links'}
+        return render(request, "objects/links.html", context)
     context = {'page': request.session['condition']}
     if request.user.is_authenticated():
 
