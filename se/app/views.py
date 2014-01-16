@@ -49,8 +49,14 @@ def links(request):
     if 'tick' in request.GET:
 
         if User.objects.filter(username=request.GET['tick']):
-            context['error'] = 'A better way to handle returning users is coming.'
-            return render(request, "objects/links.html", context)
+            if request.user.is_authenticated():
+                return redirect('/se')
+            else:
+                user = authenticate(username=request.GET['tick'], password='')
+                login(request, user)
+                return redirect('/se')
+            #context['error'] = 'A better way to handle returning users is coming.'
+            #return render(request, "objects/links.html", context)
         else:
             new_user = User.objects.create_user(username=request.GET['tick'], password='')
             new_user.save()
@@ -62,6 +68,8 @@ def links(request):
             return render(request, "objects/links.html", context)
 
     else:
+        if request.user.is_authenticated():
+            return redirect('/se')
         context['error'] = 'Tick information is incorrect or absent.'
         return render(request, "objects/links.html", context)
 

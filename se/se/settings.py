@@ -134,4 +134,3 @@ STATIC_ROOT = S3_URL
 STATICFILES_DIRS = (
     path.join(PROJECT_ROOT, 'static'),
 )
-
