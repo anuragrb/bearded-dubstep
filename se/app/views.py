@@ -32,7 +32,11 @@ def landing(request):
             return redirect('/')
         context['condition'] = condition
         request.session['condition'] = condition
-        user_profile.experimental_condition = conditions[condition]
+        try:
+            user_profile.experimental_condition = conditions[condition]
+        except Exception as e:
+            context['error'] = 'Malformed input parameter'
+            return redirect('/')
         user_profile.resolution = request.session['resolution']
         user_profile.save()
         return render(request, "objects/landing.html", context)
@@ -82,6 +86,7 @@ def se(request):
     if not 'condition' in request.session:
         context = {'page': 'links'}
         return render(request, "objects/links.html", context)
+
     context = {'page': request.session['condition']}
     if request.user.is_authenticated():
 
