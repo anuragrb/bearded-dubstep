@@ -28,8 +28,32 @@
                 {% for q in questions %}
                     {{ forloop.counter }}. {{ q.text }}
                     <br>
+                    {% if current_group == 5 or current_group == 9 %}
                     <input type='text' class='form-control' id='{{ q.question.id }}' name='{{ q.question.id }}' />
                     <br>
+                    {% elif current_group == 6 %}
+                    <div class='radioGroupBelow'>
+                        <label><br>Strongly Disagree<input type="radio" name="{{ q.question.id }}" value='Strongly Disagree' /></label>
+                        <label><br>Disagree<input type="radio" name="{{ q.question.id }}" value='Disagree' /></label>
+                        <label><br>Somewhat Disagree<input type="radio" name="{{ q.question.id }}" value='Somewhat Disagree' /></label>
+                        <label><br>Neutral<input type="radio" name="{{ q.question.id }}" value='Neutral' /></label>
+                        <label><br>Somewhat Agree<input type="radio" name="{{ q.question.id }}" value='Somewhat Agree' /></label>
+                        <label><br>Agree<input type="radio" name="{{ q.question.id }}" value='Agree' /></label>
+                        <label><br>Strongly Agree<input type="radio" name="{{ q.question.id }}" value='Strongly Agree' /></label>
+                    </div>
+                    <br>
+                    {% elif current_group == 7 %}
+                    <div class='radioGroupBelow'>
+                        <label><br>Very Unlikely<input type="radio" name="{{ q.question.id }}" value='Very Unlikely' /></label>
+                        <label><br>Unlikely<input type="radio" name="{{ q.question.id }}" value='Unlikely' /></label>
+                        <label><br>Somewhat Unlikely<input type="radio" name="{{ q.question.id }}" value='Somewhat Unlikely' /></label>
+                        <label><br>Neutral<input type="radio" name="{{ q.question.id }}" value='Neutral' /></label>
+                        <label><br>Somewhat Likely<input type="radio" name="{{ q.question.id }}" value='Somewhat Likely' /></label>
+                        <label><br>Likely<input type="radio" name="{{ q.question.id }}" value='Likely' /></label>
+                        <label><br>Very Likely<input type="radio" name="{{ q.question.id }}" value='Very Likely' /></label>
+                    </div>
+                    <br>
+                    {% endif %}
                 {% endfor %}
                 <input type='submit' class='btn btn-default' />
             </div>
