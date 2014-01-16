@@ -7,7 +7,7 @@ class Question(models.Model):
     LANGUAGE_CHOICES = (
         ('EN', 'English'),
         ('PO', 'Polish'),
-        ('ES', 'Spanish'),
+        ('DE', 'German'),
         ('IT', 'Italian')
     )
     GROUP_CHOICES = (
@@ -17,8 +17,10 @@ class Question(models.Model):
         ('3', '3'),
         ('4', '4')
     )
-    language = models.CharField(max_length=15, choices=LANGUAGE_CHOICES)
-    text = models.CharField(max_length=500)
+    english = models.CharField(max_length=500)
+    italian = models.CharField(max_length=500)
+    polish = models.CharField(max_length=500)
+    german = models.CharField(max_length=500)
     group = models.CharField(max_length=1, choices=GROUP_CHOICES)
 
 

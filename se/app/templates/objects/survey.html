@@ -1,0 +1,29 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}Exit survey - Page {{ current_group|add:-4 }}{% endblock %}
+
+{% block navbar %}
+    {% include 'objects/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class='row'>
+    <div class='col-md-9'>
+        <h4>Please answer the following exit questions</h4>
+        <form id='{{ current_group }}' method='POST' action='/submit_survey'>{% csrf_token %}
+            <div class='form-group' style='padding: 20px;'>
+                {% for q in questions %}
+                    {{ forloop.counter }}. {{ q.text }}
+                    <br>
+                    <input type='text' class='form-control' id='{{ q.question.id }}' name='{{ q.question.id }}' />
+                    <br>
+                {% endfor %}
+                <input type='submit' class='btn btn-default' />
+            </div>
+        </form>
+    <div class='col-md-3'>
+    </div>
+</div>
+
+{% endblock %}

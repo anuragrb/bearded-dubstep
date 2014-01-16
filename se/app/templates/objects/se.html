@@ -37,7 +37,7 @@
         <div class='col-md-9'>
             <form class='form' id='answer_form' method='POST' enctype="multipart/form-data" style='width:800px; padding:20px;' class='text-left' onkeypress="return event.keyCode != 13;" action='/submit_answer'>{%csrf_token%}
                 <div class='form-group'>
-                <h4>{{ question.text }}</h4>
+                <h4>{{ text }}</h4>
                 <br>
                 </div>
                 <div class='input-group' style='width:500px;'>

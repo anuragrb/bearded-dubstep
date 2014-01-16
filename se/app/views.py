@@ -32,6 +32,9 @@ def landing(request):
             return redirect('/')
         context['condition'] = condition
         request.session['condition'] = condition
+        if not 'language' in request.session:
+            request.session['language'] = True
+            request.session['language'] = 'EN'
         try:
             user_profile.experimental_condition = conditions[condition]
         except Exception as e:
@@ -56,6 +59,7 @@ def links(request):
     if 'tick' in request.GET:
 
         if User.objects.filter(username=request.GET['tick']):
+
             if request.user.is_authenticated():
                 return redirect('/se')
             else:
@@ -65,6 +69,7 @@ def links(request):
             #context['error'] = 'A better way to handle returning users is coming.'
             #return render(request, "objects/links.html", context)
         else:
+
             new_user = User.objects.create_user(username=request.GET['tick'], password='')
             new_user.save()
             user = authenticate(username=request.GET['tick'], password='')
@@ -83,11 +88,18 @@ def links(request):
 
 def se(request):
 
+    if not 'answered_group' in request.session:
+        pass
+    else:
+        if request.session['answered_group'] > 4:
+            return redirect('/survey')
+
     if not 'condition' in request.session:
         context = {'page': 'links'}
         return render(request, "objects/links.html", context)
 
     context = {'page': request.session['condition']}
+    context['questions'] = []
     if request.user.is_authenticated():
 
         user_profile = User_Profile.objects.get(user=request.user)
@@ -96,6 +108,7 @@ def se(request):
         if 'qid' in request.GET:
             question = Question.objects.get(id=request.GET['qid'])
             context['question'] = question
+            context['text'] = language(request, question)
             return render(request, 'objects/se.html', context)
 
         if not 'answered_index' in request.session:
@@ -105,11 +118,17 @@ def se(request):
             request.session['answered_group'] = 0
             question = Question.objects.get(id=request.session['answered_index'])
             context['question'] = question
+            context['text'] = language(request, question)
             return render(request, 'objects/se.html', context)
 
         elif request.session['answered_index'] > 4:
             questions = Question.objects.filter(group=request.session['answered_group'])
-            context['questions'] = questions
+            for question in questions:
+                q = {}
+                text = language(request, question)
+                q['question'] = question
+                q['text'] = text
+                context['questions'].append(q)
             return render(request, 'objects/select.html', context)
     else:
         return redirect('/')
@@ -156,6 +175,34 @@ def privacy_simplified(request):
     return render(request, "objects/privacy.html")
 
 
+def survey(request):
+    context = {'page': 'survey'}
+    context['current_group'] = request.session['answered_group']
+    context['questions'] = []
+    questions = Question.objects.filter(group=request.session['answered_group'])
+
+    for question in questions:
+        q = {}
+        text = language(request, question)
+        q['question'] = question
+        q['text'] = text
+        context['questions'].append(q)
+
+    return render(request, 'objects/survey.html', context)
+
+
+def submit_survey(request):
+    context = {'page': 'submit_survey'}
+    keys = request.POST.iterkeys()
+    for key in keys:
+        if key != 'csrfmiddlewaretoken':
+            question = Question.objects.get(id=key)
+            new_answer = Answer(question=question, user=request.user, text=request.POST[key])
+            new_answer.save()
+    request.session['answered_group'] = request.session['answered_group'] + 1
+    return redirect('/survey')
+
+
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
@@ -163,3 +210,14 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
+
+
+def language(request, question):
+    if request.session['language'] == 'EN':
+        return question.english
+    if request.session['language'] == 'IT':
+        return question.italian
+    if request.session['language'] == 'DE':
+        return question.german
+    if request.session['language'] == 'PO':
+        return question.polish
