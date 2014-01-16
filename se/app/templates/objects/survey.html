@@ -10,7 +10,19 @@
 
 <div class='row'>
     <div class='col-md-9'>
-        <h4>Please answer the following exit questions</h4>
+        {% if current_group == 5 %}
+        <h4>Please complete this internet use questionnaire</h4>
+        {% elif current_group == 6 %}
+        <h4>Please indicate your agreement with the following statements</h4>
+        {% elif current_group == 7 %}
+        <h4>Please indicate the likelihood that the following items were collected</h4>
+        {% elif current_group == 8 %}
+        <h4>The real purpose of the study was to analyse privacy-related behaviour and attitudes.
+        <br>
+        Google was the search engine.</h4>
+        {% elif current_group == 9 %}
+        <h4>Finally, please provide additional information, answering to the following questions</h4>
+        {% endif %}
         <form id='{{ current_group }}' method='POST' action='/submit_survey'>{% csrf_token %}
             <div class='form-group' style='padding: 20px;'>
                 {% for q in questions %}

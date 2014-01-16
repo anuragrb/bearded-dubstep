@@ -180,7 +180,6 @@ def survey(request):
     context['current_group'] = request.session['answered_group']
     context['questions'] = []
     questions = Question.objects.filter(group=request.session['answered_group'])
-
     for question in questions:
         q = {}
         text = language(request, question)
