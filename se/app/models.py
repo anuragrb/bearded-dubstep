@@ -31,6 +31,13 @@ class Answer(models.Model):
     question = models.ForeignKey(Question)
 
 
+class Search_Query(models.Model):
+
+    text = models.CharField(max_length=1000)
+    question = models.ManyToManyField(Question)
+    user = models.ForeignKey(User)
+
+
 class User_Profile(models.Model):
 
     EXPERIMENTAL_CONDITIONS = (
@@ -53,3 +60,4 @@ class User_Profile(models.Model):
     answers = models.ManyToManyField(Answer)
     tick = models.CharField(max_length=50)
     resolution = models.CharField(max_length=15)
+    search_queries = models.ManyToManyField(Search_Query)

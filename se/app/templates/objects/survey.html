@@ -10,54 +10,74 @@
 
 <div class='row'>
     <div class='col-md-9'>
-        {% if current_group == 5 %}
-        <h4>Please complete this internet use questionnaire</h4>
-        {% elif current_group == 6 %}
-        <h4>Please indicate your agreement with the following statements</h4>
-        {% elif current_group == 7 %}
-        <h4>Please indicate the likelihood that the following items were collected</h4>
-        {% elif current_group == 8 %}
-        <h4>The real purpose of the study was to analyse privacy-related behaviour and attitudes.
-        <br>
-        Google was the search engine.</h4>
-        {% elif current_group == 9 %}
-        <h4>Finally, please provide additional information, answering to the following questions</h4>
-        {% endif %}
-        <form id='{{ current_group }}' method='POST' action='/submit_survey'>{% csrf_token %}
-            <div class='form-group' style='padding: 20px;'>
-                {% for q in questions %}
-                    {{ forloop.counter }}. {{ q.text }}
-                    <br>
-                    {% if current_group == 5 or current_group == 9 %}
-                    <input type='text' class='form-control' id='{{ q.question.id }}' name='{{ q.question.id }}' />
-                    <br>
-                    {% elif current_group == 6 %}
-                    <div class='radioGroupBelow'>
-                        <label><br>Strongly Disagree<input type="radio" name="{{ q.question.id }}" value='Strongly Disagree' /></label>
-                        <label><br>Disagree<input type="radio" name="{{ q.question.id }}" value='Disagree' /></label>
-                        <label><br>Somewhat Disagree<input type="radio" name="{{ q.question.id }}" value='Somewhat Disagree' /></label>
-                        <label><br>Neutral<input type="radio" name="{{ q.question.id }}" value='Neutral' /></label>
-                        <label><br>Somewhat Agree<input type="radio" name="{{ q.question.id }}" value='Somewhat Agree' /></label>
-                        <label><br>Agree<input type="radio" name="{{ q.question.id }}" value='Agree' /></label>
-                        <label><br>Strongly Agree<input type="radio" name="{{ q.question.id }}" value='Strongly Agree' /></label>
-                    </div>
-                    <br>
-                    {% elif current_group == 7 %}
-                    <div class='radioGroupBelow'>
-                        <label><br>Very Unlikely<input type="radio" name="{{ q.question.id }}" value='Very Unlikely' /></label>
-                        <label><br>Unlikely<input type="radio" name="{{ q.question.id }}" value='Unlikely' /></label>
-                        <label><br>Somewhat Unlikely<input type="radio" name="{{ q.question.id }}" value='Somewhat Unlikely' /></label>
-                        <label><br>Neutral<input type="radio" name="{{ q.question.id }}" value='Neutral' /></label>
-                        <label><br>Somewhat Likely<input type="radio" name="{{ q.question.id }}" value='Somewhat Likely' /></label>
-                        <label><br>Likely<input type="radio" name="{{ q.question.id }}" value='Likely' /></label>
-                        <label><br>Very Likely<input type="radio" name="{{ q.question.id }}" value='Very Likely' /></label>
-                    </div>
-                    <br>
-                    {% endif %}
-                {% endfor %}
-                <input type='submit' class='btn btn-default' />
+        {% if current_group == 10 %}
+            <div id='disclosure' style='text-align: center;'>
+                <h3>Thank you for your co-operation. You may now exit.</h3>
             </div>
-        </form>
+        {% else %}
+            {% if current_group == 5 %}
+            <h3>Please complete this internet use questionnaire</h3>
+            {% elif current_group == 6 %}
+            <h3>Please indicate your agreement with the following statements</h3>
+            {% elif current_group == 7 %}
+            <h3>Please indicate the likelihood that the following items were collected</h3>
+            {% elif current_group == 8 %}
+            <div id='disclosure' style='text-align: center;'>
+                <h3>The real purpose of the study was to analyse privacy-related behaviour and attitudes.
+                <br>
+                <br>
+                Google was the search engine.</h3>
+                <br>
+                <br>
+                <img src='{{STATIC_URL}}download.jpg' />
+            </div>
+            {% elif current_group == 9 %}
+            <h4>Finally, please provide additional information, answering to the following questions</h4>
+            {% endif %}
+            <form id='{{ current_group }}' method='POST' action='/submit_survey'>{% csrf_token %}
+                <div class='form-group' style='padding: 20px;'>
+                    {% for q in questions %}
+                        <h4>{{ forloop.counter }}. {{ q.text }}</h4>
+                        <br>
+                        {% if current_group == 5 or current_group == 9 %}
+                        <input type='text' class='form-control' id='{{ q.question.id }}' name='{{ q.question.id }}' />
+                        <br>
+                        {% elif current_group == 6 %}
+                        <div class='radioGroupBelow'>
+                            <label>Strongly Disagree<input type="radio" name="{{ q.question.id }}" value='Strongly Disagree' /></label>
+                            <label>Disagree<input type="radio" name="{{ q.question.id }}" value='Disagree' /></label>
+                            <label>Somewhat Disagree<input type="radio" name="{{ q.question.id }}" value='Somewhat Disagree' /></label>
+                            <label>Neutral<input type="radio" name="{{ q.question.id }}" value='Neutral' /></label>
+                            <label>Somewhat Agree<input type="radio" name="{{ q.question.id }}" value='Somewhat Agree' /></label>
+                            <label>Agree<input type="radio" name="{{ q.question.id }}" value='Agree' /></label>
+                            <label>Strongly Agree<input type="radio" name="{{ q.question.id }}" value='Strongly Agree' /></label>
+                        </div>
+                        <br>
+                        {% elif current_group == 7 %}
+                        <div class='radioGroupBelow'>
+                            <label>Very Unlikely<input type="radio" name="{{ q.question.id }}" value='Very Unlikely' /></label>
+                            <label>Unlikely<input type="radio" name="{{ q.question.id }}" value='Unlikely' /></label>
+                            <label>Somewhat Unlikely<input type="radio" name="{{ q.question.id }}" value='Somewhat Unlikely' /></label>
+                            <label>Neutral<input type="radio" name="{{ q.question.id }}" value='Neutral' /></label>
+                            <label>Somewhat Likely<input type="radio" name="{{ q.question.id }}" value='Somewhat Likely' /></label>
+                            <label>Likely<input type="radio" name="{{ q.question.id }}" value='Likely' /></label>
+                            <label>Very Likely<input type="radio" name="{{ q.question.id }}" value='Very Likely' /></label>
+                        </div>
+                        <br>
+                        {% endif %}
+                    {% endfor %}
+                    {% if current_group != 8 and current_group != 9 %}
+                        <input type='submit' class='btn btn-default' value='Next >>'/>
+                    {% elif current_group == 9 %}
+                        <input type='submit' class='btn btn-default' value='Done'/>
+                    {% else %}
+                        <div style='text-align: center;'>
+                            <input type='submit' class='btn btn-default' value='Next >>' />
+                        </div>
+                    {% endif %}
+                </div>
+            </form>
+        {% endif %}
     <div class='col-md-3'>
     </div>
 </div>
