@@ -202,6 +202,20 @@ def submit_survey(request):
     return redirect('/survey')
 
 
+def save_query(request):
+    if request.is_ajax:
+        if not 'value' in request.POST:
+            pass
+        else:
+            query = request.POST['value']
+            user_profile = User_Profile.objects.get(user=request.user)
+            question = Question.objects.get(id=request.session['answered_index'])
+            value = Search_Query(text=query, question=question, user=request.user)
+            value.save()
+            user_profile.search_queries.add(value)
+    return HttpResponse("Here's the text of the Web page.")
+
+
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:

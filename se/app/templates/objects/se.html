@@ -8,6 +8,11 @@
     {% include 'objects/navbar.html' %}
 {% endblock %}
 
+{% block head %}
+<script src='{{ STATIC_URL }}js/ajax_submit.js'></script>
+
+{% endblock %}
+
 {% if error %}
 
 {% else %}
@@ -56,7 +61,7 @@
             <br>
             <form onsubmit="return executeQuery();" id="cse-search-box-form-id" class='form-inline' style='width:800px; padding:20px;' class='text-left'>
                 <div class='input-group' style='width:500px;'>
-                    <input type="text" class='form-control' placeholder='Search' id="cse-search-input-box-id" size="25" autocomplete="off"/><span class="input-group-btn"><a href="#" onclick="return executeQuery();" class='btn btn-default'>Search</a></span>
+                    <input type="text" class='form-control' placeholder='Search' id="cse-search-input-box-id" onkeypress="return event.keyCode != 13;" size="25" autocomplete="off"/><span class="input-group-btn"><a href="#" onclick="submit_query();return executeQuery();" class='btn btn-default'>Search</a></span>
                 </div>
             </form>
             <div class="row" id="results">

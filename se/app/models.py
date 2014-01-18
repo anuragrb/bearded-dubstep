@@ -34,7 +34,7 @@ class Answer(models.Model):
 class Search_Query(models.Model):
 
     text = models.CharField(max_length=1000)
-    question = models.ManyToManyField(Question)
+    question = models.ForeignKey(Question)
     user = models.ForeignKey(User)
 
 

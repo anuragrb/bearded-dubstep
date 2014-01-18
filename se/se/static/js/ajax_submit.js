@@ -36,4 +36,22 @@ $(document).ready(function() {
             
          }
     });
+
+
 });
+
+function submit_query() {
+
+    $.ajax({
+         type:"POST",
+         url:"/save_query",
+         data: {
+                value: $('#cse-search-input-box-id').val(),
+                // all of this data is submitted via POST to your view.
+                // in django, request.POST['background-color'] 
+         },
+         success: function(data){
+            
+         }
+    });
+}
