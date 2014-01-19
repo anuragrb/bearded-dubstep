@@ -6,6 +6,11 @@
     {% include 'objects/navbar.html' %}
 {% endblock %}
 
+{% block head %}
+<script src='{{ STATIC_URL }}js/ajax_submit.js'></script>
+
+{% endblock %}
+
 {% block content %}
 
 <div class='row'>
@@ -69,7 +74,7 @@
                     {% if current_group != 8 and current_group != 9 %}
                         <input type='submit' class='btn btn-default' value='Next >>'/>
                     {% elif current_group == 9 %}
-                        <input type='submit' class='btn btn-default' value='Done'/>
+                        <input type='submit' class='btn btn-default' value='Done' onclick='submit_time();' />
                     {% else %}
                         <div style='text-align: center;'>
                             <input type='submit' class='btn btn-default' value='Next >>' />

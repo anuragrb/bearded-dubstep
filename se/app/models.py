@@ -55,7 +55,7 @@ class User_Profile(models.Model):
     start_time = models.DateTimeField(auto_now_add=True)
     end_time = models.DateTimeField(auto_now_add=False, null=True)
     experimental_condition = models.CharField(max_length=2, choices=EXPERIMENTAL_CONDITIONS)
-    privacy_clicked = models.BooleanField(default=False)
+    privacy_clicked = models.IntegerField()
     questions_answered = models.ManyToManyField(Question)
     answers = models.ManyToManyField(Answer)
     tick = models.CharField(max_length=50)

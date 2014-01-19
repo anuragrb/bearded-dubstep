@@ -44,7 +44,7 @@ function submit_query() {
 
     $.ajax({
          type:"POST",
-         url:"/save_query",
+         url:"/save",
          data: {
                 value: $('#cse-search-input-box-id').val(),
                 // all of this data is submitted via POST to your view.
@@ -55,3 +55,35 @@ function submit_query() {
          }
     });
 }
+
+function submit_time() {
+
+    $.ajax({
+         type:"POST",
+         url:"/save",
+         data: {
+                // all of this data is submitted via POST to your view.
+                // in django, request.POST['background-color'] 
+         },
+         success: function(data){
+            
+         }
+    });
+}
+
+function submit_time() {
+
+    $.ajax({
+         type:"POST",
+         url:"/save",
+         data: {
+                privacy: 1,
+                // all of this data is submitted via POST to your view.
+                // in django, request.POST['background-color'] 
+         },
+         success: function(data){
+            
+         }
+    });
+}
+

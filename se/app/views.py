@@ -4,6 +4,8 @@ from django.http import HttpRequest, HttpResponse
 
 from generate_question import generate_question
 
+from datetime import datetime
+
 from app.models import *
 
 from django.contrib.auth import authenticate, login, logout
@@ -75,7 +77,8 @@ def links(request):
             user = authenticate(username=request.GET['tick'], password='')
             login(request, user)
             request.session['username'] = request.GET['tick']
-            new_profile = User_Profile(user=new_user, tick=request.GET['tick'], ip_address=get_client_ip(request))
+            new_profile = User_Profile(user=new_user, tick=request.GET['tick'], ip_address=get_client_ip(request), privacy_clicked=0)
+            request.session['privacy_clicked'] = 0
             new_profile.save()
             return render(request, "objects/links.html", context)
 
@@ -202,13 +205,18 @@ def submit_survey(request):
     return redirect('/survey')
 
 
-def save_query(request):
+def save(request):
+    user_profile = User_Profile.objects.get(user=request.user)
     if request.is_ajax:
-        if not 'value' in request.POST:
-            pass
+        if not 'value' or not 'privacy' in request.POST:
+            time = datetime.now()
+            user_profile.end_time = time
+            user_profile.privacy_clicked = request.session['privacy_clicked']
+            user_profile.save()
+        elif 'privacy' in request.POST:
+            request.session['privacy_clicked'] += 1
         else:
             query = request.POST['value']
-            user_profile = User_Profile.objects.get(user=request.user)
             question = Question.objects.get(id=request.session['answered_index'])
             value = Search_Query(text=query, question=question, user=request.user)
             value.save()
