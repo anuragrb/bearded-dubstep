@@ -1,4 +1,4 @@
 bearded-dubstep
 ===============
 
-Code for sample search engine for a research project.
+Code for research project involving google custom search and a survey.
