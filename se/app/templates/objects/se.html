@@ -23,7 +23,7 @@
     <style>
         body, h4 {
             font-family: 'Comic Sans MS';
-            background-color: yellow;
+            background-color: #f39c12;
         }
     </style>
     <script type='text/javascript'>
@@ -32,9 +32,9 @@
             $('.gs-snippet').css('font-family', 'Comic Sans MS');
             $('.gsc-url-bottom').css('font-family', 'Comic Sans MS');
             $('.gsc-cursor-page').css('font-family', 'Comic Sans MS');
-            $('.gsc-control-cse').css('background-color', 'yellow');
-            $('#results').css('background-color', 'yellow');
-            $('#___gsce_0').css('background-color', 'yellow');
+            $('.gsc-control-cse').css('background-color', '#f39c12');
+            $('#results').css('background-color', '#f39c12');
+            $('#___gsce_0').css('background-color', '#f39c12');
         }, 1);
     </script>
 {% endif %}
@@ -81,7 +81,7 @@
                 <script>
                     $(document).ready(function() {
                         $('#results').on('click', 'a', function (event) {
-                            document.getElementById('condition').innerHTML += '<br><br><h5>' + $(this).text() + '</h5>';
+                            document.getElementById('condition').innerHTML += '<br><h5>' + $(this).text() + '</h5>';
                         });
                     });
                 </script>

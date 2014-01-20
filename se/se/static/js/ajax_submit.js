@@ -71,7 +71,7 @@ function submit_time() {
     });
 }
 
-function submit_time() {
+function submit_privacy() {
 
     $.ajax({
          type:"POST",
