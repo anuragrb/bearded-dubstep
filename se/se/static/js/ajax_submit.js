@@ -29,8 +29,6 @@ $(document).ready(function() {
          url:"/",
          data: {
                 resolution: window.screen.width + 'x' + window.screen.height
-                // all of this data is submitted via POST to your view.
-                // in django, request.POST['background-color'] 
          },
          success: function(data){
             
@@ -47,8 +45,6 @@ function submit_query() {
          url:"/save",
          data: {
                 value: $('#cse-search-input-box-id').val(),
-                // all of this data is submitted via POST to your view.
-                // in django, request.POST['background-color'] 
          },
          success: function(data){
             
@@ -62,8 +58,6 @@ function submit_time() {
          type:"POST",
          url:"/save",
          data: {
-                // all of this data is submitted via POST to your view.
-                // in django, request.POST['background-color'] 
          },
          success: function(data){
             
@@ -78,8 +72,6 @@ function submit_privacy() {
          url:"/save",
          data: {
                 privacy: 1,
-                // all of this data is submitted via POST to your view.
-                // in django, request.POST['background-color'] 
          },
          success: function(data){
             
@@ -87,3 +79,17 @@ function submit_privacy() {
     });
 }
 
+function submit_search(result_text, result_href) {
+
+    $.ajax({
+         type:"POST",
+         url:"/save",
+         data: {
+                result_text: result_text,
+                result_href: result_href
+         },
+         success: function(data){
+            
+         }
+    });
+}

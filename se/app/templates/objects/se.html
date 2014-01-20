@@ -81,7 +81,20 @@
                 <script>
                     $(document).ready(function() {
                         $('#results').on('click', 'a', function (event) {
+                            result_text = $(this).text();
+                            result_href = $(this).attr('href');
+                            submit_search(result_text, result_href);
                             document.getElementById('condition').innerHTML += '<br><h5>' + $(this).text() + '</h5>';
+                        });
+                    });
+                </script>
+            {% else %}
+                <script>
+                    $(document).ready(function() {
+                        $('#results').on('click', 'a', function (event) {
+                            result_text = $(this).text();
+                            result_href = $(this).attr('href');
+                            submit_search(result_text, result_href);
                         });
                     });
                 </script>

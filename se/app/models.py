@@ -33,7 +33,15 @@ class Answer(models.Model):
 
 class Search_Query(models.Model):
 
+    text = models.CharField(max_length=10000)
+    question = models.ForeignKey(Question)
+    user = models.ForeignKey(User)
+
+
+class Search_Result(models.Model):
+
     text = models.CharField(max_length=1000)
+    href = models.CharField(max_length=1000)
     question = models.ForeignKey(Question)
     user = models.ForeignKey(User)
 
@@ -61,3 +69,4 @@ class User_Profile(models.Model):
     tick = models.CharField(max_length=50)
     resolution = models.CharField(max_length=15)
     search_queries = models.ManyToManyField(Search_Query)
+    results_clicked = models.ManyToManyField(Search_Result)

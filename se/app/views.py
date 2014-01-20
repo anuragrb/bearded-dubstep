@@ -207,20 +207,26 @@ def submit_survey(request):
 
 def save(request):
     user_profile = User_Profile.objects.get(user=request.user)
+    question = Question.objects.get(id=request.session['answered_index'])
     if request.is_ajax:
-        if not 'value' or not 'privacy' in request.POST:
+        if 'result_text' in request.POST:
+            search_result = Search_Result(text=request.POST['result_text'], href=request.POST['result_href'], user=request.user, question=question)
+            search_result.save()
+            user_profile.results_clicked.add(search_result)
+        elif 'privacy' in request.POST:
+            request.session['privacy_clicked'] += 1
+            user_profile.privacy_clicked = user_profile.privacy_clicked + 1
+            user_profile.save()
+        elif 'value' in request.POST:
+            query = request.POST['value']
+            value = Search_Query(text=query, question=question, user=request.user)
+            value.save()
+            user_profile.search_queries.add(value)
+        else:
             time = datetime.now()
             user_profile.end_time = time
             user_profile.privacy_clicked = request.session['privacy_clicked']
             user_profile.save()
-        elif 'privacy' in request.POST:
-            request.session['privacy_clicked'] += 1
-        else:
-            query = request.POST['value']
-            question = Question.objects.get(id=request.session['answered_index'])
-            value = Search_Query(text=query, question=question, user=request.user)
-            value.save()
-            user_profile.search_queries.add(value)
     return HttpResponse("Here's the text of the Web page.")
 
 
