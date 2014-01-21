@@ -44,6 +44,10 @@
          -moz-border-radius: 0 !important;
               border-radius: 0 !important;
     }
+    .modal-dialog
+    {
+      width: 800px;/* your width */
+    }
     </style>
     <script type='text/javascript'>
     window.setInterval(function() {
@@ -55,11 +59,14 @@
     </script>
 {% endif %}
     <div class='row'>
+        <img src='{{ STATIC_URL }}logo.png' style='width: 400;'/>
+    </div>
+    <div class='row'>
         <div class='col-md-9' style='background-color:#CEECF5;'>
             <form class='form' id='answer_form' method='POST' enctype="multipart/form-data" style='width:800px; padding:20px;' class='text-left' onkeypress="return event.keyCode != 13;" action='/submit_answer'>{%csrf_token%}
                 <div class='form-group'>
+                <h5>Find an answer to the question below by entering search terms into the search box below and hitting the 'Search' button. When you have found an answer, type it directly into the box below the question and hit the 'Submit Your Answer' button.</h5>
                 <h4>{{ text }}</h4>
-                <br>
                 </div>
                 <div class='input-group' style='width:500px;'>
                     <input type='text' id='answer' name='answer' class='form-control' placeholder='Your answer' autocomplete="off"/><span class="input-group-btn"><input type='submit' class='btn btn-default' value='Submit Your Answer' /></span>
@@ -85,7 +92,6 @@
             </div>
         </div>
         <div class='col-md-3' id='condition'>
-            <img src='{{ STATIC_URL }}logo.png' style='width: 400;'/>
             {% if page == 'se_anthropomorphic' %}
                 <script language="JavaScript" type="text/javascript" src="http://vhss-d.oddcast.com/vhost_embed_functions_v2.php?acc=4170425&js=1"></script><script language="JavaScript" type="text/javascript">AC_VHost_Embed(4170425,300,400,'',1,1, 2347563, 0,1,0,'dfdb49e086948c5e42ec6322413625cb',9);</script>
             {% endif %}
