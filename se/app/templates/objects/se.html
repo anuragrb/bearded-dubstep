@@ -37,9 +37,25 @@
             $('#___gsce_0').css('background-color', '#f39c12');
         }, 1);
     </script>
+{% else %}
+    <style>
+    * {
+      -webkit-border-radius: 0 !important;
+         -moz-border-radius: 0 !important;
+              border-radius: 0 !important;
+    }
+    </style>
+    <script type='text/javascript'>
+    window.setInterval(function() {
+        $('.gsc-control-cse').css('background-color', '#CEECF5');
+            $('#results').css('background-color', '#CEECF5');
+            $('#___gsce_0').css('background-color', '#CEECF5');
+            $('#gsc-resultbox-visible').css('background-color', '#CEECF5');
+        }, 1);
+    </script>
 {% endif %}
     <div class='row'>
-        <div class='col-md-9'>
+        <div class='col-md-9' style='background-color:#CEECF5;'>
             <form class='form' id='answer_form' method='POST' enctype="multipart/form-data" style='width:800px; padding:20px;' class='text-left' onkeypress="return event.keyCode != 13;" action='/submit_answer'>{%csrf_token%}
                 <div class='form-group'>
                 <h4>{{ text }}</h4>
@@ -56,15 +72,15 @@
     </div>
     <hr>
     <div class='row'>
-        <div class='col-md-9'>
+        <div class='col-md-9' style='background-color:#CEECF5;'>
             <h4>Answer the question using the search engine below</h4>
             <br>
             <form onsubmit="return executeQuery();" id="cse-search-box-form-id" class='form-inline' style='width:800px; padding:20px;' class='text-left'>
                 <div class='input-group' style='width:500px;'>
-                    <input type="text" class='form-control' placeholder='Search' id="cse-search-input-box-id" onkeypress="return event.keyCode != 13;" size="25" autocomplete="off"/><span class="input-group-btn"><a href="#" onclick="submit_query();return executeQuery();" class='btn btn-default'>Search</a></span>
+                    <input type="text" class='form-control' placeholder='Search' id="cse-search-input-box-id" onkeypress="return event.keyCode != 13;" size="25" autocomplete="off"/><span class="input-group-btn"><a href="#" onclick="submit_query();return executeQuery();" class='btn btn-primary'><span class="glyphicon glyphicon-search"></span> Search</a></span>
                 </div>
             </form>
-            <div class="row" id="results">
+            <div class="row" id="results" style='background-color:#CEECF5;'>
                 <gcse:searchresults-only></gcse:searchresults-only>
             </div>
         </div>
@@ -101,6 +117,9 @@
             {% endif %}
             {% if page == 'se_static' %}
                 <img src='{{ STATIC_URL }}avatar.png' />
+                <br>
+                <br>
+                <p><h4>What would you like to search for?</h4></p>
             {% endif %}
             {% include 'objects/footer.html' %}
         </div>
