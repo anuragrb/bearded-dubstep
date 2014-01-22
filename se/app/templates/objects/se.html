@@ -58,11 +58,12 @@
         }, 1);
     </script>
 {% endif %}
-    <div class='row'>
-        <img src='{{ STATIC_URL }}logo.png' style='width: 400;'/>
+    <div class='row' style='background-color:#006699;'>
+        <img src='{{ STATIC_URL }}logo1.png' style='width: 400; padding:20px;'/>
     </div>
+    <br>
     <div class='row'>
-        <div class='col-md-9' style='background-color:#CEECF5;'>
+        <div class='col-md-12' style='background-color:#CEECF5;'>
             <form class='form' id='answer_form' method='POST' enctype="multipart/form-data" style='width:800px; padding:20px;' class='text-left' onkeypress="return event.keyCode != 13;" action='/submit_answer'>{%csrf_token%}
                 <div class='form-group'>
                 <h5>Find an answer to the question below by entering search terms into the search box below and hitting the 'Search' button. When you have found an answer, type it directly into the box below the question and hit the 'Submit Your Answer' button.</h5>
@@ -74,14 +75,11 @@
                 <input type="hidden" placeholder='Your answer' value='{{ question.id }}' id='questionid' name='questionid' />
             </form>
         </div>
-        <div class='col-md-3'>
-        </div>
     </div>
     <hr>
     <div class='row'>
-        <div class='col-md-9' style='background-color:#CEECF5;'>
-            <h4>Answer the question using the search engine below</h4>
-            <br>
+        <div class='col-md-8' style='background-color:#CEECF5;'>
+            <h4 style='padding:20px;'>Answer the question using the search engine below</h4>
             <form onsubmit="return executeQuery();" id="cse-search-box-form-id" class='form-inline' style='width:800px; padding:20px;' class='text-left'>
                 <div class='input-group' style='width:500px;'>
                     <input type="text" class='form-control' placeholder='Search' id="cse-search-input-box-id" onkeypress="return event.keyCode != 13;" size="25" autocomplete="off"/><span class="input-group-btn"><a href="#" onclick="submit_query();return executeQuery();" class='btn btn-primary'><span class="glyphicon glyphicon-search"></span> Search</a></span>
@@ -91,9 +89,10 @@
                 <gcse:searchresults-only></gcse:searchresults-only>
             </div>
         </div>
-        <div class='col-md-3' id='condition'>
+        <div class='col-md-4' id='condition' style='background-color:#CEECF5; padding-left: 10px;'>
             {% if page == 'se_anthropomorphic' %}
                 <script language="JavaScript" type="text/javascript" src="http://vhss-d.oddcast.com/vhost_embed_functions_v2.php?acc=4170425&js=1"></script><script language="JavaScript" type="text/javascript">AC_VHost_Embed(4170425,300,400,'',1,1, 2347563, 0,1,0,'dfdb49e086948c5e42ec6322413625cb',9);</script>
+                <p><h4>What would you like to search for?</h4></p>
             {% endif %}
             {% if page == 'se_ip' %}
                 <p>Your IP address is {{ client_address }}</p>
