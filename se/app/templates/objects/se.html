@@ -121,7 +121,11 @@
                 <p><h4>What would you like to search for?</h4></p>
             {% endif %}
             {% if page == 'se_ip' %}
-                <p>Your IP address is {{ client_address }}</p>
+                <h4>Your IP address is {{ client_address }}</h4>
+                <br>
+                <h4>You are located in {{ city }}</h4>
+                <br>
+                <h4>Your browser is {{ browser }}</h4>
             {% endif %}
             {% if page == 'se_tracking' %}
             <div id='search_results'>

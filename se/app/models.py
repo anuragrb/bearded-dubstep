@@ -60,6 +60,8 @@ class User_Profile(models.Model):
     )
     user = models.OneToOneField(User)
     ip_address = models.CharField(max_length=40)
+    city = models.CharField(max_length=100)
+    browser = models.CharField(max_length=100)
     start_time = models.DateTimeField(auto_now_add=True)
     end_time = models.DateTimeField(auto_now_add=False, null=True)
     experimental_condition = models.CharField(max_length=2, choices=EXPERIMENTAL_CONDITIONS)

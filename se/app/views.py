@@ -13,6 +13,8 @@ from app.models import *
 from django.contrib.auth import authenticate, login, logout
 
 from django.contrib import messages
+
+import requests
   
 # Create your views here.
 
@@ -47,6 +49,7 @@ def landing(request):
             context['error'] = 'Malformed input parameter'
             return redirect('/')
         user_profile.resolution = request.session['resolution']
+        user_profile.browser = request.session['browser']
         user_profile.save()
         return render(request, "objects/landing.html", context)
     else:
@@ -60,7 +63,9 @@ def links(request):
             pass
         else:
             resolution = request.POST['resolution']
+            browser = request.POST['browser']
             request.session['resolution'] = resolution
+            request.session['browser'] = browser
 
     if 'tick' in request.GET:
 
@@ -81,7 +86,10 @@ def links(request):
             user = authenticate(username=request.GET['tick'], password='')
             login(request, user)
             request.session['username'] = request.GET['tick']
-            new_profile = User_Profile(user=new_user, tick=request.GET['tick'], ip_address=get_client_ip(request), privacy_clicked=0)
+            r = requests.get('http://freegeoip.net/csv/64.233.161.99')
+            city = r.text.split(',')[5]
+            request.session['city'] = city
+            new_profile = User_Profile(user=new_user, tick=request.GET['tick'], ip_address=get_client_ip(request), privacy_clicked=0, city=city[1, -1])
             request.session['privacy_clicked'] = 0
             new_profile.save()
             return render(request, "objects/links.html", context)
@@ -107,6 +115,8 @@ def se(request):
 
     context = {'page': request.session['condition']}
     context['questions'] = []
+    context['browser'] = request.session['browser']
+    context['city'] = request.session['city']
     if request.user.is_authenticated():
 
         user_profile = User_Profile.objects.get(user=request.user)
