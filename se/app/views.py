@@ -9,6 +9,8 @@ from datetime import datetime
 from app.models import *
 
 from django.contrib.auth import authenticate, login, logout
+
+from django.contrib import messages
   
 # Create your views here.
 
@@ -138,6 +140,7 @@ def se(request):
 
 
 def submit_answer(request):
+
     if not 'questionid' or not 'answer' in request.POST:
         return redirect('/')
 
@@ -145,6 +148,9 @@ def submit_answer(request):
     qid = request.POST['questionid']
     question = Question.objects.get(id=qid)
     answer = request.POST['answer']
+    if len(answer) < 1:
+        messages.add_message(request, messages.INFO, 'Please do not submit a blank answer')
+        return redirect('/se')
     if request.user.is_authenticated():
 
         user_profile = User_Profile.objects.get(user=request.user)

@@ -18,6 +18,11 @@
       {% block navbar %}
       {% endblock %}
       <div class="container">
+      {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
       {% if error %}
         <div class="alert alert-danger">{{ error }}</div>
       {% else %}
