@@ -86,10 +86,11 @@ def links(request):
             user = authenticate(username=request.GET['tick'], password='')
             login(request, user)
             request.session['username'] = request.GET['tick']
-            r = requests.get('http://freegeoip.net/csv/64.233.161.99')
+            r = requests.get('http://freegeoip.net/csv/' + get_client_ip(request))
             city = r.text.split(',')[5]
+            city = city[1:-1]
             request.session['city'] = city
-            new_profile = User_Profile(user=new_user, tick=request.GET['tick'], ip_address=get_client_ip(request), privacy_clicked=0, city=city[1, -1])
+            new_profile = User_Profile(user=new_user, tick=request.GET['tick'], ip_address=get_client_ip(request), privacy_clicked=0, city=city)
             request.session['privacy_clicked'] = 0
             new_profile.save()
             return render(request, "objects/links.html", context)
