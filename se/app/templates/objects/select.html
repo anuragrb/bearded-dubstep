@@ -15,7 +15,7 @@
             <br>
             </div>
             {% for q in questions %}
-                <a href='/se?qid={{ q.question.id }}'>{{ q.text }}</a>
+                <h4><a href='/se?qid={{ q.question.id }}'>{{ q.text }}</a></h4>
                 <br>
             {% endfor %}
     </div>
