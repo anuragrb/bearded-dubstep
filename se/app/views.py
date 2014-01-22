@@ -6,6 +6,8 @@ from generate_question import generate_question
 
 from datetime import datetime
 
+import re
+
 from app.models import *
 
 from django.contrib.auth import authenticate, login, logout
@@ -108,7 +110,10 @@ def se(request):
     if request.user.is_authenticated():
 
         user_profile = User_Profile.objects.get(user=request.user)
-        
+        context['search_results'] = []
+        for search_result in user_profile.results_clicked.all():
+            context['search_results'].append(search_result)
+
         context['client_address'] = user_profile.ip_address
         if 'qid' in request.GET:
             question = Question.objects.get(id=request.GET['qid'])
@@ -157,8 +162,12 @@ def submit_answer(request):
         context['client_address'] = user_profile.ip_address
         if Answer.objects.filter(question=question, user=request.user):
             return redirect('/')
+
         new_answer = Answer(question=question, user=request.user, text=answer)
         new_answer.save()
+        user_profile.questions_answered.add(question)
+        user_profile.answers.add(new_answer)
+
         if not 'answered_group' in request.session or request.session['answered_index'] < 4:
             request.session['answered_group'] = 0
             request.session['answered_index'] = request.session['answered_index'] + 1
@@ -216,24 +225,29 @@ def save(request):
     question = Question.objects.get(id=request.session['answered_index'])
     if request.is_ajax:
         if 'result_text' in request.POST:
-            search_result = Search_Result(text=request.POST['result_text'], href=request.POST['result_href'], user=request.user, question=question)
+            href = request.POST['result_href']
+            new_href = re.search(r'(?<=q=)(.*?)(?<=&)', href)
+            search_result = Search_Result(text=request.POST['result_text'], href=new_href.group(0)[:-1], user=request.user, question=question)
             search_result.save()
             user_profile.results_clicked.add(search_result)
+            return HttpResponse(new_href.group(0)[:-1])
         elif 'privacy' in request.POST:
             request.session['privacy_clicked'] += 1
             user_profile.privacy_clicked = user_profile.privacy_clicked + 1
             user_profile.save()
+            return HttpResponse("Here's the text of the Web page.")
         elif 'value' in request.POST:
             query = request.POST['value']
             value = Search_Query(text=query, question=question, user=request.user)
             value.save()
             user_profile.search_queries.add(value)
+            return HttpResponse("Here's the text of the Web page.")
         else:
             time = datetime.now()
             user_profile.end_time = time
             user_profile.privacy_clicked = request.session['privacy_clicked']
             user_profile.save()
-    return HttpResponse("Here's the text of the Web page.")
+            return HttpResponse("Here's the text of the Web page.")
 
 
 def get_client_ip(request):

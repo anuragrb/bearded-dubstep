@@ -124,17 +124,21 @@
                 <p>Your IP address is {{ client_address }}</p>
             {% endif %}
             {% if page == 'se_tracking' %}
-                <p>Click history:</p>
+            <div id='search_results'>
+                <h4 style='padding: 10px;' id='click_history'>Click history:</h4>
                 <script>
                     $(document).ready(function() {
                         $('#results').on('click', 'a', function (event) {
                             result_text = $(this).text();
                             result_href = $(this).attr('href');
                             submit_search(result_text, result_href);
-                            document.getElementById('condition').innerHTML += '<br><h5>' + $(this).text() + '</h5>';
                         });
                     });
                 </script>
+                {% for result in search_results reversed %}
+                    <h5 style='padding-left: 10px;'>{{ result.href }}</h5>
+                {% endfor %}
+            </div>
             {% else %}
                 <script>
                     $(document).ready(function() {

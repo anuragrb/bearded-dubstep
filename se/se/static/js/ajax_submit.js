@@ -88,8 +88,9 @@ function submit_search(result_text, result_href) {
                 result_text: result_text,
                 result_href: result_href
          },
-         success: function(data){
-            
+         success: function(return_data){
+
+            document.getElementById('click_history').innerHTML += '<h5>' + return_data + '</h5>';
          }
     });
 }
