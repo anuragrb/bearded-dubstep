@@ -69,6 +69,7 @@ class User_Profile(models.Model):
     questions_answered = models.ManyToManyField(Question)
     answers = models.ManyToManyField(Answer)
     tick = models.CharField(max_length=50)
-    resolution = models.CharField(max_length=15)
+    screen_resolution = models.CharField(max_length=15)
+    browser_resolution = models.CharField(max_length=15)
     search_queries = models.ManyToManyField(Search_Query)
     results_clicked = models.ManyToManyField(Search_Result)

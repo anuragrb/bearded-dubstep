@@ -48,7 +48,8 @@ def landing(request):
         except Exception as e:
             context['error'] = 'Malformed input parameter'
             return redirect('/')
-        user_profile.resolution = request.session['resolution']
+        user_profile.screen_resolution = request.session['screen_resolution']
+        user_profile.browser_resolution = request.session['browser_resolution']
         user_profile.browser = request.session['browser']
         user_profile.save()
         return render(request, "objects/landing.html", context)
@@ -59,12 +60,16 @@ def landing(request):
 def links(request):
     context = {'page': 'links'}
     if request.is_ajax:
-        if not 'resolution' in request.POST:
+        if not 'screen_resolution' in request.POST:
+            print request.POST
             pass
         else:
-            resolution = request.POST['resolution']
+            screen_resolution = request.POST['screen_resolution']
+            browser_resolution = request.POST['browser_resolution']
             browser = request.POST['browser']
-            request.session['resolution'] = resolution
+            print 'here'
+            request.session['screen_resolution'] = screen_resolution
+            request.session['browser_resolution'] = browser_resolution
             request.session['browser'] = browser
 
     if 'tick' in request.GET:
