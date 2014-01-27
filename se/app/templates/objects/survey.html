@@ -9,6 +9,14 @@
 {% block head %}
 <script src='{{ STATIC_URL }}js/ajax_submit.js'></script>
 
+<style>
+.blank {
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+</style>
+
 {% endblock %}
 
 {% block content %}
@@ -50,22 +58,22 @@
                         {% elif current_group == 6 %}
                         <div class='radioGroupBelow'>
                             <label>Strongly Disagree<input type="radio" name="{{ q.question.id }}" value='Strongly Disagree' /></label>
-                            <label>Disagree<input type="radio" name="{{ q.question.id }}" value='Disagree' /></label>
-                            <label>Somewhat Disagree<input type="radio" name="{{ q.question.id }}" value='Somewhat Disagree' /></label>
-                            <label>Neutral<input type="radio" name="{{ q.question.id }}" value='Neutral' /></label>
-                            <label>Somewhat Agree<input type="radio" name="{{ q.question.id }}" value='Somewhat Agree' /></label>
-                            <label>Agree<input type="radio" name="{{ q.question.id }}" value='Agree' /></label>
+                            <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Disagree' /></label>
+                            <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Somewhat Disagree' /></label>
+                            <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Neutral' /></label>
+                            <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Somewhat Agree' /></label>
+                            <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Agree' /></label>
                             <label>Strongly Agree<input type="radio" name="{{ q.question.id }}" value='Strongly Agree' /></label>
                         </div>
                         <br>
                         {% elif current_group == 7 %}
                         <div class='radioGroupBelow'>
                             <label>Very Unlikely<input type="radio" name="{{ q.question.id }}" value='Very Unlikely' /></label>
-                            <label>Unlikely<input type="radio" name="{{ q.question.id }}" value='Unlikely' /></label>
-                            <label>Somewhat Unlikely<input type="radio" name="{{ q.question.id }}" value='Somewhat Unlikely' /></label>
-                            <label>Neutral<input type="radio" name="{{ q.question.id }}" value='Neutral' /></label>
-                            <label>Somewhat Likely<input type="radio" name="{{ q.question.id }}" value='Somewhat Likely' /></label>
-                            <label>Likely<input type="radio" name="{{ q.question.id }}" value='Likely' /></label>
+                            <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Unlikely' /></label>
+                            <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Somewhat Unlikely' /></label>
+                            <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Neutral' /></label>
+                            <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Somewhat Likely' /></label>
+                            <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Likely' /></label>
                             <label>Very Likely<input type="radio" name="{{ q.question.id }}" value='Very Likely' /></label>
                         </div>
                         <br>

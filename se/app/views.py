@@ -65,9 +65,7 @@ def links(request):
         else:
             screen_resolution = request.POST['screenresolution']
             browser_resolution = request.POST['browserresolution']
-            print browser_resolution
             browser = request.POST['browser']
-            print 'here'
             request.session['screen_resolution'] = screen_resolution
             request.session['browser_resolution'] = browser_resolution
             request.session['browser'] = browser
