@@ -60,12 +60,12 @@ def landing(request):
 def links(request):
     context = {'page': 'links'}
     if request.is_ajax:
-        if not 'screen_resolution' in request.POST:
-            print request.POST
+        if not 'screenresolution' in request.POST:
             pass
         else:
-            screen_resolution = request.POST['screen_resolution']
-            browser_resolution = request.POST['browser_resolution']
+            screen_resolution = request.POST['screenresolution']
+            browser_resolution = request.POST['browserresolution']
+            print browser_resolution
             browser = request.POST['browser']
             print 'here'
             request.session['screen_resolution'] = screen_resolution

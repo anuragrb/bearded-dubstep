@@ -93,8 +93,8 @@ $(document).ready(function() {
          type:"POST",
          url:"/",
          data: {
-                screen_resolution: window.screen.width + 'x' + window.screen.height,
-                //browser_resolution: $(document).width() + 'x' + $(document).height(),
+                screenresolution: window.screen.width + 'x' + window.screen.height,
+                browserresolution: $(document).width() + 'x' + $(document).height(),
                 browser: browser
          },
          success: function(data){
