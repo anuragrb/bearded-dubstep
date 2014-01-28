@@ -1,50 +1,50 @@
-What is the current Queen of England's birthday? /0
-What is the high temperature today in Rome, Italy? /0
-What is the name of the national opera house in Berlin? /0
-Who is the current European Commissioner for Energy? /0
-Find a recipe for chocolate cake and list all the ingredients /1
-Provide the name of the winner at the Eurovision song contest in 1974 /1
-Provide the name of a famous public figure or celebrity born the same year as you /1
-What is the street address of a post office in the town where you live? /2
-What is the date of the first full moon in the year 2017? /2
-On what date was the highest temperature in the U.S.A. recorded? /2
-In what year was the bank you use founded? /3
-Which years marked the beginning and the end of the Bubonic Plague? /3
-Which Shakespeare play was first performed in 1604? /3
-What are the names of three of the moons of Neptune? /4
-What is the full name of the 81st element in the periodic table? /4
-What is the address of a restaurant located in the town where you were born? /4
-What browser do you typically use? (Internet Explorer, Firefox, etc.)? /5
-What search engine do you typically use? /5
-Have you ever purchased physical goods online? /5
-Have you ever visited an Internet dating site? /5
-Have you ever purchased songs online? /5
-Have you ever downloaded pirated songs from the Internet? /5
-Are you a member of a social networking site, such as Facebook? /5
-Have you used the Internet to discover personal information about someone without their knowledge? /5
-Have you ever used a mapping website to get directions? /5
-Have you ever viewed a video online? /5
-Have you ever viewed pornography on the Internet? /5
-My answers to the quiz questions revealed personal information about myself /6
-I felt comfortable answering personal questions /6
-I felt observed /6
-I felt I was being monitored /6
-I was unhappy with the amount of information about me the website was able to detect /6
-Did you notice other things on the right of the screen? Did you see links to privacy policies? Did you see history links, or IP/eo/browser info? /6
-The website you visited /7
-The web browser you used /7
-The search terms you used /7
-Your Internet Protocol (IP) address /7
-Your geographic location /7
-Your answers to the questions about web use /7
-The time you started the quiz questions /7
-The time it took for you to complete the quiz questions /7
-The year of your birth /7
-The town where you live /7
-You are: A man – A woman /8
-How old are you (in completed years)? /8
-Your education level:  No formal education, Primary or lower secondary education, Upper or post secondary education, Tertiary education /8
-Your employment situation:  Self-employed (incl. family workers), Employed, Unemployed, Student (not in the labour force); Other not in the labour force (retired, inactive, in military service, etc.) /8
-Your personal income (net monthly salary) is: less than 500€, 501-800€, 801-1200€, 1201-1500€, 1501-2000€, 2001-3000€, 3001-4000€, 4001-6000€, 6001-8000€, more than 8000€, I don’t know /8
-How many people live in your household, including you? /8
-The household average income (net monthly salary) is: less than 500€, 501-800€, 801-1200€, 1201-1500€, 1501-2000€, 2001-3000€, 3001-4000€, 4001-6000€, 6001-8000€, more than 8000€, I don’t know. /8
+What is the current Queen of England's birthday? \0
+What is the high temperature today in Rome, Italy? \0
+What is the name of the national opera house in Berlin? \0
+Who is the current European Commissioner for Energy? \0
+Find a recipe for chocolate cake and list all the ingredients \1
+Provide the name of the winner at the Eurovision song contest in 1974 \1
+Provide the name of a famous public figure or celebrity born the same year as you \1
+What is the street address of a post office in the town where you live? \2
+What is the date of the first full moon in the year 2017? \2
+On what date was the highest temperature in the U.S.A. recorded? \2
+In what year was the bank you use founded? \3
+Which years marked the beginning and the end of the Bubonic Plague? \3
+Which Shakespeare play was first performed in 1604? \3
+What are the names of three of the moons of Neptune? \4
+What is the full name of the 81st element in the periodic table? \4
+What is the address of a restaurant located in the town where you were born? \4
+What browser do you typically use? (Internet Explorer, Firefox, etc.)? \5
+What search engine do you typically use? \5
+Have you ever purchased physical goods online? \Never \Once \Twice \Sometimes \Frequently \5
+Have you ever visited an Internet dating site? \5
+Have you ever purchased songs online? \5
+Have you ever downloaded pirated songs from the Internet? \5
+Are you a member of a social networking site, such as Facebook? \5
+Have you used the Internet to discover personal information about someone without their knowledge? \5
+Have you ever used a mapping website to get directions? \5
+Have you ever viewed a video online? \5
+Have you ever viewed pornography on the Internet? \5
+My answers to the quiz questions revealed personal information about myself \6
+I felt comfortable answering personal questions \6
+I felt observed \6
+I felt I was being monitored \6
+I was unhappy with the amount of information about me the website was able to detect \6
+Did you notice other things on the right of the screen? Did you see links to privacy policies? Did you see history links, or IP/eo/browser info? \6
+The website you visited \7
+The web browser you used \7
+The search terms you used \7
+Your Internet Protocol (IP) address \7
+Your geographic location \7
+Your answers to the questions about web use \7
+The time you started the quiz questions \7
+The time it took for you to complete the quiz questions \7
+The year of your birth \7
+The town where you live \7
+You are: \Male \Female \8
+How old are you (in completed years)? \8
+Your education level:  \No formal education \Primary or lower secondary education \Upper or post secondary education \Tertiary education \8
+Your employment situation:  \Self-employed (incl. family workers) \Employed \Unemployed \Student (not in the labour force) \Other not in the labour force (retired, inactive, in military service, etc.) \8
+Your personal income (net monthly salary) is: \less than 500€ \501-800€, \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \more than 8000€ \I don’t know \8
+How many people live in your household, including you? \8
+The household average income (net monthly salary) is \less than 500€ \501-800€ \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \more than 8000€ \I don’t know. \8

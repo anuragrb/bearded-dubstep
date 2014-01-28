@@ -2,26 +2,23 @@ from django.db import models
 
 from django.contrib.auth.models import User
 
+
+class Option(models.Model):
+
+    english = models.CharField(max_length=150)
+    italian = models.CharField(max_length=150)
+    polish = models.CharField(max_length=150)
+    german = models.CharField(max_length=150)
+
+
 class Question(models.Model):
 
-    LANGUAGE_CHOICES = (
-        ('EN', 'English'),
-        ('PO', 'Polish'),
-        ('DE', 'German'),
-        ('IT', 'Italian')
-    )
-    GROUP_CHOICES = (
-        ('0', '0'),
-        ('1', '1'),
-        ('2', '2'),
-        ('3', '3'),
-        ('4', '4')
-    )
     english = models.CharField(max_length=500)
     italian = models.CharField(max_length=500)
     polish = models.CharField(max_length=500)
     german = models.CharField(max_length=500)
-    group = models.CharField(max_length=1, choices=GROUP_CHOICES)
+    group = models.CharField(max_length=2)
+    options = models.ManyToManyField(Option)
 
 
 class Answer(models.Model):
@@ -29,6 +26,7 @@ class Answer(models.Model):
     text = models.CharField(max_length=150)
     user = models.ForeignKey(User)
     question = models.ForeignKey(Question)
+    option = models.ForeignKey(Option)
 
 
 class Search_Query(models.Model):
