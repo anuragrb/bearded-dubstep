@@ -10,6 +10,7 @@ for question in f.readlines():
 
     split = question.split('\\')
     if len(split) > 2:
+        print split
         split_slice = split[1:-1]
         new_question = Question(english=split[0], group=split[-1])
         new_question.save()
@@ -18,5 +19,5 @@ for question in f.readlines():
             new_option.save()
             new_question.options.add(new_option)
     else:
-        new_question = Question(english=split[0], group=split[-1])
+        new_question = Question(english=question.split('\\')[0], group=question.split('\\')[1][0])
         new_question.save()

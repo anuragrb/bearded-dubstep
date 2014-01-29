@@ -15,6 +15,11 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.inline-radio {
+
+    display: inline-block;
+}
 </style>
 
 {% endblock %}
@@ -22,7 +27,7 @@
 {% block content %}
 
 <div class='row'>
-    <div class='col-md-9'>
+    <div class='col-md-12'>
         {% if current_group == 10 %}
             <div id='disclosure' style='text-align: center;'>
                 <h3>Thank you for your co-operation. You may now exit.</h3>
@@ -56,8 +61,17 @@
                         <h4>{{ forloop.counter }}. {{ q.text }}</h4>
                         <br>
                         {% if current_group == 5 or current_group == 8 %}
-                        <input type='text' class='form-control' id='{{ q.question.id }}' name='{{ q.question.id }}' />
-                        <br>
+                            {% if q.options %}
+                                <div class='radioGroupBelow'>
+                                {% for option in q.options %}
+                                    <label class='blank'>{{ option.english }}<input type="radio" name="{{ q.question.id }}" class='blank' value='{{ option.english }}' /></label>
+                                {% endfor %}
+                                </div>
+                                <br>
+                            {% else %}
+                                <input type='text' class='form-control' id='{{ q.question.id }}' name='{{ q.question.id }}' />
+                                <br>
+                            {% endif %}
                         {% elif current_group == 6 %}
                         <div class='radioGroupBelow'>
                             <label>Strongly Disagree<input type="radio" name="{{ q.question.id }}" value='Strongly Disagree' /></label>
@@ -94,7 +108,6 @@
                 </div>
             </form>
         {% endif %}
-    <div class='col-md-3'>
     </div>
 </div>
 

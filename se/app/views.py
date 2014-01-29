@@ -146,7 +146,7 @@ def se(request):
             return render(request, 'objects/se.html', context)
 
         elif request.session['answered_index'] > 4:
-            questions = Question.objects.filter(group=request.session['answered_group'])
+            questions = Question.objects.filter(group__contains=request.session['answered_group'])
             for question in questions:
                 q = {}
                 text = language(request, question)
@@ -211,12 +211,13 @@ def survey(request):
     context = {'page': 'survey'}
     context['current_group'] = request.session['answered_group']
     context['questions'] = []
-    questions = Question.objects.filter(group=request.session['answered_group'])
+    questions = Question.objects.filter(group__contains=request.session['answered_group'])
     for question in questions:
         q = {}
         text = language(request, question)
         q['question'] = question
         q['text'] = text
+        q['options'] = question.options.all()
         context['questions'].append(q)
 
     return render(request, 'objects/survey.html', context)

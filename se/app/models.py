@@ -26,7 +26,6 @@ class Answer(models.Model):
     text = models.CharField(max_length=150)
     user = models.ForeignKey(User)
     question = models.ForeignKey(Question)
-    option = models.ForeignKey(Option)
 
 
 class Search_Query(models.Model):
