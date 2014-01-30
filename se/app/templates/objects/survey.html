@@ -62,9 +62,11 @@
                         <br>
                         {% if current_group == 5 or current_group == 8 %}
                             {% if q.options %}
-                                <div class='radioGroupBelow'>
+                                <div class='radioGroupBelow' style='padding-left:10px;'>
                                 {% for option in q.options %}
+                                <div style='display: inline-block; width: 150px; word-wrap: break-word;'>
                                     <label class='blank'>{{ option.english }}<input type="radio" name="{{ q.question.id }}" class='blank' value='{{ option.english }}' /></label>
+                                </div>
                                 {% endfor %}
                                 </div>
                                 <br>
