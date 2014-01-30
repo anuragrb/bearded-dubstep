@@ -6,10 +6,10 @@
             <h4>{{ text }}</h4>
             </div>
             <div class='input-group' style='width:500px;'>
-                <input type='text' id='answer' name='answer' class='form-control' placeholder='Your answer' autocomplete="off"/>
+                <input type='text' id='answer' name='answer' onkeydown="if (event.keyCode == 13) document.getElementById('submitanswer').click()" class='form-control' placeholder='Your answer' autocomplete="off"/>
                 <br>
                 <br>
-                <input type='submit' class='btn btn-primary' value='Submit Your Answer' />
+                <input type='submit' id='submitanswer' class='btn btn-primary' value='Submit Your Answer' />
             </div>
             <input type="hidden" placeholder='Your answer' value='{{ question.id }}' id='questionid' name='questionid' />
         </form>
