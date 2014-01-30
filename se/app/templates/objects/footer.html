@@ -2,16 +2,6 @@
 
 {% endblock %}
 
-<div id="footer">
-    <div class="container" style="padding-top: 20px">
-        {% if page != 'se_control' %}
-            <p class="muted credit" style='cursor:pointer;'><a data-target='#privacy_modal' data-toggle='modal' target='_blank' onclick='submit_privacy();'>Privacy Policy</a></p>
-        {% elif page == 'se_simplified' %}
-            <p class="muted credit" style='cursor:pointer;'><a href='/privacy' target='_blank' onclick='submit_privacy();'>Simple Privacy Policy</a></p>
-        {% endif %}
-    </div>
-</div>
-
 <div class="modal fade" id="privacy_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

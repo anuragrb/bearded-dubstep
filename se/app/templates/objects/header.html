@@ -1,0 +1,24 @@
+{% block head %}
+
+{% endblock %}
+
+<div class='row' id='image-div'>
+    <div class='col-md-9'>
+    {% if page != 'se_informal' %}
+    <img src='{{ STATIC_URL }}logo1.png' style='width: 400; padding-left:30px; padding-top:20px; padding-bottom:20px;'/>
+    {% else %}
+    <img src='{{ STATIC_URL }}logo-informal.png' style='width: 400; padding-left:30px; padding-top:20px; padding-bottom:20px;'/>
+    {% endif %}
+    </div>
+    <div class='col-md-3'>
+    <div id="footer">
+        <div class="container" style="padding-top: 20px">
+            {% if page != 'se_control' %}
+                <p class="muted credit" style='cursor:pointer;'><a data-target='#privacy_modal' style='color:#FFFFFF;' data-toggle='modal' target='_blank' onclick='submit_privacy();'>Privacy Policy</a></p>
+            {% elif page == 'se_simplified' %}
+                <p class="muted credit" style='cursor:pointer;'><a href='/privacy' target='_blank' style='color:#FFFFFF;' onclick='submit_privacy();'>Simple Privacy Policy</a></p>
+            {% endif %}
+        </div>
+    </div>
+    </div>
+</div>

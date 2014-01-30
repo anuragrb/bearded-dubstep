@@ -1,0 +1,17 @@
+<div class='row'>
+    <div class='col-md-12 form-div'>
+        <form class='form' id='answer_form' method='POST' enctype="multipart/form-data" style='width:800px; padding:20px;' class='text-left' onkeypress="return event.keyCode != 13;" action='/submit_answer'>{%csrf_token%}
+            <div class='form-group'>
+            <h5>Find an answer to the question below by entering search terms into the search box below and hitting the 'Search' button. When you have found an answer, type it directly into the box below the question and hit the 'Submit Your Answer' button.</h5>
+            <h4>{{ text }}</h4>
+            </div>
+            <div class='input-group' style='width:500px;'>
+                <input type='text' id='answer' name='answer' class='form-control' placeholder='Your answer' autocomplete="off"/>
+                <br>
+                <br>
+                <input type='submit' class='btn btn-primary' value='Submit Your Answer' />
+            </div>
+            <input type="hidden" placeholder='Your answer' value='{{ question.id }}' id='questionid' name='questionid' />
+        </form>
+    </div>
+</div>
