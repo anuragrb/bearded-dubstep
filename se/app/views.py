@@ -224,10 +224,10 @@ def survey(request):
 def submit_survey(request):
     context = {'page': 'submit_survey'}
     keys = request.POST.iterkeys()
-    for key in keys:
-        if len(request.POST[key]) < 1 and request.session['answered_group'] != 5:
-            messages.add_message(request, messages.INFO, 'Please answer all questions in this part of the survey')
-            return redirect('/')
+    # for key in keys:
+    #     if len(request.POST[key]) < 1 and request.session['answered_group'] != 5:
+    #         messages.add_message(request, messages.INFO, 'Please answer all questions in this part of the survey')
+    #         return redirect('/')
     for key in keys:
         if key != 'csrfmiddlewaretoken':
             question = Question.objects.get(id=key)

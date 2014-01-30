@@ -26,6 +26,7 @@ class Answer(models.Model):
     text = models.CharField(max_length=150)
     user = models.ForeignKey(User)
     question = models.ForeignKey(Question)
+    time_posted = models.DateTimeField(auto_now_add=True)
 
 
 class Search_Query(models.Model):
