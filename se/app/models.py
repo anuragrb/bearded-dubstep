@@ -34,6 +34,7 @@ class Search_Query(models.Model):
     text = models.CharField(max_length=10000)
     question = models.ForeignKey(Question)
     user = models.ForeignKey(User)
+    time_posted = models.DateTimeField(auto_now_add=True)
 
 
 class Search_Result(models.Model):
@@ -42,6 +43,7 @@ class Search_Result(models.Model):
     href = models.CharField(max_length=1000)
     question = models.ForeignKey(Question)
     user = models.ForeignKey(User)
+    time_posted = models.DateTimeField(auto_now_add=True)
 
 
 class User_Profile(models.Model):

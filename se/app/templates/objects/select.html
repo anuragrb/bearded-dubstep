@@ -6,18 +6,48 @@
     {% include 'objects/navbar.html' %}
 {% endblock %}
 
+{% block head %}
+
+{% if page == 'se_informal' %}
+    <style>
+        body {
+            font-family: 'Comic Sans MS';
+            background-color: #f39c12;
+        }
+        h4, h5 {
+            font-family: 'Comic Sans MS';
+            color: red;
+        }
+    </style>
+    <style>
+        #image-div {
+
+            background-color:#FFD801;
+        }
+        .form-div {
+
+            background-color: #FFD801;
+        }
+    </style>
+{% endif %}
+
+{% endblock %}
+
 {% block content %}
+
 
 <div class='row'>
     <div class='col-md-9'>
         <div class='form-group'>
-            <h4>Select one of the questions below</h4>
+            <h4 style='padding-left:20px;'>Select one of the questions below</h4>
             <br>
             </div>
+            <div class='form-div'>
             {% for q in questions %}
-                <h4><a href='/se?qid={{ q.question.id }}'>{{ q.text }}</a></h4>
+                <h4 style='padding: 20px;'><a href='/se?qid={{ q.question.id }}'>{{ q.text }}</a></h4>
                 <br>
             {% endfor %}
+            </div>
     </div>
     <div class='col-md-3'>
     </div>
