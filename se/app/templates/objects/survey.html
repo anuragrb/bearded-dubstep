@@ -38,7 +38,7 @@
             {% elif current_group == 6 %}
             <h3>Please indicate your agreement with the following statements</h3>
             {% elif current_group == 7 %}
-            <h3>Please indicate the likelihood that the following items were collected</h3>
+            <h3>Please indicate the likelihood that the following items were collected by the search engine</h3>
             {% elif current_group == 9 %}
             <div id='disclosure' style='text-align: center;'>
                 <h3>The real purpose of the study was to analyse privacy-related behaviour and attitudes.
@@ -66,6 +66,7 @@
                                 {% for option in q.options %}
                                 <div style='display: inline-block; width: 150px; word-wrap: break-word;'>
                                     <label class='blank'>{{ option.english }}<input type="radio" name="{{ q.question.id }}" class='blank' value='{{ option.english }}' /></label>
+                                    <input name="{{ q.question.id }}" type="hidden" value="0" />
                                 </div>
                                 {% endfor %}
                                 </div>
@@ -76,6 +77,7 @@
                             {% endif %}
                         {% elif current_group == 6 %}
                         <div class='radioGroupBelow'>
+                            <input name="{{ q.question.id }}" type="hidden" value="0" />
                             <label>Strongly Disagree<input type="radio" name="{{ q.question.id }}" value='Strongly Disagree' /></label>
                             <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Disagree' /></label>
                             <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Somewhat Disagree' /></label>
