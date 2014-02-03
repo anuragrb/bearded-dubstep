@@ -4,7 +4,14 @@
     text-align:center;
     margin:0 0.2em;
 }
+
 .radioGroupBelow label input[type="radio"] {
     display:block;
     margin:0.5em auto;
 }​
+
+#wrap {
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
