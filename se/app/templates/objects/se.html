@@ -33,11 +33,12 @@
         }
         .form-div {
 
-            background-color: #FFD801;
+            background-color:#FFD801;
         }
     </style>
     <script type='text/javascript'>
         window.setInterval(function() {
+            $("#search-div").height($("#condition").height());
             $('.gs-title').css('font-family', 'Comic Sans MS');
             $('.gs-snippet').css('font-family', 'Comic Sans MS');
             $('.gsc-url-bottom').css('font-family', 'Comic Sans MS');
@@ -67,10 +68,12 @@
 
         background-color:#CEECF5;
         padding-right:20px; border-right: 5px solid #FFF;
+        min-height:800px;
     }
     </style>
     <script type='text/javascript'>
     window.setInterval(function() {
+            $("#search-div").height($("#condition").height());
             $('.gsc-control-cse').css('background-color', '#CEECF5');
             $('.gsc-control-cse').css('border', '0px');
             $('#results').css('background-color', '#CEECF5');
@@ -83,7 +86,7 @@
     <br>
     {% include 'objects/answer_submit.html' %}
     <hr>
-    <div class='row'>
+    <div class='row' id='search-div'>
         <div class='col-md-8 form-div'>
             <h4 style='padding:20px;'>Answer the question using the search engine below</h4>
             <form onsubmit="return executeQuery();" id="cse-search-box-form-id" class='form-inline' style='width:800px; padding:20px;' class='text-left'>
