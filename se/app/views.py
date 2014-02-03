@@ -226,6 +226,7 @@ def survey(request):
 def submit_survey(request):
     context = {'page': 'submit_survey'}
     keys = request.POST.iterkeys()
+    print request.POST
     if request.session['answered_group'] != 5:
         for key in keys:
             if request.POST[key] == '0':
