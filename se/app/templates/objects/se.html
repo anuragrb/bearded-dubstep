@@ -56,6 +56,10 @@
     </script>
 {% else %}
     <style>
+    #VHSS {
+
+        width:350px;
+    }
     * {
       -webkit-border-radius: 0 !important;
          -moz-border-radius: 0 !important;
@@ -106,9 +110,12 @@
                 <gcse:searchresults-only></gcse:searchresults-only>
             </div>
         </div>
-        <div class='col-md-4 form-div' id='condition' style='padding-left: 10px;'>
+        <div class='col-md-4 form-div' id='condition' style='padding-left: 10px; '>
             {% if page == 'se_anthropomorphic' %}
+            <div style='text-align:center;'>
                 {% include 'objects/anthropomorphic.html' %}
+                <p><h4>What would you like to search for?</h4></p>
+            </div>
             {% endif %}
             {% if page == 'se_ip' %}
                 {% include 'objects/ip.html' %}
@@ -127,7 +134,10 @@
                 </script>
             {% endif %}
             {% if page == 'se_static' %}
+            <div style='text-align:center;'>
                 {% include 'objects/static.html' %}
+                <p><h4>What would you like to search for?</h4></p>
+            </div>
             {% endif %}
             {% include 'objects/footer.html' %}
         </div>

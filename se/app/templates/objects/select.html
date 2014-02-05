@@ -22,9 +22,66 @@
         }
         .form-div {
 
-            background-color: #FFD801;
+            background-color:#FFD801;
+            padding-right:20px; border-right: 5px solid #f39c12;
+            min-height:800px;
+        }
+        .submit-div {
+
+            background-color:#FFD801;
         }
     </style>
+    <script type='text/javascript'>
+        window.setInterval(function() {
+            $('.gs-title').css('font-family', 'Comic Sans MS');
+            $('.gs-snippet').css('font-family', 'Comic Sans MS');
+            $('.gsc-url-bottom').css('font-family', 'Comic Sans MS');
+            $('.gsc-cursor-page').css('font-family', 'Comic Sans MS');
+            $('.gsc-control-cse').css('background-color', '#FFD801');
+            $('#results').css('background-color', '#FFD801');
+            $('#___gsce_0').css('background-color', '#FFD801');
+            $('.gsc-control-cse').css('border', '0px');
+        }, 1);
+    </script>
+{% else %}
+    <style>
+    #VHSS {
+
+        width:350px;
+    }
+    * {
+      -webkit-border-radius: 0 !important;
+         -moz-border-radius: 0 !important;
+              border-radius: 0 !important;
+    }
+    #image-div {
+
+        background-color: #009999;
+    }
+    .modal-dialog
+    {
+      width: 800px;/* your width */
+    }
+    .form-div {
+
+        background-color:#CEECF5;
+        padding-right:20px; border-right: 5px solid #FFF;
+        min-height:800px;
+    }
+    .submit-div {
+
+        background-color:#CEECF5;
+    }
+    </style>
+    <script type='text/javascript'>
+    window.setInterval(function() {
+            $('.gsc-control-cse').css('background-color', '#CEECF5');
+            $('.gsc-control-cse').css('border', '0px');
+            $('#results').css('background-color', '#CEECF5');
+            $('#___gsce_0').css('background-color', '#CEECF5');
+            $('#gsc-resultbox-visible').css('background-color', '#CEECF5');
+        }, 1);
+    </script>
 {% endif %}
 
 {% endblock %}
@@ -33,19 +90,46 @@
 
 
 <div class='row'>
-    <div class='col-md-9'>
+    <div class='col-md-8 form-div form-group'>
         <div class='form-group'>
             <h4 style='padding-left:20px;'>Please select one of the questions below</h4>
             <br>
             </div>
-            <div class='form-div'>
+            <div>
             {% for q in questions %}
                 <h4 style='padding: 20px;'><a href='/se?qid={{ q.question.id }}'>{{ q.text }}</a></h4>
                 <br>
             {% endfor %}
             </div>
     </div>
-    <div class='col-md-3'>
+    <div class='col-md-4 form-div' id='condition' style='padding-left: 10px; '>
+        {% if page == 'se_anthropomorphic' %}
+            <div style='text-align:center;'>
+            {% include 'objects/anthropomorphic.html' %}
+            </div>
+        {% endif %}
+        {% if page == 'se_ip' %}
+            {% include 'objects/ip.html' %}
+        {% endif %}
+        {% if page == 'se_tracking' %}
+        {% include 'objects/tracking.html' %}
+        {% else %}
+            <script>
+                $(document).ready(function() {
+                    $('#results').on('click', 'a', function (event) {
+                        result_text = $(this).text();
+                        result_href = $(this).attr('href');
+                        submit_search(result_text, result_href);
+                    });
+                });
+            </script>
+        {% endif %}
+        {% if page == 'se_static' %}
+            <div style='text-align:center;'>
+            {% include 'objects/static.html' %}
+            </div>
+        {% endif %}
+        {% include 'objects/footer.html' %}
     </div>
 </div>
 
