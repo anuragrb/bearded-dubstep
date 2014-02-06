@@ -15,5 +15,9 @@ for question in f.readlines():
             new_option.save()
             new_question.options.add(new_option)
     else:
-        new_question = Question(english=question.split('\\')[0], group=question.split('\\')[1][0])
-        new_question.save()
+        if len(question.split('\\')[1]) == 1:
+            new_question = Question(english=question.split('\\')[0], group=question.split('\\')[1][0])
+            new_question.save()
+        else:
+            new_question = Question(english=question.split('\\')[0], group=question.split('\\')[1].rstrip())
+            new_question.save()
