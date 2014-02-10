@@ -16,6 +16,12 @@ SECRET_KEY = environ.get('DJANGO_SECRET_KEY')
 PROJECT_ROOT = path.realpath(path.dirname(__file__)) + '/'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+ADMINS = (
+    ('Anurag Bhatt', 'anuragrb@andrew.cmu.edu'),
+)
+
+MANAGERS = ADMINS
+
 DEBUG = environ.get('DEBUG_STATE')
 
 TEMPLATE_DEBUG = DEBUG
