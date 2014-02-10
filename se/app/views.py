@@ -120,7 +120,10 @@ def se(request):
     context = {'page': request.session['condition']}
     context['questions'] = []
     context['browser'] = request.session['browser']
-    context['city'] = request.session['city']
+    if not request.session['city']:
+        context['city'] = ''
+    else:
+        context['city'] = request.session['city']
     if request.user.is_authenticated():
 
         user_profile = User_Profile.objects.get(user=request.user)
