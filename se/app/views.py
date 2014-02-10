@@ -120,7 +120,7 @@ def se(request):
     context = {'page': request.session['condition']}
     context['questions'] = []
     context['browser'] = request.session['browser']
-    if not request.session['city']:
+    if not 'city' in request.session:
         context['city'] = ''
     else:
         context['city'] = request.session['city']
