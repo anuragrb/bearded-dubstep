@@ -89,6 +89,19 @@ $(document).ready(function() {
     
     browser = detect_browser();
 
+    $.ajax({
+         type:"POST",
+         url:"/",
+         data: {
+                screenresolution: window.screen.width + 'x' + window.screen.height,
+                browserresolution: $(document).width() + 'x' + $(document).height(),
+                browser: browser
+         },
+         success: function(data){
+            
+         }
+    });
+
     var hasFlash = false;
     try {
       var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
@@ -102,15 +115,12 @@ $(document).ready(function() {
         hasFlash = true;
       }
     }
-    
+
     $.ajax({
          type:"POST",
          url:"/",
          data: {
-                screenresolution: window.screen.width + 'x' + window.screen.height,
-                browserresolution: $(document).width() + 'x' + $(document).height(),
-                browser: browser,
-                hasflash: hasFlash
+            hasflash: hasFlash
          },
          success: function(data){
             

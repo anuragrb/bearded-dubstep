@@ -64,17 +64,16 @@ def landing(request):
 def links(request):
     context = {'page': 'links'}
     if request.is_ajax:
-        if not 'screenresolution' in request.POST:
-            pass
+        if 'hasflash' in request.POST:
+            hasflash = request.POST['hasflash']
+            request.session['hasflash'] = hasflash
         else:
             screen_resolution = request.POST['screenresolution']
             browser_resolution = request.POST['browserresolution']
             browser = request.POST['browser']
-            hasflash = request.POST['hasflash']
             request.session['screen_resolution'] = screen_resolution
             request.session['browser_resolution'] = browser_resolution
             request.session['browser'] = browser
-            request.session['hasflash'] = hasflash
 
     if 'tick' in request.GET:
 
