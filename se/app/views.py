@@ -1,22 +1,20 @@
-from django.shortcuts import render, render_to_response, redirect
-
-from django.http import HttpRequest, HttpResponse
-
-from generate_question import generate_question
-
+#Python library imports 
 from datetime import datetime
-
 import re
 
+#Django specific imports
+from django.shortcuts import render, render_to_response, redirect
+from django.http import HttpRequest, HttpResponse
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+import requests
+import logging
+
+#App specific imports
+from generate_question import generate_question
 from app.models import *
 
-from django.contrib.auth import authenticate, login, logout
-
-from django.contrib import messages
-
-import requests
-  
-# Create your views here.
+logger = logging.getLogger('custom.logger')
 
 def landing(request):
     context = {'page': 'landing'}
@@ -48,11 +46,15 @@ def landing(request):
         except Exception as e:
             context['error'] = 'Malformed input parameter'
             return redirect('/')
-        user_profile.screen_resolution = request.session['screen_resolution']
-        user_profile.browser_resolution = request.session['browser_resolution']
-        user_profile.browser = request.session['browser']
-        user_profile.hasflash = request.session['hasflash']
-        user_profile.save()
+        try:
+            user_profile.screen_resolution = request.session['screen_resolution']
+            user_profile.browser_resolution = request.session['browser_resolution']
+            user_profile.browser = request.session['browser']
+            user_profile.hasflash = request.session['hasflash']
+            user_profile.save()
+        except Exception as e:
+            logger.exception('There was a key error')
+            user_profile.save()
         return render(request, "objects/landing.html", context)
     else:
         return redirect('/')
