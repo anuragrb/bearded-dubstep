@@ -125,6 +125,7 @@ def se(request):
     context['browser'] = request.session['browser']
     if not 'city' in request.session:
         context['city'] = ''
+        request.session['city'] = ''
     else:
         context['city'] = request.session['city']
     if request.user.is_authenticated():
