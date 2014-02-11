@@ -48,7 +48,10 @@ def landing(request):
         except Exception as e:
             context['error'] = 'Malformed input parameter'
             return redirect('/')
-        user_profile.screen_resolution = request.session['screen_resolution']
+        if not 'screen_resolution' in request.session:
+            user_profile.screen_resolution = ''
+        else:
+            user_profile.screen_resolution = request.session['screen_resolution']
         user_profile.browser_resolution = request.session['browser_resolution']
         user_profile.hasFlash = request.session['hasflash']
         user_profile.browser = request.session['browser']
