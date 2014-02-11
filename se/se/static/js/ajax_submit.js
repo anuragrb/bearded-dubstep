@@ -89,19 +89,33 @@ $(document).ready(function() {
     
     browser = detect_browser();
 
+    var hasFlash = false;
+    try {
+      var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+      if (fo) {
+        hasFlash = true;
+      }
+    } catch (e) {
+      if (navigator.mimeTypes
+            && navigator.mimeTypes['application/x-shockwave-flash'] != undefined
+            && navigator.mimeTypes['application/x-shockwave-flash'].enabledPlugin) {
+        hasFlash = true;
+      }
+    }
+    
     $.ajax({
          type:"POST",
          url:"/",
          data: {
                 screenresolution: window.screen.width + 'x' + window.screen.height,
                 browserresolution: $(document).width() + 'x' + $(document).height(),
-                browser: browser
+                browser: browser,
+                hasflash: hasFlash
          },
          success: function(data){
             
          }
     });
-
 
 });
 

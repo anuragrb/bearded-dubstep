@@ -50,6 +50,7 @@ def landing(request):
             return redirect('/')
         user_profile.screen_resolution = request.session['screen_resolution']
         user_profile.browser_resolution = request.session['browser_resolution']
+        user_profile.hasFlash = request.session['hasflash']
         user_profile.browser = request.session['browser']
         user_profile.save()
         return render(request, "objects/landing.html", context)
@@ -66,9 +67,11 @@ def links(request):
             screen_resolution = request.POST['screenresolution']
             browser_resolution = request.POST['browserresolution']
             browser = request.POST['browser']
+            hasflash = request.POST['hasflash']
             request.session['screen_resolution'] = screen_resolution
             request.session['browser_resolution'] = browser_resolution
             request.session['browser'] = browser
+            request.session['hasflash'] = hasflash
 
     if 'tick' in request.GET:
 
