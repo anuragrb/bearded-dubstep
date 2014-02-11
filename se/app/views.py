@@ -53,6 +53,7 @@ def landing(request):
             user_profile.hasflash = request.session['hasflash']
             user_profile.save()
         except Exception as e:
+            user_profile.browser = 'Internet Explorer'
             logger.exception('There was a key error - full stack trace follows')
             user_profile.save()
         return render(request, "objects/landing.html", context)
