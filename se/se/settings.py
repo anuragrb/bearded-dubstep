@@ -22,6 +22,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+SERVER_EMAIL = 'django@theresearchgroup.org'
+
 DEBUG = environ.get('DEBUG_STATE')
 
 TEMPLATE_DEBUG = DEBUG
