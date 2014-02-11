@@ -1,8 +1,8 @@
-#Python library imports 
+# Python library imports
 from datetime import datetime
 import re
 
-#Django specific imports
+# Django specific imports
 from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpRequest, HttpResponse
 from django.contrib.auth import authenticate, login, logout
@@ -10,11 +10,12 @@ from django.contrib import messages
 import requests
 import logging
 
-#App specific imports
+# App specific imports
 from generate_question import generate_question
 from app.models import *
 
 logger = logging.getLogger('custom.logger')
+
 
 def landing(request):
     context = {'page': 'landing'}
@@ -30,7 +31,8 @@ def landing(request):
             'IN': 'se_informal',
             'SI': 'se_simplified'
         }
-        conditions = dict((EXPERIMENTAL_CONDITIONS[k], k) for k in EXPERIMENTAL_CONDITIONS)
+        conditions = dict((EXPERIMENTAL_CONDITIONS[k], k)
+                          for k in EXPERIMENTAL_CONDITIONS)
         user_profile = User_Profile.objects.get(user=request.user)
         if 'q' in request.GET:
             condition = request.GET['q']
@@ -47,14 +49,17 @@ def landing(request):
             context['error'] = 'Malformed input parameter'
             return redirect('/')
         try:
-            user_profile.screen_resolution = request.session['screen_resolution']
-            user_profile.browser_resolution = request.session['browser_resolution']
+            user_profile.screen_resolution = request.session[
+                'screen_resolution']
+            user_profile.browser_resolution = request.session[
+                'browser_resolution']
             user_profile.browser = request.session['browser']
             user_profile.hasflash = request.session['hasflash']
             user_profile.save()
         except Exception as e:
             user_profile.browser = 'Internet Explorer'
-            logger.exception('There was a key error - full stack trace follows')
+            logger.exception(
+                'There was a key error - full stack trace follows')
             user_profile.save()
         return render(request, "objects/landing.html", context)
     else:
@@ -89,16 +94,18 @@ def links(request):
                 login(request, user)
                 return redirect('/se')
             #context['error'] = 'A better way to handle returning users is coming.'
-            #return render(request, "objects/links.html", context)
+            # return render(request, "objects/links.html", context)
         else:
 
-            new_user = User.objects.create_user(username=request.GET['tick'], password='')
+            new_user = User.objects.create_user(
+                username=request.GET['tick'], password='')
             new_user.save()
             user = authenticate(username=request.GET['tick'], password='')
             login(request, user)
             request.session['username'] = request.GET['tick']
             try:
-                r = requests.get('http://freegeoip.net/csv/' + get_client_ip(request))
+                r = requests.get(
+                    'http://freegeoip.net/csv/' + get_client_ip(request))
                 city = r.text.split(',')[5]
                 city = city[1:-1]
                 if len(city) < 1:
@@ -106,9 +113,11 @@ def links(request):
                 else:
                     request.session['city'] = city
             except Exception as e:
-                logger.exception('There was a key error while retrieving a city from freegeoip.net')
+                logger.exception(
+                    'There was a key error while retrieving a city from freegeoip.net')
                 request.session['city'] = ''
-            new_profile = User_Profile(user=new_user, tick=request.GET['tick'], ip_address=get_client_ip(request), privacy_clicked=0, city=city)
+            new_profile = User_Profile(user=new_user, tick=request.GET[
+                                       'tick'], ip_address=get_client_ip(request), privacy_clicked=0, city=city)
             request.session['privacy_clicked'] = 0
             new_profile.save()
             return render(request, "objects/links.html", context)
@@ -145,6 +154,8 @@ def se(request):
         else:
             context['city'] = request.session['city']
     except Exception as e:
+        logger.exception(
+            'No city in request.session or no browser in request.session. Traceback has more details')
         context['city'] = ''
     if request.user.is_authenticated():
 
@@ -162,16 +173,18 @@ def se(request):
 
         if not 'answered_index' in request.session:
             request.session['answered_index'] = 1
-        
+
         if not 'answered_group' in request.session or request.session['answered_index'] <= 4:
             request.session['answered_group'] = 0
-            question = Question.objects.get(id=request.session['answered_index'])
+            question = Question.objects.get(
+                id=request.session['answered_index'])
             context['question'] = question
             context['text'] = language(request, question)
             return render(request, 'objects/se.html', context)
 
         elif request.session['answered_index'] > 4:
-            questions = Question.objects.filter(group=request.session['answered_group'])
+            questions = Question.objects.filter(
+                group=request.session['answered_group'])
             for question in questions:
                 q = {}
                 text = language(request, question)
@@ -193,7 +206,8 @@ def submit_answer(request):
     question = Question.objects.get(id=qid)
     answer = request.POST['answer']
     if len(answer) < 1:
-        messages.add_message(request, messages.INFO, 'Please do not submit a blank answer')
+        messages.add_message(
+            request, messages.INFO, 'Please do not submit a blank answer')
         return redirect('/se')
     if request.user.is_authenticated():
 
@@ -209,16 +223,20 @@ def submit_answer(request):
 
         if not 'answered_group' in request.session or request.session['answered_index'] < 4:
             request.session['answered_group'] = 0
-            request.session['answered_index'] = request.session['answered_index'] + 1
+            request.session['answered_index'] = request.session[
+                'answered_index'] + 1
             return redirect('/se')
 
         if request.session['answered_index'] == 4:
-            request.session['answered_group'] = request.session['answered_group'] + 1
-            request.session['answered_index'] = request.session['answered_index'] + 1
+            request.session['answered_group'] = request.session[
+                'answered_group'] + 1
+            request.session['answered_index'] = request.session[
+                'answered_index'] + 1
             return redirect('/se')
 
         elif request.session['answered_index'] > 4:
-            request.session['answered_group'] = request.session['answered_group'] + 1
+            request.session['answered_group'] = request.session[
+                'answered_group'] + 1
             return redirect('/se')
 
 
@@ -236,7 +254,8 @@ def survey(request):
     context = {'page': 'survey'}
     context['current_group'] = request.session['answered_group']
     context['questions'] = []
-    questions = Question.objects.filter(group__contains=request.session['answered_group'])
+    questions = Question.objects.filter(
+        group__contains=request.session['answered_group'])
     for question in questions:
         q = {}
         text = language(request, question)
@@ -254,13 +273,15 @@ def submit_survey(request):
     if request.session['answered_group'] != 5:
         for key in keys:
             if request.POST[key] == '0':
-                messages.add_message(request, messages.INFO, 'Please answer all questions')
+                messages.add_message(
+                    request, messages.INFO, 'Please answer all questions')
                 return redirect('/survey')
 
     for key in keys:
         if key != 'csrfmiddlewaretoken':
             question = Question.objects.get(id=key)
-            new_answer = Answer(question=question, user=request.user, text=request.POST[key])
+            new_answer = Answer(
+                question=question, user=request.user, text=request.POST[key])
             new_answer.save()
     request.session['answered_group'] = request.session['answered_group'] + 1
     return redirect('/survey')
@@ -273,7 +294,8 @@ def save(request):
         if 'result_text' in request.POST:
             href = request.POST['result_href']
             new_href = re.search(r'(?<=q=)(.*?)(?<=&)', href)
-            search_result = Search_Result(text=request.POST['result_text'], href=new_href.group(0)[:-1], user=request.user, question=question)
+            search_result = Search_Result(
+                text=request.POST['result_text'], href=new_href.group(0)[:-1], user=request.user, question=question)
             search_result.save()
             user_profile.results_clicked.add(search_result)
             return HttpResponse(new_href.group(0)[:-1])
@@ -284,7 +306,8 @@ def save(request):
             return HttpResponse("Here's the text of the Web page.")
         elif 'value' in request.POST:
             query = request.POST['value']
-            value = Search_Query(text=query, question=question, user=request.user)
+            value = Search_Query(
+                text=query, question=question, user=request.user)
             value.save()
             user_profile.search_queries.add(value)
             return HttpResponse("Here's the text of the Web page.")
