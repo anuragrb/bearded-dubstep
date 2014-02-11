@@ -53,7 +53,7 @@ def landing(request):
             user_profile.hasflash = request.session['hasflash']
             user_profile.save()
         except Exception as e:
-            logger.exception('There was a key error')
+            logger.exception('There was a key error - full stack trace follows')
             user_profile.save()
         return render(request, "objects/landing.html", context)
     else:
@@ -106,6 +106,7 @@ def links(request):
                 else:
                     request.session['city'] = city
             except Exception as e:
+                logger.exception('There was a key error while retrieving a city from freegeoip.net')
                 request.session['city'] = ''
             new_profile = User_Profile(user=new_user, tick=request.GET['tick'], ip_address=get_client_ip(request), privacy_clicked=0, city=city)
             request.session['privacy_clicked'] = 0
@@ -133,8 +134,11 @@ def se(request):
 
     context = {'page': request.session['condition']}
     context['questions'] = []
-    context['browser'] = request.session['browser']
     try:
+        if not 'browser' in request.session:
+            context['browser'] = 'Internet Explorer'
+        else:
+            context['browser'] = request.session['browser']
         if not 'city' in request.session:
             context['city'] = ''
             request.session['city'] = ''
