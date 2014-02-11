@@ -89,13 +89,16 @@ def links(request):
             user = authenticate(username=request.GET['tick'], password='')
             login(request, user)
             request.session['username'] = request.GET['tick']
-            r = requests.get('http://freegeoip.net/csv/' + get_client_ip(request))
-            city = r.text.split(',')[5]
-            city = city[1:-1]
-            if len(city) < 1:
+            try:
+                r = requests.get('http://freegeoip.net/csv/' + get_client_ip(request))
+                city = r.text.split(',')[5]
+                city = city[1:-1]
+                if len(city) < 1:
+                    request.session['city'] = ''
+                else:
+                    request.session['city'] = city
+            except Exception as e:
                 request.session['city'] = ''
-            else:
-                request.session['city'] = city
             new_profile = User_Profile(user=new_user, tick=request.GET['tick'], ip_address=get_client_ip(request), privacy_clicked=0, city=city)
             request.session['privacy_clicked'] = 0
             new_profile.save()
