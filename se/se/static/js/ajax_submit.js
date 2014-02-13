@@ -123,7 +123,7 @@ function submit_flash() {
     }
     $.ajax({
          type:"POST",
-         url:"/",
+         url:"/save",
          data: {
                 hasflash: hasFlash,
          },

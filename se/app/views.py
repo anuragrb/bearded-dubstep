@@ -63,10 +63,6 @@ def landing(request):
         else:
             user_profile.browser = request.session['browser']
 
-        if not 'hasflash' in request.session:
-            user_profile.hasflash = ''
-        else:
-            user_profile.hasflash = request.session['hasflash']
         user_profile.save()
         return render(request, "objects/landing.html", context)
     else:
@@ -289,34 +285,44 @@ def submit_survey(request):
 
 def save(request):
     user_profile = User_Profile.objects.get(user=request.user)
-    question = Question.objects.get(id=request.session['answered_index'])
+    if 'answered_index' in request.session:
+        question = Question.objects.get(id=request.session['answered_index'])
+    else:
+        question = ''
     if request.is_ajax:
-        if 'result_text' in request.POST:
-            href = request.POST['result_href']
-            new_href = re.search(r'(?<=q=)(.*?)(?<=&)', href)
-            search_result = Search_Result(
-                text=request.POST['result_text'], href=new_href.group(0)[:-1], user=request.user, question=question)
-            search_result.save()
-            user_profile.results_clicked.add(search_result)
-            return HttpResponse(new_href.group(0)[:-1])
-        elif 'privacy' in request.POST:
-            request.session['privacy_clicked'] += 1
-            user_profile.privacy_clicked = user_profile.privacy_clicked + 1
-            user_profile.save()
-            return HttpResponse("Here's the text of the Web page.")
-        elif 'value' in request.POST:
-            query = request.POST['value']
-            value = Search_Query(
-                text=query, question=question, user=request.user)
-            value.save()
-            user_profile.search_queries.add(value)
-            return HttpResponse("Here's the text of the Web page.")
-        else:
-            time = datetime.now()
-            user_profile.end_time = time
-            user_profile.privacy_clicked = request.session['privacy_clicked']
-            user_profile.save()
-            return HttpResponse("Here's the text of the Web page.")
+        try:
+            if 'result_text' in request.POST:
+                href = request.POST['result_href']
+                new_href = re.search(r'(?<=q=)(.*?)(?<=&)', href)
+                search_result = Search_Result(
+                    text=request.POST['result_text'], href=new_href.group(0)[:-1], user=request.user, question=question)
+                search_result.save()
+                user_profile.results_clicked.add(search_result)
+                return HttpResponse(new_href.group(0)[:-1])
+            elif 'privacy' in request.POST:
+                request.session['privacy_clicked'] += 1
+                user_profile.privacy_clicked = user_profile.privacy_clicked + 1
+                user_profile.save()
+                return HttpResponse("Successfully incremented privacy counter.")
+            elif 'value' in request.POST:
+                query = request.POST['value']
+                value = Search_Query(
+                    text=query, question=question, user=request.user)
+                value.save()
+                user_profile.search_queries.add(value)
+                return HttpResponse("Successfully added a new search query.")
+            elif 'hasflash' in request.POST:
+                user_profile.hasflash = request.POST['hasflash']
+                user_profile.save()
+                return HttpResponse("Successfully checked for flash in user's browser.")
+            else:
+                time = datetime.now()
+                user_profile.end_time = time
+                user_profile.privacy_clicked = request.session['privacy_clicked']
+                user_profile.save()
+                return HttpResponse("Successfully completed the survey for the current user.")
+        except Exception as e:
+            logger.exception('Something very bad happened while saving to the DB')
 
 
 def get_client_ip(request):
