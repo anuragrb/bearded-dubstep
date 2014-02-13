@@ -88,8 +88,27 @@ $(document).ready(function() {
     });
     
     browser = detect_browser();
+    submit_flash();
 
+    $.ajax({
+         type:"POST",
+         url:"/",
+         data: {
+                screenresolution: window.screen.width + 'x' + window.screen.height,
+                browserresolution: $(document).width() + 'x' + $(document).height(),
+                browser: browser,
+         },
+         success: function(data){
+            
+         }
+    });
+
+});
+
+function submit_flash() {
+ 
     var hasFlash = false;
+    alert('here');
     try {
       var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
       if (fo) {
@@ -102,22 +121,17 @@ $(document).ready(function() {
         hasFlash = true;
       }
     }
-
     $.ajax({
          type:"POST",
          url:"/",
          data: {
-                screenresolution: window.screen.width + 'x' + window.screen.height,
-                browserresolution: $(document).width() + 'x' + $(document).height(),
-                browser: browser,
-                hasflash: hasFlash
+                hasflash: hasFlash,
          },
          success: function(data){
             
          }
     });
-
-});
+}
 
 function submit_query() {
 

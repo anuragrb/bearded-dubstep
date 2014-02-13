@@ -73,4 +73,4 @@ class User_Profile(models.Model):
     browser_resolution = models.CharField(max_length=15)
     search_queries = models.ManyToManyField(Search_Query)
     results_clicked = models.ManyToManyField(Search_Result)
-    hasFlash = models.CharField(max_length=10)
+    hasflash = models.CharField(max_length=10)

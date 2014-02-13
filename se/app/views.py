@@ -48,19 +48,26 @@ def landing(request):
         except Exception as e:
             context['error'] = 'Malformed input parameter'
             return redirect('/')
-        try:
-            user_profile.screen_resolution = request.session[
-                'screen_resolution']
-            user_profile.browser_resolution = request.session[
-                'browser_resolution']
+        if not 'screen_resolution' in request.session:
+            user_profile.screen_resolution = ''
+        else:
+            user_profile.screen_resolution = request.session['screen_resolution']
+
+        if not 'browser_resolution' in request.session:
+            user_profile.browser_resolution = ''
+        else:
+            user_profile.browser_resolution = request.session['browser_resolution']
+
+        if not 'browser' in request.session:
+            user_profile.browser = ''
+        else:
             user_profile.browser = request.session['browser']
+
+        if not 'hasflash' in request.session:
+            user_profile.hasflash = ''
+        else:
             user_profile.hasflash = request.session['hasflash']
-            user_profile.save()
-        except Exception as e:
-            user_profile.browser = 'Internet Explorer'
-            logger.exception(
-                'There was a key error - full stack trace follows')
-            user_profile.save()
+        user_profile.save()
         return render(request, "objects/landing.html", context)
     else:
         return redirect('/')
@@ -70,11 +77,7 @@ def links(request):
     context = {'page': 'links'}
     if request.is_ajax:
         if not 'screenresolution' in request.POST:
-            if not 'hasflash' in request.POST:
-                hasflash = ''
-            else:
-                hasflash = request.POST['hasflash']
-                request.session['hasflash'] = hasflash
+            print request.POST
         else:
             screen_resolution = request.POST['screenresolution']
             browser_resolution = request.POST['browserresolution']
@@ -93,12 +96,9 @@ def links(request):
                 user = authenticate(username=request.GET['tick'], password='')
                 login(request, user)
                 return redirect('/se')
-            #context['error'] = 'A better way to handle returning users is coming.'
-            # return render(request, "objects/links.html", context)
         else:
 
-            new_user = User.objects.create_user(
-                username=request.GET['tick'], password='')
+            new_user = User.objects.create_user(username=request.GET['tick'], password='')
             new_user.save()
             user = authenticate(username=request.GET['tick'], password='')
             login(request, user)
