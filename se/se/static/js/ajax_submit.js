@@ -108,7 +108,6 @@ $(document).ready(function() {
 function submit_flash() {
  
     var hasFlash = false;
-    alert('here');
     try {
       var fo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
       if (fo) {
