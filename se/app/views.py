@@ -73,7 +73,7 @@ def links(request):
     context = {'page': 'links'}
     if request.is_ajax:
         if not 'screenresolution' in request.POST:
-            print request.POST
+            pass
         else:
             screen_resolution = request.POST['screenresolution']
             browser_resolution = request.POST['browserresolution']
