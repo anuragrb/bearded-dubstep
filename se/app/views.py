@@ -96,9 +96,13 @@ def links(request):
 
             new_user = User.objects.create_user(username=request.GET['tick'], password='')
             new_user.save()
-            user = authenticate(username=request.GET['tick'], password='')
+            if len(request.GET['tick']) > 30:
+                tick = request.GET['tick'][0:30]
+            else:
+                tick = request.GET['tick']
+            user = authenticate(username=tick, password='')
             login(request, user)
-            request.session['username'] = request.GET['tick']
+            request.session['username'] = tick
             try:
                 r = requests.get(
                     'http://freegeoip.net/csv/' + get_client_ip(request))
@@ -111,9 +115,9 @@ def links(request):
             except Exception as e:
                 logger.exception(
                     'There was a key error while retrieving a city from freegeoip.net')
+                city = ''
                 request.session['city'] = ''
-            new_profile = User_Profile(user=new_user, tick=request.GET[
-                                       'tick'], ip_address=get_client_ip(request), privacy_clicked=0, city=city)
+            new_profile = User_Profile(user=new_user, tick=tick, ip_address=get_client_ip(request), privacy_clicked=0, city=city)
             request.session['privacy_clicked'] = 0
             new_profile.save()
             return render(request, "objects/links.html", context)
@@ -205,6 +209,7 @@ def submit_answer(request):
         messages.add_message(
             request, messages.INFO, 'Please do not submit a blank answer')
         return redirect('/se')
+
     if request.user.is_authenticated():
 
         user_profile = User_Profile.objects.get(user=request.user)
