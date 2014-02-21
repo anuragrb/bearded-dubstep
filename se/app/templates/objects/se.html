@@ -21,15 +21,15 @@
             font-family: 'Comic Sans MS';
             background-color: #f39c12;
         }
-        h4, h5 {
+        h1, h2, h4, h5 {
             font-family: 'Comic Sans MS';
-            color: red;
+            color: green;
         }
     </style>
     <style>
         #image-div {
 
-            background-color:#FFD801;
+            background-color:green;
         }
         .form-div {
 
@@ -43,6 +43,19 @@
         }
     </style>
     <script type='text/javascript'>
+        var d;
+        var t;
+
+        $(document).ready(function() {
+
+            d = new Date();
+        })
+        function savetime() {
+
+            difference = new Date() - d;
+            alert(difference);
+            document.getElementById('clicktime').value = difference;
+        }
         window.setInterval(function() {
             $('.gs-title').css('font-family', 'Comic Sans MS');
             $('.gs-snippet').css('font-family', 'Comic Sans MS');

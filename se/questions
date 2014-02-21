@@ -1,6 +1,6 @@
 What is the current Queen of Norway's birthday? \0
 What is the high temperature today in Hammamet, Tunisia? \0
-What is the name of the national opera house in Hungary? \0
+What is the name of the national opera house in Kiev? \0
 Who is the current European Commissioner for Development? \0
 Find a recipe for chocolate cake and list all the ingredients \1
 Provide the name of the winner at the Eurovision song contest in 1978 \1
@@ -9,7 +9,7 @@ What is the street address of a post office in the town where you live? \2
 What is the date of the first full moon in the year 2017? \2
 On what date was the highest temperature in the U.S.A. recorded? \2
 In what year was the bank you use founded? \3
-Which years marked the beginning and the end of the Bubonic Plague? \3
+Which years marked the beginning and the end of the Crimean War? \3
 Which Shakespeare play was first performed in 1604? \3
 What are the names of three of the moons of Neptune? \4
 What is the full name of the 81st element in the periodic table? \4
@@ -19,7 +19,7 @@ What search engine do you typically use? \Google \Yahoo \Bing \Other \I do not k
 Have you ever purchased physical goods online? \Never \Once or Twice \Sometimes \Frequently \5
 Have you ever visited an Internet dating site? \Never \Once or Twice \Sometimes \Frequently \5
 Have you ever purchased songs online? \Never \Once or Twice \Sometimes \Frequently \5
-Have you ever downloaded pirated songs from the Internet? \Never \Once or Twice \Sometimes \Frequently \5
+Have you ever illegally downloaded songs from the Internet? \Never \Once or Twice \Sometimes \Frequently \5
 Are you a member of a social networking site, such as Facebook? \Yes \No \5
 Have you ever used the Internet to discover personal information about someone without their knowledge? \Never \Once or Twice \Sometimes \Frequently \5
 Have you ever used a mapping website to get directions? \Never \Once or Twice \Sometimes \Frequently \5
@@ -42,7 +42,7 @@ The year of your birth \7
 The town you are currently connected from \7
 While you were answering the quiz questions, did you notice anything unusual in the right side of the screen? Please describe what you noticed, if anything \8
 While you were answering the quiz questions, did you notice a link to a privacy policy for the search engine? \I noticed it \I did not notice it \8
-While you were answering the quiz questions, did you notice a series of links to urls you had visited? \I noticed it \I did not notice it \8
+While you were answering the quiz questions, did you notice a series of links to URLs you had visited? \I noticed it \I did not notice it \8
 While you were answering the quiz questions, did you notice an IP address? \I noticed it \I did not notice it \8
 While you were answering the quiz questions, did you notice a geographical location? Was it the correct location from you are currently connected from? \I noticed it, and it was correct \I noticed it, and it was not correct \I did not notice it \8
 While you were answering the quiz questions, did you notice a browser name? Was it the correct name of the browser you are currently using?  \I noticed it, and it was correct \I noticed it, and it was not correct \I did not notice it \8

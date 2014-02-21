@@ -205,6 +205,7 @@ def submit_answer(request):
     qid = request.POST['questionid']
     question = Question.objects.get(id=qid)
     answer = request.POST['answer']
+    clicktime = request.POST['clicktime']
     if len(answer) < 1:
         messages.add_message(
             request, messages.INFO, 'Please do not submit a blank answer')
@@ -217,7 +218,7 @@ def submit_answer(request):
         if Answer.objects.filter(question=question, user=request.user):
             return redirect('/')
 
-        new_answer = Answer(question=question, user=request.user, text=answer)
+        new_answer = Answer(question=question, user=request.user, text=answer, clicktime=clicktime)
         new_answer.save()
         user_profile.questions_answered.add(question)
         user_profile.answers.add(new_answer)
