@@ -1,58 +1,65 @@
-What is the current Queen of Norway's birthday? \0
-What is the high temperature today in Hammamet, Tunisia? \0
-What is the name of the national opera house in Kiev? \0
-Who is the current European Commissioner for Development? \0
-Find a recipe for chocolate cake and list all the ingredients \1
-Provide the name of the winner at the Eurovision song contest in 1978 \1
-Provide the name of a famous public figure or celebrity born the same year as you \1
-What is the street address of a post office in the town where you live? \2
-What is the date of the first full moon in the year 2017? \2
-On what date was the highest temperature in the U.S.A. recorded? \2
-In what year was the bank you use founded? \3
-Which years marked the beginning and the end of the Crimean War? \3
-Which Shakespeare play was first performed in 1604? \3
-What are the names of three of the moons of Neptune? \4
-What is the full name of the 81st element in the periodic table? \4
-What is the address of your favorite restaurant located in the town where you were born? \4
-What browser do you typically use? \Internet Explorer \Mozilla Firefox \Google Chrome \Safari \Opera \Other \I do not know \5
-What search engine do you typically use? \Google \Yahoo \Bing \Other \I do not know \5
-Have you ever purchased physical goods online? \Never \Once or Twice \Sometimes \Frequently \5
-Have you ever visited an Internet dating site? \Never \Once or Twice \Sometimes \Frequently \5
-Have you ever purchased songs online? \Never \Once or Twice \Sometimes \Frequently \5
-Have you ever illegally downloaded songs from the Internet? \Never \Once or Twice \Sometimes \Frequently \5
-Are you a member of a social networking site, such as Facebook? \Yes \No \5
-Have you ever used the Internet to discover personal information about someone without their knowledge? \Never \Once or Twice \Sometimes \Frequently \5
-Have you ever used a mapping website to get directions? \Never \Once or Twice \Sometimes \Frequently \5
-Have you ever viewed a video online? \Never \Once or Twice \Sometimes \Frequently \5
-Have you ever viewed pornography on the Internet? \Never \Once or Twice \Sometimes \Frequently \5
-My answers to the quiz questions revealed personal information about myself \6
-I felt comfortable answering personal questions during this study \6
-I felt observed during this study \6
-I felt I was being monitored during this study \6
-The search engine website was able to detect several pieces of information about my online activity \6
-The websites you visited \7
-The web browser you used \7
-The search terms you used \7
-Your Internet Protocol (IP) address \7
-Your geographic location \7
-Your answers to the questions about web use \7
-The time you started the quiz questions \7
-The time it took for you to complete the quiz questions \7
-The year of your birth \7
-The town you are currently connected from \7
-While you were answering the quiz questions, did you notice anything unusual in the right side of the screen? Please describe what you noticed, if anything \8
-While you were answering the quiz questions, did you notice a link to a privacy policy for the search engine? \I noticed it \I did not notice it \8
-While you were answering the quiz questions, did you notice a series of links to URLs you had visited? \I noticed it \I did not notice it \8
-While you were answering the quiz questions, did you notice an IP address? \I noticed it \I did not notice it \8
-While you were answering the quiz questions, did you notice a geographical location? Was it the correct location from you are currently connected from? \I noticed it, and it was correct \I noticed it, and it was not correct \I did not notice it \8
-While you were answering the quiz questions, did you notice a browser name? Was it the correct name of the browser you are currently using?  \I noticed it, and it was correct \I noticed it, and it was not correct \I did not notice it \8
-While you were answering the quiz questions, did you notice an image of a female character? \I noticed her, and her eyes were moving \I noticed her, and her eyes were not moving \I did not notice her \8
-You are: \Male \Female \I prefer not to answer \9
-How old are you? \18-25 \26-33 \34-41 \42-49 \50-57 \58-65 \66 and above \I prefer not to answer \9
-Your education level:  \Below high school \Some high school \High school graduate \Some college \College graduate \Advanced degree \I prefer not to answer \9
-Your employment situation:  \Student \Self-employed \Homemaker \Employed \Unemployed \Retired \I prefer not to answer \9
-Your personal income (net monthly salary) is: \Less than 500€ \501-800€, \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \More than 8000€ \I prefer not to answer  \9
-How many people live in your household, including you? \1-3 \4-6 \7-9 \10 and above \I prefer not to answer \9
-Your household average income (net monthly salary) is \Less than 500€ \501-800€ \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \More than 8000€ \I prefer not to answer \9
-What was the goal of this study? \10
-Do you have any comment or suggestion for our study? \10
+What is the current Queen of Norway's birthday? \0 \0
+What is the high temperature today in Hammamet, Tunisia? \0 \0
+What is the name of the national opera house in Kiev? \0 \0
+Who is the current European Commissioner for Development? \0 \0
+Find a recipe for chocolate cake and list all the ingredients \1 \0
+Provide the name of the winner at the Eurovision song contest in 1978 \1 \0
+Provide the name of a famous public figure or celebrity born the same year as you \1 \0
+What is the street address of a post office in the town where you live? \2 \0
+What is the date of the first full moon in the year 2017? \2 \0
+On what date was the highest temperature in the U.S.A. recorded? \2 \0
+In what year was the bank you use founded? \3 \0
+Which years marked the beginning and the end of the Crimean War? \3 \0
+Which Shakespeare play was first performed in 1604? \3 \0
+What are the names of three of the moons of Neptune? \4 \0
+What is the full name of the 81st element in the periodic table? \4 \0
+What is the address of your favorite restaurant located in the town where you were born? \4 \0
+What browser do you typically use? \Internet Explorer \Mozilla Firefox \Google Chrome \Safari \Opera \Other \I do not know \5 \1
+What search engine do you typically use? \Google \Yahoo \Bing \Other \I do not know \5 \1
+Are you a member of a social networking site, such as Facebook? \Yes \No \5 \1
+Do you think the search engine you tested is easier to use than the search engine that you typically use? \5 \2
+Do you think the search engine you tested is more efficient in the result provided than the search engine that you typically use? \5 \2
+Do you think the search engine you tested fits your needs better than the search engine that you typically use? \5 \2
+Do you think the search engine you tested is more straightforward in relation to your searches than the search engine that you typically use? \5 \2
+Have you had sex with the current husband, wife, or partner of a friend? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you fantasized about having violent non consensual sex with someone? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you had sex with someone who was too drunk to know what they were doing? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you looked at pornographic material? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you claimed to have education that you didn't actually have? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you known about or witnessed a serious crime and failed to report it or stop it? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you lied about your income to someone? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you pretended not to see a beggar to avoid being seen as stingy? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you drunk so much that you got a hangover? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you failed to tip a waiter in a country in which tipping is customary? \Never \Once or Twice \Sometimes \Frequently \6 \1
+My answers to the quiz questions revealed personal information about myself \7 \2
+I felt comfortable answering personal questions during this study \7 \2
+I felt observed during this study \7 \2
+I felt I was being monitored during this study \7 \2
+The search engine website was able to detect several pieces of information about my online activity \7 \2
+The websites you visited \8 \3
+The web browser you used \8 \3
+The search terms you used \8 \3
+Your Internet Protocol (IP) address \8 \3
+Your geographic location \8 \3
+Your answers to the questions about web use \8 \3
+The time you started the quiz questions \8 \3
+The time it took for you to complete the quiz questions \8 \3
+The year of your birth \8 \3
+The town you are currently connected from \8 \3
+While you were answering the quiz questions, did you notice anything unusual in the right side of the screen? Please describe what you noticed, if anything \9 \0
+While you were answering the quiz questions, did you notice a link to a privacy policy for the search engine? \I noticed it \I did not notice it \9 \1
+While you were answering the quiz questions, did you notice a series of links to URLs you had visited? \I noticed it \I did not notice it \9 \1
+While you were answering the quiz questions, did you notice an IP address? \I noticed it \I did not notice it \9 \1
+While you were answering the quiz questions, did you notice a geographical location? Was it the correct location from you are currently connected from? \I noticed it, and it was correct \I noticed it, and it was not correct \I did not notice it \9 \1
+While you were answering the quiz questions, did you notice a browser name? Was it the correct name of the browser you are currently using?  \I noticed it, and it was correct \I noticed it, and it was not correct \I did not notice it \9 \1
+While you were answering the quiz questions, did you notice an image of a female character? \I noticed her, and her eyes were moving \I noticed her, and her eyes were not moving \I did not notice her \9 \1
+You are: \Male \Female \I prefer not to answer \10 \1
+How old are you? \18-25 \26-33 \34-41 \42-49 \50-57 \58-65 \66 and above \I prefer not to answer \10 \1
+Your education level:  \Below high school \Some high school \High school graduate \Some college \College graduate \Advanced degree \I prefer not to answer \10 \1
+Your employment situation:  \Student \Self-employed \Homemaker \Employed \Unemployed \Retired \I prefer not to answer \10 \1
+Your personal income (net monthly salary) is: \Less than 500€ \501-800€, \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \More than 8000€ \I prefer not to answer  \10 \1
+How many people live in your household, including you? \1-3 \4-6 \7-9 \10 and above \I prefer not to answer \10 \1
+Your household average income (net monthly salary) is \Less than 500€ \501-800€ \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \More than 8000€ \I prefer not to answer \10 \1
+For which political party did you vote at the last elections? \I prefer not to answer \10 \4
+What was the goal of this study? \11 \0
+Do you have any comment or suggestion for our study? \11 \0

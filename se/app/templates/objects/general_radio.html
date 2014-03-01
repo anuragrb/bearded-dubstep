@@ -1,0 +1,16 @@
+{% if q.options %}
+    <div class='radioGroupBelow' style='padding-left:10px;'>
+    <input name="{{ q.question.id }}" type="hidden" value="0" />
+    {% for option in q.options %}
+    <div style='display: inline-block; text-align:center; width: 200px; word-wrap: break-word;'>
+        <label class='blank'>{{ option.english }}<input type="radio" name="{{ q.question.id }}" class='blank' value='{{ option.english }}' /></label>   
+    </div>
+    {% endfor %}
+    </div>
+    <br>
+    <br>
+{% else %}
+    <input type='text' class='form-control' id='{{ q.question.id }}' name='{{ q.question.id }}' style='width: 500px;'/>
+    <br>
+    <br>
+{% endif %}

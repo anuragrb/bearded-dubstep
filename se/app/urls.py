@@ -18,3 +18,7 @@ urlpatterns = patterns('',
                        url(r'^save$', 'app.views.save'),
                        url(r'^$', 'app.views.links'),
                        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += patterns('',
+    url(r'^', include('app.reporting.urls')),
+    )

@@ -19,6 +19,7 @@ class Question(models.Model):
     german = models.CharField(max_length=500)
     group = models.CharField(max_length=2)
     options = models.ManyToManyField(Option)
+    category = models.CharField(max_length=2)
 
 
 class Answer(models.Model):

@@ -43,19 +43,8 @@
         }
     </style>
     <script type='text/javascript'>
-        var d;
-        var t;
 
-        $(document).ready(function() {
-
-            d = new Date();
-        })
-        function savetime() {
-
-            difference = new Date() - d;
-            alert(difference);
-            document.getElementById('clicktime').value = difference;
-        }
+        
         window.setInterval(function() {
             $('.gs-title').css('font-family', 'Comic Sans MS');
             $('.gs-snippet').css('font-family', 'Comic Sans MS');
