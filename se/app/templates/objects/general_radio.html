@@ -1,6 +1,8 @@
 {% if q.options %}
     <div class='radioGroupBelow' style='padding-left:10px;'>
+    {% if q.category != '4' %}
     <input name="{{ q.question.id }}" type="hidden" value="0" />
+    {% endif %}
     {% for option in q.options %}
     <div style='display: inline-block; text-align:center; width: 200px; word-wrap: break-word;'>
         <label class='blank'>{{ option.english }}<input type="radio" name="{{ q.question.id }}" class='blank' value='{{ option.english }}' /></label>   

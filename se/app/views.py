@@ -273,9 +273,9 @@ def survey(request):
 def submit_survey(request):
     context = {'page': 'submit_survey'}
     keys = request.POST.iterkeys()
-    if request.session['answered_group'] != 5 or request.session['answered_group'] != 6:
+    if request.session['answered_group'] != 5 and request.session['answered_group'] != 6:
         for key in keys:
-            if request.POST[key] == '0':
+            if len(request.POST[key]) <= 1:
                 messages.add_message(
                     request, messages.INFO, 'Please answer all questions on this page')
                 return redirect('/survey')
