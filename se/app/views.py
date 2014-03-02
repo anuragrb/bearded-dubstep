@@ -269,16 +269,19 @@ def survey(request):
 def submit_survey(request):
     context = {'page': 'submit_survey'}
     if request.is_ajax:
-        keys = request.POST.iterkeys()
+        try:
+            keys = request.POST.iterkeys()
 
-        for key in keys:
-            if key != 'csrfmiddlewaretoken':
-                question = Question.objects.get(id=key)
-                new_answer = Answer(
-                    question=question, user=request.user, text=request.POST[key])
-                new_answer.save()
+            for key in keys:
+                if key != 'csrfmiddlewaretoken':
+                    question = Question.objects.get(id=key)
+                    new_answer = Answer(
+                        question=question, user=request.user, text=request.POST[key])
+                    new_answer.save()
 
-        request.session['answered_group'] = request.session['answered_group'] + 1
+            request.session['answered_group'] = request.session['answered_group'] + 1
+        except Exception as e:
+            logger.exception('Something terrible happened while saving survey data. Check stack trace')
         return redirect('/survey')
 
 
@@ -316,7 +319,6 @@ def save(request):
                 return HttpResponse("Successfully checked for flash in user's browser.")
             else:
                 time = datetime.now()
-                print 'here'
                 user_profile.end_time = time
                 user_profile.privacy_clicked = request.session['privacy_clicked']
                 user_profile.save()
