@@ -77,7 +77,7 @@ $(document).ready(function() {
                             {% include 'objects/textarea.html' %}
                         {% elif q.category == '4' %}
                             <div class='radioGroupBelow' style='padding-bottom: 20px;'>
-                                <label class='blank'>{{ option.english }}<input type="radio" id='option' name="{{ q.question.id }}" style='display:none;' class='blank' value='{{ option.english }}'><input type='text' class='form-control' onclick='document.getElementById("option").checked=true;'/></label>
+                                <label class='blank'>{{ option.english }}<input type="radio" id='option' name="{{ q.question.id }}" style='display:none;' class='blank' value='{{ option.english }}'><input type='text' class='form-control' name="{{ q.question.id }}" onclick='document.getElementById("option").checked=true;'/></label>
                                 <label class='blank'>{{ option.english }}<input type="radio" name="{{ q.question.id }}" class='blank' value='{{ option.english }}' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' />I prefer not to answer</label>
                             </div>
                         {% endif %}
