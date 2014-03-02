@@ -273,20 +273,17 @@ def survey(request):
 def submit_survey(request):
     context = {'page': 'submit_survey'}
     if request.is_ajax:
-        print request.POST
-    keys = request.POST.iterkeys()
+        keys = request.POST.iterkeys()
 
-    for key in keys:
-        if key != 'csrfmiddlewaretoken':
-            question = Question.objects.get(id=key)
-            print question
-            new_answer = Answer(
-                question=question, user=request.user, text=request.POST[key])
-            print new_answer
-            new_answer.save()
+        for key in keys:
+            if key != 'csrfmiddlewaretoken':
+                question = Question.objects.get(id=key)
+                new_answer = Answer(
+                    question=question, user=request.user, text=request.POST[key])
+                new_answer.save()
 
-    request.session['answered_group'] = request.session['answered_group'] + 1
-    return redirect('/survey')
+        request.session['answered_group'] = request.session['answered_group'] + 1
+        return redirect('/survey')
 
 
 def save(request):
