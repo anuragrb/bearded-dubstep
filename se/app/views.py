@@ -320,6 +320,7 @@ def save(request):
                 return HttpResponse("Successfully checked for flash in user's browser.")
             else:
                 time = datetime.now()
+                print 'here'
                 user_profile.end_time = time
                 user_profile.privacy_clicked = request.session['privacy_clicked']
                 user_profile.save()
