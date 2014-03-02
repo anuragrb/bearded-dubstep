@@ -257,7 +257,7 @@ def survey(request):
     context['current_group'] = request.session['answered_group']
     context['questions'] = []
     questions = Question.objects.filter(
-        group__contains=request.session['answered_group'])
+        group=request.session['answered_group'])
     for question in questions:
         q = {}
         text = language(request, question)
@@ -272,20 +272,19 @@ def survey(request):
 
 def submit_survey(request):
     context = {'page': 'submit_survey'}
+    if request.is_ajax:
+        print request.POST
     keys = request.POST.iterkeys()
-    if request.session['answered_group'] != 5 and request.session['answered_group'] != 6:
-        for key in keys:
-            if len(request.POST[key]) <= 1:
-                messages.add_message(
-                    request, messages.INFO, 'Please answer all questions on this page')
-                return redirect('/survey')
 
     for key in keys:
         if key != 'csrfmiddlewaretoken':
             question = Question.objects.get(id=key)
+            print question
             new_answer = Answer(
                 question=question, user=request.user, text=request.POST[key])
+            print new_answer
             new_answer.save()
+
     request.session['answered_group'] = request.session['answered_group'] + 1
     return redirect('/survey')
 

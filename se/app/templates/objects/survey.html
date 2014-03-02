@@ -5,6 +5,36 @@
 {% block head %}
 <script src='{{ STATIC_URL }}js/ajax_submit.js'></script>
 
+<script type="text/javascript">
+$(document).ready(function() {
+    var optionsBootstrap = {
+        classNamePrefix: 'bvalidator_bootstrap_',
+        position: {x:'top', y:'center'},
+        offset:     {x:15, y:0},
+        singleError: true,
+        template: '<div class="{errMsgClass}"><div class="bvalidator_bootstrap_arrow"></div><div class="bvalidator_bootstrap_cont1">{message}</div></div>',    
+        templateCloseIcon: '<div style="display:table"><div style="display:table-cell">{message}</div><div style="display:table-cell"><div class="{closeIconClass}">&#215;</div></div></div>'
+    };
+    var current_group = {{current_group}};
+    if ((current_group != 5) && (current_group != 6)) {
+        
+        $('#survey_form').bValidator(optionsBootstrap);
+    }
+    // $('#survey_form').submit(function() {
+    //     var current_group = {{current_group}};
+    //     if ((current_group != 5) && (current_group != 6)) {
+
+    //         if ($('div.radioGroupBelow:not(:has(:radio:checked))')) {
+
+    //             $('#preamble').append('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Please answer all questions on this page</div>');
+    //             return false;
+    //         }
+    //     }
+
+    // });
+});
+</script>
+
 <style>
 .blank {
 
@@ -29,8 +59,10 @@
                 <h3>Thank you for your cooperation.</h3>
             </div>
         {% else %}
-            {% include 'objects/preamble.html' %}
-            <form id='{{ current_group }}' method='POST' action='/submit_survey'>{% csrf_token %}
+            <div id='preamble'>
+                {% include 'objects/preamble.html' %}
+            </div>
+            <form id='survey_form' method='POST' action='/submit_survey'>{% csrf_token %}
                 <div class='form-group' style='padding: 20px;'>
                     {% for q in questions %}
                         <h4>{{ forloop.counter }}. {{ q.text }}</h4>

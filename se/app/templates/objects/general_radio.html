@@ -1,18 +1,15 @@
 {% if q.options %}
     <div class='radioGroupBelow' style='padding-left:10px;'>
-    {% if q.category != '4' %}
-    <input name="{{ q.question.id }}" type="hidden" value="0" />
-    {% endif %}
     {% for option in q.options %}
     <div style='display: inline-block; text-align:center; width: 200px; word-wrap: break-word;'>
-        <label class='blank'>{{ option.english }}<input type="radio" name="{{ q.question.id }}" class='blank' value='{{ option.english }}' /></label>   
+        <label class='blank'>{{ option.english }}<input type="radio" name="{{ q.question.id }}" class='blank' value='{{ option.english }}' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' /></label>   
     </div>
     {% endfor %}
     </div>
     <br>
     <br>
 {% else %}
-    <input type='text' class='form-control' id='{{ q.question.id }}' name='{{ q.question.id }}' style='width: 500px;'/>
+    <input type='text' class='form-control' id='{{ q.question.id }}' name='{{ q.question.id }}' style='width: 500px;' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' />
     <br>
     <br>
 {% endif %}
