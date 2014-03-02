@@ -206,10 +206,6 @@ def submit_answer(request):
     question = Question.objects.get(id=qid)
     answer = request.POST['answer']
     clicktime = request.POST['clicktime']
-    if len(answer) < 1:
-        messages.add_message(
-            request, messages.INFO, 'Please do not submit a blank answer')
-        return redirect('/se')
 
     if request.user.is_authenticated():
 
