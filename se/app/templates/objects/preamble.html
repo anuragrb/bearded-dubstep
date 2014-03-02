@@ -1,5 +1,7 @@
-{% if current_group == 5 or current_group == 6 %}
+{% if current_group == 5 %}
 <h3>Please complete this Internet use questionnaire (all questions are voluntary)</h3>
+{% elif current_group == 6 %}
+<h3>Please answer this questionnaire (all questions are voluntary)</h3>
 {% elif current_group == 9 %}
 <h3>Please answer the following questions (all questions are compulsory)</h3>
 {% elif current_group == 7 %}
@@ -7,7 +9,7 @@
 {% elif current_group == 8 %}
 <h3>Please indicate the likelihood that the following items were collected by the search engine (all questions are compulsory)</h3>
 {% elif current_group == 11 %}
-<h3>We are almost done. Please answer these final questions.</h3>
+<h3>We are almost done. Please answer these final questions (all questions are compulsory)</h3>
 {% elif current_group == 12 %}
 <div id='disclosure' style='text-align: center;'>
     <h3>Thank you for participating in this study! The study is now complete.
