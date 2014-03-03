@@ -73,7 +73,7 @@ DATABASES = {
     'dev': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'se',
-    }
+    },
     'prod': {
 
         'ENGINE': 'django.db.backends.mysql',
