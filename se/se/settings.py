@@ -79,7 +79,8 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'se',
-        'HOST': 'sedbinstance.cy8n3rriujir.us-west-2.rds.amazonaws.com:3306',
+        'HOST': 'sedbinstance.cy8n3rriujir.us-west-2.rds.amazonaws.com',
+        'PORT': '3306',
         'USER': USERNAME,
         'PASSWORD': PASSWORD,
     }
