@@ -65,10 +65,22 @@ WSGI_APPLICATION = 'se.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+USERNAME = environ.get('db_username')
+
+PASSWORD = environ.get('db_password')
+
 DATABASES = {
-    'default': {
+    'dev': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'se',
+    }
+    'prod': {
+
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'se',
+        'HOST': 'sedbinstance.cy8n3rriujir.us-west-2.rds.amazonaws.com:3306',
+        'USER': USERNAME,
+        'PASSWORD': PASSWORD,
     }
 }
 
