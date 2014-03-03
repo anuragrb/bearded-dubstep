@@ -70,6 +70,7 @@ USERNAME = environ.get('db_username')
 PASSWORD = environ.get('db_password')
 
 DATABASES = {
+    'default': {},
     'dev': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'se',
