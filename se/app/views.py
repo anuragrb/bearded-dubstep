@@ -1,6 +1,7 @@
 # Python library imports
 from datetime import datetime
 import re
+import random
 
 # Django specific imports
 from django.shortcuts import render, render_to_response, redirect
@@ -22,32 +23,27 @@ def landing(request):
     if request.user.is_authenticated():
 
         EXPERIMENTAL_CONDITIONS = {
-            'TR': 'se_traditional',
-            'CO': 'se_control',
-            'AN': 'se_anthropomorphic',
-            'ST': 'se_static',
-            'IP': 'se_ip',
-            'CL': 'se_tracking',
-            'IN': 'se_informal',
-            'SI': 'se_simplified'
+            '1': 'TR',
+            '2': 'CO',
+            '3': 'AN',
+            '4': 'ST',
+            '5': 'IP',
+            '6': 'CL',
+            '7': 'IN',
+            '8': 'SI'
         }
-        conditions = dict((EXPERIMENTAL_CONDITIONS[k], k)
-                          for k in EXPERIMENTAL_CONDITIONS)
         user_profile = User_Profile.objects.get(user=request.user)
-        if 'q' in request.GET:
-            condition = request.GET['q']
-        else:
+        try:
+            condition = EXPERIMENTAL_CONDITIONS[str(request.session['conint'])]
+            context['condition'] = condition
+            request.session['condition'] = condition
+            user_profile.experimental_condition = condition
+        except Exception as e:
+            logger.exception('Randomizer key error')
             return redirect('/')
-        context['condition'] = condition
-        request.session['condition'] = condition
         if not 'language' in request.session:
             request.session['language'] = True
             request.session['language'] = 'EN'
-        try:
-            user_profile.experimental_condition = conditions[condition]
-        except Exception as e:
-            context['error'] = 'Malformed input parameter'
-            return redirect('/')
         if not 'screen_resolution' in request.session:
             user_profile.screen_resolution = ''
         else:
@@ -120,7 +116,9 @@ def links(request):
             new_profile = User_Profile(user=new_user, tick=tick, ip_address=get_client_ip(request), privacy_clicked=0, city=city)
             request.session['privacy_clicked'] = 0
             new_profile.save()
-            return render(request, "objects/links.html", context)
+            condition = random.randint(1, 8)
+            request.session['conint'] = condition
+            return redirect('/landing')
 
     else:
         if request.user.is_authenticated():
