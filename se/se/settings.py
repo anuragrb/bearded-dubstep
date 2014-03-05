@@ -71,6 +71,12 @@ PASSWORD = environ.get('db_password')
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'se',
+        'HOST': 'sedbinstance.cy8n3rriujir.us-west-2.rds.amazonaws.com',
+        'PORT': '3306',
+        'USER': USERNAME,
+        'PASSWORD': PASSWORD,
     },
     'dev': {
         'ENGINE': 'django.db.backends.mysql',
@@ -78,12 +84,7 @@ DATABASES = {
     },
     'prod': {
 
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'se',
-        'HOST': 'sedbinstance.cy8n3rriujir.us-west-2.rds.amazonaws.com',
-        'PORT': '3306',
-        'USER': USERNAME,
-        'PASSWORD': PASSWORD,
+        
     }
 }
 
