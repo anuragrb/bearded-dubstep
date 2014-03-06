@@ -4,7 +4,7 @@
 
 {% block head %}
 
-{% if page == 'se_informal' %}
+{% if page == 'IN' %}
     <style>
         body {
             font-family: 'Comic Sans MS';
@@ -103,15 +103,15 @@
             </div>
     </div>
     <div class='col-md-4 form-div' id='condition' style='padding-left: 10px; '>
-        {% if page == 'se_anthropomorphic' %}
+        {% if page == 'AN' %}
             <div style='text-align:center;'>
             {% include 'objects/anthropomorphic.html' %}
             </div>
         {% endif %}
-        {% if page == 'se_ip' %}
+        {% if page == 'IP' %}
             {% include 'objects/ip.html' %}
         {% endif %}
-        {% if page == 'se_tracking' %}
+        {% if page == 'CL' %}
         {% include 'objects/tracking.html' %}
         {% else %}
             <script>
@@ -124,7 +124,7 @@
                 });
             </script>
         {% endif %}
-        {% if page == 'se_static' %}
+        {% if page == 'ST' %}
             <div style='text-align:center;'>
             {% include 'objects/static.html' %}
             </div>

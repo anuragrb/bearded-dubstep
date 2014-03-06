@@ -4,7 +4,7 @@
 
 <div class='row' id='image-div'>
     <div class='col-md-9'>
-    {% if page != 'se_informal' %}
+    {% if page != 'IN' %}
     <img src='{{ STATIC_URL }}logo.png' style='width: 400; padding-left:30px; padding-top:20px; padding-bottom:20px;'/>
     {% else %}
     <img src='{{ STATIC_URL }}logo-informal.png' style='width: 400; padding-left:30px; padding-top:20px; padding-bottom:20px;'/>
@@ -13,9 +13,9 @@
     <div class='col-md-3'>
     <div id="footer">
         <div class="container" style="padding-top: 35px; vertical-align:middle; ">
-            {% if page != 'se_control' %}
+            {% if page != 'CO' %}
                 <h4 style='cursor:pointer; '><a data-target='#privacy_modal' style='color:#FFFFFF;' data-toggle='modal' target='_blank' onclick='submit_privacy();'>Privacy Policy</a></p></h4>
-            {% elif page == 'se_simplified' %}
+            {% elif page == 'SI' %}
                 <h4 style='cursor:pointer;'><a href='/privacy' target='_blank' style='color:#FFFFFF;' onclick='submit_privacy();'>Simple Privacy Policy</a></p></h4>
             {% endif %}
         </div>
