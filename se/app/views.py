@@ -124,6 +124,12 @@ def links(request):
 
         return render(request, 'objects/mturk_landing.html')
 
+    else:        
+        if request.user.is_authenticated():
+        return redirect('/se')
+        context['error'] = 'Tick information is incorrect or absent.'
+        return render(request, "objects/links.html", context)
+
 
 def se(request):
 
