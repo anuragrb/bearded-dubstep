@@ -1,0 +1,38 @@
+{% extends 'pages/base.html' %}
+
+{% block head %}
+
+<script type="text/javascript" language="JavaScript"><!--
+window.onload = function() {
+    var assignment_id_field = document.getElementById('myelementLink');
+    var paramstr = window.location.search.substring(1);
+    var parampairs = paramstr.split("&");
+    var mturkworkerID = "";
+    for (i in parampairs) {
+
+      var pair = parampairs[i].split("=");
+      if (pair[0] == "workerId")
+
+        mturkworkerID = pair[1];
+    }
+    if (mturkworkerID == "" ) {
+
+      assignment_id_field.innerHTML = '<h3>The link will appear here only if you accept this HIT.</h3>';
+
+    } else {
+
+      assignment_id_field.innerHTML = '<h3><a target="_blank" href="http://theresearchgroup.org?tick=' + mturkworkerID + '"><b>CLICK HERE TO TAKE THE SURVEY!</b></a></h3>';
+    }
+};
+
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+<div id='myelementLink'>
+
+</div>
+
+{% endblock %}

@@ -17,8 +17,8 @@ from app.models import *
 
 logger = logging.getLogger('custom.logger')
 
-
 def landing(request):
+
     context = {'page': 'landing'}
     if request.user.is_authenticated():
 
@@ -120,11 +120,9 @@ def links(request):
             request.session['conint'] = condition
             return redirect('/landing')
 
-    else:
-        if request.user.is_authenticated():
-            return redirect('/se')
-        context['error'] = 'Tick information is incorrect or absent.'
-        return render(request, "objects/links.html", context)
+    elif 'workerId' in request.GET:
+
+        return render(request, 'objects/mturk_landing.html')
 
 
 def se(request):
