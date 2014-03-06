@@ -126,7 +126,7 @@ def links(request):
 
     else:        
         if request.user.is_authenticated():
-        return redirect('/se')
+            return redirect('/se')
         context['error'] = 'Tick information is incorrect or absent.'
         return render(request, "objects/links.html", context)
 
