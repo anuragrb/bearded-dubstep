@@ -15,10 +15,13 @@
     <h3>Thank you for participating in this study! The study is now complete.
     <br>
     <br>
-    This study is part of a European non-profit research project aimed at investigating privacy-related behaviour and attitudes. The results of this study will only be used for research purposes, and all answers will be kept anonymous.</h3>
+    This study is part of a European non-profit research project aimed at investigating privacy-related behaviour and attitudes. The results of this study will only be used for research purposes, and all answers will be kept anonymous.
     <br>
     <br>
     <img src='{{STATIC_URL}}download.jpg' />
+    <br>
+    <br>
+    Your randomly generated code is {{ user_profile.mturk_payment_code }}. Please copy and paste this on the landing page to confirm that you completed the survey and collect your payment.</h3>
 </div>
 {% elif current_group == 10 %}
 <h4>Finally, please provide additional information, answering the following questions (all questions are compulsory)</h4>

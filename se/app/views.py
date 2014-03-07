@@ -2,6 +2,7 @@
 from datetime import datetime
 import re
 import random
+import string
 
 # Django specific imports
 from django.shortcuts import render, render_to_response, redirect
@@ -254,8 +255,10 @@ def survey(request):
     context = {'page': 'survey'}
     context['current_group'] = request.session['answered_group']
     context['questions'] = []
+    user_profile = User_Profile.objects.get(user=request.user)
     questions = Question.objects.filter(
         group=request.session['answered_group'])
+    context['user_profile'] = user_profile
     for question in questions:
         q = {}
         text = language(request, question)
@@ -323,7 +326,9 @@ def save(request):
                 time = datetime.now()
                 user_profile.end_time = time
                 user_profile.privacy_clicked = request.session['privacy_clicked']
+                user_profile.mturk_payment_code = id_generator()
                 user_profile.save()
+                request.session['mturk_payment_code'] = user_profile.mturk_payment_code
                 return HttpResponse("Successfully completed the survey for the current user.")
         except Exception as e:
             logger.exception('Something very bad happened while saving to the DB')
@@ -347,3 +352,7 @@ def language(request, question):
         return question.german
     if request.session['language'] == 'PO':
         return question.polish
+
+
+def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
