@@ -17,4 +17,12 @@ logger = logging.getLogger('custom.logger')
 
 def reporting(request):
 
-    return render(request, 'objects/reporting.html')
+    context = {'page': 'reporting'}
+    context['total_users'] = len(User_Profile.objects.filter().all())
+    user_profiles = User_Profile.objects.filter()
+    users_complete = 0
+    for user_profile in user_profiles:
+        if len(str(user_profile.end_time)) > 0:
+            users_complete += 1
+    context['users_complete'] = users_complete 
+    return render(request, 'objects/reporting.html', context)

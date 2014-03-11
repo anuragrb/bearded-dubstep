@@ -10,4 +10,24 @@
 
 {% block content %}
 
+
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Data Point</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><h5>Total users</h5></td>
+            <td><h5>{{ total_users }}</h5></td>
+        </tr>
+        <tr>
+            <td><h5>Users who completed the survey</h5></td>
+            <td><h5>{{ users_complete }}</h5></td>
+        </tr>
+    </tbody>
+</table>
+
 {% endblock %}

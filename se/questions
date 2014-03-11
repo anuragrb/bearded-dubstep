@@ -21,16 +21,16 @@ Do you think the search engine you tested is easier to use than the search engin
 Do you think the search engine you tested is more efficient in the result provided than the search engine that you typically use? \5 \2
 Do you think the search engine you tested fits your needs better than the search engine that you typically use? \5 \2
 Do you think the search engine you tested is more straightforward in relation to your searches than the search engine that you typically use? \5 \2
-Have you had sex with the current husband, wife, or partner of a friend? \Never \Once or Twice \Sometimes \Frequently \6 \1
-Have you fantasized about having violent non consensual sex with someone? \Never \Once or Twice \Sometimes \Frequently \6 \1
-Have you had sex with someone who was too drunk to know what they were doing? \Never \Once or Twice \Sometimes \Frequently \6 \1
-Have you looked at pornographic material? \Never \Once or Twice \Sometimes \Frequently \6 \1
-Have you claimed to have education that you didn't actually have? \Never \Once or Twice \Sometimes \Frequently \6 \1
-Have you known about or witnessed a serious crime and failed to report it or stop it? \Never \Once or Twice \Sometimes \Frequently \6 \1
-Have you lied about your income to someone? \Never \Once or Twice \Sometimes \Frequently \6 \1
-Have you pretended not to see a beggar to avoid being seen as stingy? \Never \Once or Twice \Sometimes \Frequently \6 \1
-Have you drunk so much that you got a hangover? \Never \Once or Twice \Sometimes \Frequently \6 \1
-Have you failed to tip a waiter in a country in which tipping is customary? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you ever had sex with the current husband, wife, or partner of a friend? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you ever fantasized about having violent non consensual sex with someone? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you ever had sex with someone who was too drunk to know what they were doing? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you ever looked at pornographic material? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you ever claimed to have education that you didn't actually have? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you ever known about or witnessed a serious crime and failed to report it or stop it? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you ever lied about your income to someone? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you ever pretended not to see a beggar to avoid being seen as stingy? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you ever drunk so much that you got a hangover? \Never \Once or Twice \Sometimes \Frequently \6 \1
+Have you ever failed to tip a waiter in a country in which tipping is customary? \Never \Once or Twice \Sometimes \Frequently \6 \1
 My answers to the quiz questions revealed personal information about myself \7 \2
 I felt comfortable answering personal questions during this study \7 \2
 I felt observed during this study \7 \2
@@ -50,7 +50,7 @@ While you were answering the quiz questions, did you notice anything unusual in 
 While you were answering the quiz questions, did you notice a link to a privacy policy for the search engine? \I noticed it \I did not notice it \9 \1
 While you were answering the quiz questions, did you notice a series of links to URLs you had visited? \I noticed it \I did not notice it \9 \1
 While you were answering the quiz questions, did you notice an IP address? \I noticed it \I did not notice it \9 \1
-While you were answering the quiz questions, did you notice a geographical location? Was it the correct location from you are currently connected from? \I noticed it, and it was correct \I noticed it, and it was not correct \I did not notice it \9 \1
+While you were answering the quiz questions, did you notice a geographical location? Was it the correct location from which you are currently connected? \I noticed it, and it was correct \I noticed it, and it was not correct \I did not notice it \9 \1
 While you were answering the quiz questions, did you notice a browser name? Was it the correct name of the browser you are currently using?  \I noticed it, and it was correct \I noticed it, and it was not correct \I did not notice it \9 \1
 While you were answering the quiz questions, did you notice an image of a female character? \I noticed her, and her eyes were moving \I noticed her, and her eyes were not moving \I did not notice her \9 \1
 You are: \Male \Female \I prefer not to answer \10 \1
