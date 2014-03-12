@@ -6,7 +6,7 @@
 <h3>Please answer the following questions (all questions are compulsory)</h3>
 {% elif current_group == 7 %}
 <h3>Please indicate your agreement with the following statements (all questions are compulsory)</h3>
-{% elif current_group == 8 %}
+{% elif current_group == 8 %3
 <h3>Please indicate the likelihood that the following items were collected by the search engine (all questions are compulsory)</h3>
 {% elif current_group == 11 %}
 <h3>We are almost done. Please answer these final questions (all questions are compulsory)</h3>
@@ -24,5 +24,5 @@
     Your randomly generated code is {{ user_profile.mturk_payment_code }}. Please copy and paste this on the landing page to confirm that you completed the survey and collect your payment.</h3>
 </div>
 {% elif current_group == 10 %}
-<h4>Finally, please provide additional information, answering the following questions (all questions are compulsory)</h4>
+<h3>Finally, please provide additional information, answering the following questions (all questions are compulsory)</h3>
 {% endif %}
