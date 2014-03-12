@@ -2,6 +2,47 @@
 
 {% block title %}Landing Page{% endblock %}
 
+{% block head %}
+
+<script type="text/javascript">
+
+function yesvalidator(value) {
+
+    if($('input[name=18older]:checked').val() == 'No') {
+
+        return false;
+    }
+    if($('input[name=country]:checked').val() == 'No') {
+
+        return false;
+    }
+    if($('input[name=minutes]:checked').val() == 'No') {
+
+        return false;
+    }
+    if($('input[name=internet]:checked').val() == 'No') {
+
+        return false;
+    }
+    return true;
+}
+$(document).ready(function() {
+    var optionsBootstrap = {
+        classNamePrefix: 'bvalidator_bootstrap_',
+        position: {x:'top', y:'center'},
+        offset:     {x:15, y:0},
+        singleError: true,
+        template: '<div class="{errMsgClass}"><div class="bvalidator_bootstrap_arrow"></div><div class="bvalidator_bootstrap_cont1">{message}</div></div>',    
+        templateCloseIcon: '<div style="display:table"><div style="display:table-cell">{message}</div><div style="display:table-cell"><div class="{closeIconClass}">&#215;</div></div></div>'
+    };
+    
+    $('#beginform').bValidator(optionsBootstrap);
+
+});
+</script>
+
+{% endblock %}
+
 {% block content %}
 
 <div id='text' style='padding-top: 60px;' class='row'>
@@ -24,7 +65,34 @@
 
         <p>Thank you for your collaboration!</p>
 
-        <a href='/se' class='btn btn-primary'>Begin</a>
+        <p>In order to participate in this study, you must be 18 years old or older, you must be connecting from the U.S.A., you must have at least 30 uninterrupted minutes to complete the study, and at the moment you must be using a reliable Internet connection that will make it possible for you to complete the study.</p>
+
+        <br>
+        <form id='beginform' action='/se'>
+
+            <p>1. Are you 18 years old or older?
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="18older" value='Yes' data-bvalidator='yesvalidator[],required' data-bvalidator-msg='You must fulfill all these conditions to continue' />
+                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="18older" value='No'/></p>
+            <br>
+
+            <p>2. Are you connecting from the U.S.A.?
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="country" value='Yes' data-bvalidator='yesvalidator[],required' data-bvalidator-msg='You must fulfill all these conditions to continue' />
+                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="country" value='No'/></p>
+            <br>
+
+            <p>3. Do you have at least 30 uninterrupted minutes to complete the study? 
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="minutes" value='Yes' data-bvalidator='yesvalidator[],required' data-bvalidator-msg='You must fulfill all these conditions to continue' />
+                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="minutes" value='No'/></p>
+            <br>
+
+            <p>4. At the moment, do you have a reliable Internet connection that will make it possible for you to complete the study?
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="internet" value='Yes' data-bvalidator='yesvalidator[],required' data-bvalidator-msg='You must fulfill all these conditions to continue' />
+                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="internet" value='No'/></p>
+            <br>
+
+            <input type='Submit' value='Begin' class='btn btn-primary'/>
+
+        </form>
 
     </div>
 
