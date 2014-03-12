@@ -102,7 +102,7 @@
     <hr>
     <div class='row' id='search-div'>
         <div class='col-md-8 form-div form-group'>
-            <h4 style='padding-left:20px; padding-top:20px;'>Answer the question using the search engine below</h4>
+            <h4 style='padding-left:20px; padding-top:20px;'>Please use our search engine box below to answer the question</h4>
             <form onsubmit="return executeQuery();" id="cse-search-box-form-id" class='form-inline' style='width:800px; padding-left:20px; padding-top:6px;' class='text-left'>
                 <div class='input-group' style='width:500px;'>
                     <input type="text" class='form-control' placeholder='Search' onkeydown="if (event.keyCode == 13) document.getElementById('searchbtn').click()" id="cse-search-input-box-id" onkeypress="return event.keyCode != 13;" size="25" autocomplete="off"/><span class="input-group-btn"><a href="#" id='searchbtn' onclick="submit_query();return executeQuery();" class='btn btn-success'><span class="glyphicon glyphicon-search"></span> Search</a></span>

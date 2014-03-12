@@ -2,7 +2,7 @@
     <div class='radioGroupBelow' style='padding-left:10px;'>
     {% for option in q.options %}
     <div style='display: inline-block; text-align:center; width: 200px; word-wrap: break-word;'>
-        <label class='blank'>{{ option.english }}<input type="radio" name="{{ q.question.id }}" class='blank' value='{{ option.english }}' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' /></label>   
+        <label>{{ option.english }}<input type="radio" name="{{ q.question.id }}" value='{{ option.english }}' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' /></label>   
     </div>
     {% endfor %}
     </div>
