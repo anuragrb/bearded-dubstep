@@ -6,28 +6,122 @@
 
 {% block head %}
 
+<script src='{{ STATIC_URL}}js/flot/jquery.flot.min.js'></script>
+<script src='{{ STATIC_URL}}js/flot/jquery.flot.pie.min.js'></script>
+
+<script type='text/javascript'>
+
+function labelFormatter(label, series) {
+    return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
+}
+
+$(document).ready(function() {
+
+    var incompletes = {{ total_users }} - {{ users_complete }};
+    var completeness_data = [
+
+     { label: "Completes ({{ users_complete }})",  data: {{ users_complete}} },
+     { label: "Incompletes (" + incompletes + ") ",  data: incompletes },
+
+    ];
+
+    $.plot($('#completes'), completeness_data, {
+        series: {
+            pie: { 
+                show: true,
+                radius: 1,
+                label: {
+                    show: true,
+                    radius: 1,
+                    formatter: labelFormatter,
+                    background: {
+                        opacity: 0.8
+                    }
+                }
+            }
+        },
+        grid: {
+            hoverable: true,
+            clickable: true
+        }
+    });
+});
+
+$(document).ready(function() {
+
+    var question_terminated = '{{question_terminated}}';
+    question_terminated = question_terminated.replace(/&quot;/g, '\"');
+    jsonified = $.parseJSON(question_terminated);
+    terminate_array = [];
+    var i = 0;
+    for(key in jsonified) {
+
+        terminate_array[i] = {
+            label: 'Question ' + key + ' (' + jsonified[key] + ')',
+            data: jsonified[key]
+        }
+        i = i + 1;
+    }
+    $.plot($('#terminates'), terminate_array, {
+        series: {
+            pie: { 
+                show: true,
+                radius: 1,
+                label: {
+                    show: true,
+                    radius: 1,
+                    formatter: labelFormatter,
+                    background: {
+                        opacity: 0.8
+                    }
+                }
+            }
+        },
+        grid: {
+            hoverable: true,
+            clickable: true
+        }
+    });
+
+});
+
+</script>
+
 {% endblock %}
 
 {% block content %}
 
+<div class='row'>
+    <div class='col-md-2'>
+    </div>
+    <div class='col-md-8'>
+        <h2 style='text-align:center;'>Re-Search Engine: Reporting Page</h2>
+    </div>
+    <div class='col-md-2'>
+    </div>
+</div>
 
-<table class="table table-striped table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>Data Point</th>
-            <th>Amount</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><h5>Total users</h5></td>
-            <td><h5>{{ total_users }}</h5></td>
-        </tr>
-        <tr>
-            <td><h5>Users who completed the survey</h5></td>
-            <td><h5>{{ users_complete }}</h5></td>
-        </tr>
-    </tbody>
-</table>
+<br>
+<br>
+<br>
+
+<div class='row'>
+    <div class='col-md-6'>
+        <h3 style='text-align:center;'>Completes</h3>
+        <br>
+        <br>
+        <div id='completes' style='height: 400px;'>
+            <img src='{{STATIC_URL}}loading3.gif'/>
+        </div>
+    </div>
+    <div class='col-md-6'>
+        <h3 style='text-align:center;'>Terminates by question</h3>
+        <br>
+        <br>
+        <div id='terminates' style='height: 400px;'>
+            <img src='{{STATIC_URL}}loading3.gif'/>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
