@@ -103,18 +103,26 @@ def links(request):
             try:
                 r = requests.get(
                     'http://freegeoip.net/csv/' + get_client_ip(request))
+                country = r.text.split(',')[2]
+                country = country[1:-1]
                 city = r.text.split(',')[5]
                 city = city[1:-1]
                 if len(city) < 1:
                     request.session['city'] = ''
                 else:
                     request.session['city'] = city
+                if len(country) < 1:
+                    request.session['country'] = ''
+                else:
+                    request.session['country'] = country
             except Exception as e:
                 logger.exception(
-                    'There was a key error while retrieving a city from freegeoip.net')
+                    'There was a key error while retrieving a city or country from freegeoip.net')
                 city = ''
                 request.session['city'] = ''
-            new_profile = User_Profile(user=new_user, tick=tick, ip_address=get_client_ip(request), privacy_clicked=0, city=city)
+                country = ''
+                request.session['country'] = ''
+            new_profile = User_Profile(user=new_user, tick=tick, ip_address=get_client_ip(request), privacy_clicked=0, city=city, country=country)
             request.session['privacy_clicked'] = 0
             new_profile.save()
             condition = random.randint(1, 8)

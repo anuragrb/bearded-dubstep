@@ -77,3 +77,4 @@ class User_Profile(models.Model):
     results_clicked = models.ManyToManyField(Search_Result)
     hasflash = models.CharField(max_length=10)
     mturk_payment_code = models.CharField(max_length=10)
+    country = models.CharField(max_length=25)
