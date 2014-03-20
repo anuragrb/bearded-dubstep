@@ -43,7 +43,6 @@ def landing(request):
             logger.exception('Randomizer key error')
             return redirect('/')
         if not 'language' in request.session:
-            request.session['language'] = True
             request.session['language'] = 'EN'
         if not 'screen_resolution' in request.session:
             user_profile.screen_resolution = ''
@@ -103,28 +102,34 @@ def links(request):
             try:
                 r = requests.get(
                     'http://freegeoip.net/csv/' + get_client_ip(request))
-                country = r.text.split(',')[2]
-                country = country[1:-1]
                 city = r.text.split(',')[5]
                 city = city[1:-1]
                 if len(city) < 1:
                     request.session['city'] = ''
                 else:
                     request.session['city'] = city
-                if len(country) < 1:
-                    request.session['country'] = ''
-                else:
-                    request.session['country'] = country
             except Exception as e:
                 logger.exception(
                     'There was a key error while retrieving a city or country from freegeoip.net')
                 city = ''
                 request.session['city'] = ''
-                country = ''
-                request.session['country'] = ''
-            new_profile = User_Profile(user=new_user, tick=tick, ip_address=get_client_ip(request), privacy_clicked=0, city=city, country=country)
+            new_profile = User_Profile(user=new_user, tick=tick, ip_address=get_client_ip(request), privacy_clicked=0, city=city)
             request.session['privacy_clicked'] = 0
             new_profile.save()
+            if 'C' in request.GET:
+                country = request.GET['C']
+                if country == '1':
+                    request.session['country'] = 'UK'
+                    request.session['language'] = 'EN'
+                elif country == '2':
+                    request.session['country'] = 'Germany'
+                    request.session['language'] = 'DE'
+                elif country == '3':
+                    request.session['country'] = 'Poland'
+                    request.session['language'] = 'PO'
+                elif country == '4':
+                    request.session['country'] = 'Italy'
+                    request.session['language'] = 'IT'
             condition = random.randint(1, 8)
             request.session['conint'] = condition
             return redirect('/landing')

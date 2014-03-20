@@ -85,6 +85,82 @@ $(document).ready(function() {
 
 });
 
+$(document).ready(function() {
+
+    var country_completes = '{{ country_completes }}';
+    country_completes = country_completes.replace(/&quot;/g, '\"');
+    jsonified = $.parseJSON(country_completes);
+    country_completes_array = [];
+    var i = 0;
+    for(key in jsonified) {
+
+        country_completes_array[i] = {
+            label: key + ' (' + jsonified[key] + ')',
+            data: jsonified[key]
+        }
+        i = i + 1;
+    }
+    $.plot($('#country_completes'), country_completes_array, {
+        series: {
+            pie: { 
+                show: true,
+                radius: 1,
+                label: {
+                    show: true,
+                    radius: 1,
+                    formatter: labelFormatter,
+                    background: {
+                        opacity: 0.8
+                    }
+                }
+            }
+        },
+        grid: {
+            hoverable: true,
+            clickable: true
+        }
+    });
+
+});
+
+$(document).ready(function() {
+
+    var country_terminates = '{{ country_completes }}';
+    country_terminates = country_terminates.replace(/&quot;/g, '\"');
+    jsonified = $.parseJSON(country_terminates);
+    country_terminates_array = [];
+    var i = 0;
+    for(key in jsonified) {
+
+        country_terminates_array[i] = {
+            label: key + ' (' + jsonified[key] + ')',
+            data: jsonified[key]
+        }
+        i = i + 1;
+    }
+    $.plot($('#country_terminates'), country_terminates_array, {
+        series: {
+            pie: { 
+                show: true,
+                radius: 1,
+                label: {
+                    show: true,
+                    radius: 1,
+                    formatter: labelFormatter,
+                    background: {
+                        opacity: 0.8
+                    }
+                }
+            }
+        },
+        grid: {
+            hoverable: true,
+            clickable: true
+        }
+    });
+
+});
+
 </script>
 
 {% endblock %}
@@ -119,6 +195,24 @@ $(document).ready(function() {
         <br>
         <br>
         <div id='terminates' style='height: 400px;'>
+            <img src='{{STATIC_URL}}loading3.gif'/>
+        </div>
+    </div>
+</div>
+<div class='row'>
+    <div class='col-md-6'>
+        <h3 style='text-align:center;'>Country-wise Completes</h3>
+        <br>
+        <br>
+        <div id='country_completes' style='height: 400px;'>
+            <img src='{{STATIC_URL}}loading3.gif'/>
+        </div>
+    </div>
+    <div class='col-md-6'>
+        <h3 style='text-align:center;'>Country-wise Terminates</h3>
+        <br>
+        <br>
+        <div id='country_terminates' style='height: 400px;'>
             <img src='{{STATIC_URL}}loading3.gif'/>
         </div>
     </div>

@@ -29,10 +29,17 @@ def reporting(request):
     users_complete = 0
 
     question_terminated = {}
+    country_completes = {}
+    country_incompletes = {}
 
     for user_profile in user_profiles:
+        user_country = user_profile.country
         if str(user_profile.end_time) != 'None':
             users_complete += 1
+            if user_country in country_completes.iterkeys():
+                country_completes[user_country] += 1
+            else:
+                country_completes[user_country] = 1
         else:
             user_answers = Answer.objects.filter(user=user_profile.user)
             user_answers = list(user_answers)
@@ -49,7 +56,13 @@ def reporting(request):
                     question_terminated['1'] += 1
                 else:
                     question_terminated['1'] = 1
+            if user_country in country_incompletes.iterkeys():
+                country_incompletes[user_country] += 1
+            else:
+                country_incompletes[user_country] = 1
     
+    context['country_completes'] = str(simplejson.dumps(country_completes))
+    context['country_incompletes'] = str(simplejson.dumps(country_incompletes))
     context['question_terminated'] = str(simplejson.dumps(question_terminated))
     context['users_complete'] = users_complete 
     return render(request, 'objects/reporting.html', context)
