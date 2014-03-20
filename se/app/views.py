@@ -118,16 +118,16 @@ def links(request):
             new_profile.save()
             if 'C' in request.GET:
                 country = request.GET['C']
-                if country == '1':
+                if country == 1:
                     request.session['country'] = 'UK'
                     request.session['language'] = 'EN'
-                elif country == '2':
+                elif country == 2:
                     request.session['country'] = 'Germany'
                     request.session['language'] = 'DE'
-                elif country == '3':
+                elif country == 3:
                     request.session['country'] = 'Poland'
                     request.session['language'] = 'PO'
-                elif country == '4':
+                elif country == 4:
                     request.session['country'] = 'Italy'
                     request.session['language'] = 'IT'
             condition = random.randint(1, 8)
