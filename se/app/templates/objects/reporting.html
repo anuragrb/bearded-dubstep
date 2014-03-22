@@ -6,6 +6,13 @@
 
 {% block head %}
 
+<style>
+.label-span {
+
+    color: black;
+}
+</style>
+
 <script src='{{ STATIC_URL}}js/flot/jquery.flot.min.js'></script>
 <script src='{{ STATIC_URL}}js/flot/jquery.flot.pie.min.js'></script>
 
@@ -14,6 +21,15 @@
 function labelFormatter(label, series) {
     return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
 }
+
+(function ($) {
+
+    $.fn.getWidthInPercent = function () {
+        var width = parseFloat($(this).css('width'))/parseFloat($(this).parent().css('width'));
+        return Math.round(100*width);
+    };
+
+})(jQuery);
 
 var options = {
             series: {
@@ -75,12 +91,47 @@ $(document).ready(function() {
     country_completes = country_completes.replace(/&quot;/g, '\"');
     jsonified = $.parseJSON(country_completes);
     country_completes_array = [];
+    undefined_count = 0;
+    uk_count = 0;
+    italy_count = 0;
+    germany_count = 0;
+    poland_count = 0;
+    total_count = 0;
     var i = 0;
     for(key in jsonified) {
 
         country_completes_array[i] = {
             label: key + ' (' + jsonified[key] + ')',
             data: jsonified[key]
+        }
+        if(key == 'UK') {
+
+            uk_count += 1;
+            $('#uk-progress').css('width', uk_count/800 + '%')
+            $('#uk-count').html(uk_count + '/800')
+        }
+        if(key == 'Poland') {
+
+            uk_count += 1;
+            $('#poland-progress').css('width', poland_count/800 + '%')
+            $('#poland-count').html(poland_count + '/800')
+        }
+        if(key == 'Germany') {
+
+            germany_count += 1;
+            $('#germany-progress').css('width', germany_count/800 + '%')
+            $('#germany-count').html(germanygermany_count + '/800')
+        }
+        if(key == 'Italy') {
+
+            italy_count += 1;
+            $('#italy-progress').css('width', italy_count/800 + '%')
+            $('#italy-count').html(italy_count + '/800')
+        }
+        if(key != 'Undefined') {
+            total_count += 1;
+            $('#total-progress').css('width', total_count/800 + '%')
+            $('#total-count').html(total_count + '/3200')
         }
         i = i + 1;
     }
@@ -116,7 +167,7 @@ $(document).ready(function() {
     }
     else {
 
-        $('#country_terminates').html('No users have attempted to take the survey');
+        $('#country_terminates').html('<h3>No users have left the survey incomplete</h3>');
     }
 
 });
@@ -181,5 +232,76 @@ $(document).ready(function() {
         </div>
     </div>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+
+<div class='row'>
+    <div class='col-md-6'>
+        <h3 style='text-align:center;'>Progress towards UK quota</h3>
+        <br>
+        <br>
+        <div class="progress progress-striped active">
+          <div class="progress-bar" id='uk-progress' role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+            <span id='uk-count' class='label-span'></span>
+          </div>
+        </div>
+    </div>
+    <div class='col-md-6'>
+        <h3 style='text-align:center;'>Progress towards Poland quota</h3>
+        <br>
+        <br>
+        <div class="progress progress-striped active">
+          <div class="progress-bar" id='poland-progress' role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+            <span id='poland-count' class='label-span'></span>
+          </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class='row'>
+    <div class='col-md-6'>
+        <h3 style='text-align:center;'>Progress towards Italy quota</h3>
+        <br>
+        <br>
+        <div class="progress progress-striped active">
+          <div class="progress-bar" id='italy-progress' role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+            <span id='italy-count' class='label-span'></span>
+          </div>
+        </div>
+    </div>
+    <div class='col-md-6'>
+        <h3 style='text-align:center;'>Progress towards Germany quota</h3>
+        <br>
+        <br>
+        <div class="progress progress-striped active">
+          <div class="progress-bar" id='germany-progress' role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+            <span id='germany-count' class='label-span'></span>
+          </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class='row'>
+    <div class='col-md-12'>
+        <h3 style='text-align:center;'>Progress towards total quota</h3>
+        <br>
+        <br>
+        <div class="progress progress-striped active">
+          <div class="progress-bar" id='total-progress' role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+            <span id='total-count' class='label-span'></span>
+          </div>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}
