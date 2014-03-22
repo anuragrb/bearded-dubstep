@@ -1,13 +1,13 @@
 # Python library imports
 from datetime import datetime
 import re
+import json
 
 # Django specific imports
 from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpRequest, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from django.utils import simplejson
 import requests
 import logging
 
@@ -59,10 +59,11 @@ def reporting(request):
             if user_country in country_incompletes.iterkeys():
                 country_incompletes[user_country] += 1
             else:
-                country_incompletes[user_country] = 1
-    
-    context['country_completes'] = str(simplejson.dumps(country_completes))
-    context['country_incompletes'] = str(simplejson.dumps(country_incompletes))
-    context['question_terminated'] = str(simplejson.dumps(question_terminated))
+                if len(user_country) > 1:
+                    country_incompletes[user_country] = 1
+
+    context['country_completes'] = str(json.dumps(country_completes))
+    context['country_incompletes'] = str(json.dumps(country_incompletes))
+    context['question_terminated'] = str(json.dumps(question_terminated))
     context['users_complete'] = users_complete 
     return render(request, 'objects/reporting.html', context)

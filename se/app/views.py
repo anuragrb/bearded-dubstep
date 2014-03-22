@@ -18,52 +18,6 @@ from app.models import *
 
 logger = logging.getLogger('custom.logger')
 
-def landing(request):
-
-    context = {'page': 'landing'}
-    if request.user.is_authenticated():
-
-        EXPERIMENTAL_CONDITIONS = {
-            '1': 'TR',
-            '2': 'CO',
-            '3': 'AN',
-            '4': 'ST',
-            '5': 'IP',
-            '6': 'CL',
-            '7': 'IN',
-            '8': 'SI'
-        }
-        user_profile = User_Profile.objects.get(user=request.user)
-        try:
-            condition = EXPERIMENTAL_CONDITIONS[str(request.session['conint'])]
-            context['condition'] = condition
-            request.session['condition'] = condition
-            user_profile.experimental_condition = condition
-        except Exception as e:
-            logger.exception('Randomizer key error')
-            return redirect('/')
-        if not 'language' in request.session:
-            request.session['language'] = 'EN'
-        if not 'screen_resolution' in request.session:
-            user_profile.screen_resolution = ''
-        else:
-            user_profile.screen_resolution = request.session['screen_resolution']
-
-        if not 'browser_resolution' in request.session:
-            user_profile.browser_resolution = ''
-        else:
-            user_profile.browser_resolution = request.session['browser_resolution']
-
-        if not 'browser' in request.session:
-            user_profile.browser = ''
-        else:
-            user_profile.browser = request.session['browser']
-
-        user_profile.save()
-        return render(request, "objects/landing.html", context)
-    else:
-        return redirect('/')
-
 
 def links(request):
     context = {'page': 'links'}
@@ -117,19 +71,22 @@ def links(request):
             request.session['privacy_clicked'] = 0
             new_profile.save()
             if 'C' in request.GET:
-                country = request.GET['C']
-                if country == 1:
+                country = str(request.GET['C'])
+                if country == '1':
                     request.session['country'] = 'UK'
                     request.session['language'] = 'EN'
-                elif country == 2:
+                elif country == '2':
                     request.session['country'] = 'Germany'
                     request.session['language'] = 'DE'
-                elif country == 3:
+                elif country == '3':
                     request.session['country'] = 'Poland'
                     request.session['language'] = 'PO'
-                elif country == 4:
+                elif country == '4':
                     request.session['country'] = 'Italy'
                     request.session['language'] = 'IT'
+                else:
+                    request.session['country'] = 'Undefined'
+                    request.session['language'] = 'EN'
             condition = random.randint(1, 8)
             request.session['conint'] = condition
             return redirect('/landing')
@@ -143,6 +100,56 @@ def links(request):
             return redirect('/se')
         context['error'] = 'Tick information is incorrect or absent.'
         return render(request, "objects/links.html", context)
+
+
+def landing(request):
+
+    context = {'page': 'landing'}
+    if request.user.is_authenticated():
+
+        EXPERIMENTAL_CONDITIONS = {
+            '1': 'TR',
+            '2': 'CO',
+            '3': 'AN',
+            '4': 'ST',
+            '5': 'IP',
+            '6': 'CL',
+            '7': 'IN',
+            '8': 'SI'
+        }
+        user_profile = User_Profile.objects.get(user=request.user)
+        try:
+            condition = EXPERIMENTAL_CONDITIONS[str(request.session['conint'])]
+            context['condition'] = condition
+            request.session['condition'] = condition
+            user_profile.experimental_condition = condition
+        except Exception as e:
+            logger.exception('Randomizer key error')
+            return redirect('/')
+        if not 'language' in request.session:
+            request.session['language'] = 'EN'
+            user_profile.country = 'Undefined'
+        else:
+            user_profile.country = request.session['country']
+        if not 'screen_resolution' in request.session:
+            user_profile.screen_resolution = ''
+        else:
+            user_profile.screen_resolution = request.session['screen_resolution']
+
+        if not 'browser_resolution' in request.session:
+            user_profile.browser_resolution = ''
+        else:
+            user_profile.browser_resolution = request.session['browser_resolution']
+
+        if not 'browser' in request.session:
+            user_profile.browser = ''
+        else:
+            user_profile.browser = request.session['browser']
+
+        user_profile.save()
+        return render(request, "objects/landing.html", context)
+    else:
+        return redirect('/')
 
 
 def se(request):

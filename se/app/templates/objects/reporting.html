@@ -15,6 +15,28 @@ function labelFormatter(label, series) {
     return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
 }
 
+var options = {
+            series: {
+                pie: { 
+                    show: true,
+                    radius: 1,
+                    label: {
+                        show: true,
+                        radius: 1,
+                        formatter: labelFormatter,
+                        background: {
+                            opacity: 0.8
+                        }
+                    }
+                }
+            },
+            grid: {
+                hoverable: true,
+                clickable: true
+            }};
+
+options.colors = ['blue','green','red','orange','purple'];
+
 $(document).ready(function() {
 
     var incompletes = {{ total_users }} - {{ users_complete }};
@@ -25,26 +47,7 @@ $(document).ready(function() {
 
     ];
 
-    $.plot($('#completes'), completeness_data, {
-        series: {
-            pie: { 
-                show: true,
-                radius: 1,
-                label: {
-                    show: true,
-                    radius: 1,
-                    formatter: labelFormatter,
-                    background: {
-                        opacity: 0.8
-                    }
-                }
-            }
-        },
-        grid: {
-            hoverable: true,
-            clickable: true
-        }
-    });
+    $.plot($('#completes'), completeness_data, options);
 });
 
 $(document).ready(function() {
@@ -62,26 +65,7 @@ $(document).ready(function() {
         }
         i = i + 1;
     }
-    $.plot($('#terminates'), terminate_array, {
-        series: {
-            pie: { 
-                show: true,
-                radius: 1,
-                label: {
-                    show: true,
-                    radius: 1,
-                    formatter: labelFormatter,
-                    background: {
-                        opacity: 0.8
-                    }
-                }
-            }
-        },
-        grid: {
-            hoverable: true,
-            clickable: true
-        }
-    });
+    $.plot($('#terminates'), terminate_array, options);
 
 });
 
@@ -100,32 +84,20 @@ $(document).ready(function() {
         }
         i = i + 1;
     }
-    $.plot($('#country_completes'), country_completes_array, {
-        series: {
-            pie: { 
-                show: true,
-                radius: 1,
-                label: {
-                    show: true,
-                    radius: 1,
-                    formatter: labelFormatter,
-                    background: {
-                        opacity: 0.8
-                    }
-                }
-            }
-        },
-        grid: {
-            hoverable: true,
-            clickable: true
-        }
-    });
+    if (country_completes_array.length >= 1) {
+
+        $.plot($('#country_completes'), country_completes_array, options);
+    }
+    else {
+
+        $('#country_completes').html('<h3>No users have completed the survey</h3>');
+    }
 
 });
 
 $(document).ready(function() {
 
-    var country_terminates = '{{ country_completes }}';
+    var country_terminates = '{{ country_incompletes }}';
     country_terminates = country_terminates.replace(/&quot;/g, '\"');
     jsonified = $.parseJSON(country_terminates);
     country_terminates_array = [];
@@ -138,26 +110,14 @@ $(document).ready(function() {
         }
         i = i + 1;
     }
-    $.plot($('#country_terminates'), country_terminates_array, {
-        series: {
-            pie: { 
-                show: true,
-                radius: 1,
-                label: {
-                    show: true,
-                    radius: 1,
-                    formatter: labelFormatter,
-                    background: {
-                        opacity: 0.8
-                    }
-                }
-            }
-        },
-        grid: {
-            hoverable: true,
-            clickable: true
-        }
-    });
+    if(country_terminates_array.length >= 1) {
+        
+        $.plot($('#country_terminates'), country_terminates_array, options);
+    }
+    else {
+
+        $('#country_terminates').html('No users have attempted to take the survey');
+    }
 
 });
 
@@ -199,6 +159,10 @@ $(document).ready(function() {
         </div>
     </div>
 </div>
+
+<br>
+<br>
+
 <div class='row'>
     <div class='col-md-6'>
         <h3 style='text-align:center;'>Country-wise Completes</h3>
