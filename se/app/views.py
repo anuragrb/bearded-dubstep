@@ -21,17 +21,6 @@ logger = logging.getLogger('custom.logger')
 
 def links(request):
     context = {'page': 'links'}
-    if request.is_ajax:
-        if not 'screenresolution' in request.POST:
-            pass
-        else:
-            screen_resolution = request.POST['screenresolution']
-            browser_resolution = request.POST['browserresolution']
-            browser = request.POST['browser']
-            request.session['screen_resolution'] = screen_resolution
-            request.session['browser_resolution'] = browser_resolution
-            request.session['browser'] = browser
-
     if 'tick' in request.GET:
 
         if User.objects.filter(username=request.GET['tick']):
@@ -84,9 +73,9 @@ def links(request):
                 elif country == '4':
                     request.session['country'] = 'Italy'
                     request.session['language'] = 'IT'
-                else:
-                    request.session['country'] = 'Undefined'
-                    request.session['language'] = 'EN'
+            else:
+                request.session['country'] = 'Undefined'
+                request.session['language'] = 'EN'
             condition = random.randint(1, 8)
             request.session['conint'] = condition
             return redirect('/landing')
@@ -326,6 +315,18 @@ def save(request):
                 search_result.save()
                 user_profile.results_clicked.add(search_result)
                 return HttpResponse(new_href.group(0)[:-1])
+            elif 'screenresolution' in request.POST:
+                screen_resolution = request.POST['screenresolution']
+                browser_resolution = request.POST['browserresolution']
+                browser = request.POST['browser']
+                request.session['screen_resolution'] = screen_resolution
+                request.session['browser_resolution'] = browser_resolution
+                request.session['browser'] = browser
+                user_profile.screen_resolution = screen_resolution
+                user_profile.browser_resolution = browser_resolution
+                user_profile.browser = browser
+                user_profile.save()
+                return HttpResponse('Done')
             elif 'privacy' in request.POST:
                 request.session['privacy_clicked'] += 1
                 user_profile.privacy_clicked = user_profile.privacy_clicked + 1

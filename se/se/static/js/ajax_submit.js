@@ -89,10 +89,9 @@ $(document).ready(function() {
     
     browser = detect_browser();
     submit_flash();
-
     $.ajax({
          type:"POST",
-         url:"/",
+         url:"/save",
          data: {
                 screenresolution: window.screen.width + 'x' + window.screen.height,
                 browserresolution: $(document).width() + 'x' + $(document).height(),
