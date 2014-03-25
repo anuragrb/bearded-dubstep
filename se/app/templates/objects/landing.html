@@ -6,27 +6,32 @@
 
 <script type="text/javascript">
 
-function yesvalidator(value) {
+function yesvalidator() {
 
     if($('input[name=18older]:checked').val() == 'No') {
 
         window.location.replace('/thanks');
+        return false;
     }
     if($('input[name=country]:checked').val() == 'No') {
 
         window.location.replace('/thanks');
+        return false;
     }
     if($('input[name=minutes]:checked').val() == 'No') {
 
         window.location.replace('/thanks');
+        return false;
     }
     if($('input[name=internet]:checked').val() == 'No') {
 
         window.location.replace('/thanks');
+        return false;
     }
     if($('input[name=device]:checked').val() == 'No') {
 
         window.location.replace('/thanks');
+        return false;
     }
     return true;
 }
@@ -74,30 +79,30 @@ $(document).ready(function() {
         <p>In order to participate in this study, you must be 18 years old or older, you must be connecting from the U.S.A., you must have at least 30 uninterrupted minutes to complete the study, and at the moment you must be using a reliable Internet connection that will make it possible for you to complete the study.</p>
 
         <br>
-        <form id='beginform' action='/se' method='POST'>{% csrf_token %}
+        <form id='beginform' onsubmit='return yesvalidator();' action='/se' method='POST'>{% csrf_token %}
 
             <p>1. Are you 18 years old or older?
-                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="18older" value='Yes' data-bvalidator='yesvalidator[],required' data-bvalidator-msg='You must fulfill all these conditions to continue' />
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="18older" value='Yes'  />
                 <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="18older" value='No'/></p>
             <br>
 
             <p>2. Are you connecting from the U.S.A.?
-                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="country" value='Yes' data-bvalidator='yesvalidator[],required' data-bvalidator-msg='You must fulfill all these conditions to continue' />
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="country" value='Yes' />
                 <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="country" value='No'/></p>
             <br>
 
             <p>3. Do you have at least 30 uninterrupted minutes to complete the study? 
-                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="minutes" value='Yes' data-bvalidator='yesvalidator[],required' data-bvalidator-msg='You must fulfill all these conditions to continue' />
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="minutes" value='Yes'  />
                 <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="minutes" value='No'/></p>
             <br>
 
             <p>4. At the moment, do you have a reliable Internet connection that will make it possible for you to complete the study?
-                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="internet" value='Yes' data-bvalidator='yesvalidator[],required' data-bvalidator-msg='You must fulfill all these conditions to continue' />
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="internet" value='Yes'  />
                 <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="internet" value='No'/></p>
             <br>
 
             <p>5. Are you currently using a desktop or a laptop?
-                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="device" value='Yes' data-bvalidator='yesvalidator[],required' data-bvalidator-msg='You must fulfill all these conditions to continue' />
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="device" value='Yes'  />
                 <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="device" value='No'/></p>
             <br>
 
