@@ -9,7 +9,7 @@
 <style>
 .label-span {
 
-    color: black;
+    color: purple;
 }
 </style>
 
@@ -30,6 +30,13 @@ function labelFormatter(label, series) {
     };
 
 })(jQuery);
+
+undefined_count = 0;
+uk_count = 0;
+italy_count = 0;
+germany_count = 0;
+poland_count = 0;
+total_count = 0;
 
 var options = {
             series: {
@@ -64,6 +71,7 @@ $(document).ready(function() {
     ];
 
     $.plot($('#completes'), completeness_data, options);
+    update_progress_bars();
 });
 
 $(document).ready(function() {
@@ -85,18 +93,12 @@ $(document).ready(function() {
 
 });
 
-$(document).ready(function() {
+function update_progress_bars() {
 
     var country_completes = '{{ country_completes }}';
     country_completes = country_completes.replace(/&quot;/g, '\"');
     jsonified = $.parseJSON(country_completes);
     country_completes_array = [];
-    undefined_count = 0;
-    uk_count = 0;
-    italy_count = 0;
-    germany_count = 0;
-    poland_count = 0;
-    total_count = 0;
     var i = 0;
     for(key in jsonified) {
 
@@ -106,34 +108,39 @@ $(document).ready(function() {
         }
         if(key == 'UK') {
 
-            uk_count += 1;
-            $('#uk-progress').css('width', uk_count/800 + '%')
-            $('#uk-count').html(uk_count + '/800')
+            total_count += jsonified[key];
+            $('#uk-progress').css('width', jsonified[key]/800*100 + '%');
+            $('#uk-count').html(jsonified[key] + '/800');
         }
         if(key == 'Poland') {
 
-            uk_count += 1;
-            $('#poland-progress').css('width', poland_count/800 + '%')
-            $('#poland-count').html(poland_count + '/800')
+            total_count += jsonified[key];
+            $('#poland-progress').css('width', jsonified[key]/800*100 + '%');
+            $('#poland-count').html(jsonified[key] + '/800');
         }
         if(key == 'Germany') {
 
-            germany_count += 1;
-            $('#germany-progress').css('width', germany_count/800 + '%')
-            $('#germany-count').html(germanygermany_count + '/800')
+            total_count += jsonified[key];
+            $('#germany-progress').css('width', jsonified[key]/800*100 + '%');
+            $('#germany-count').html(jsonified[key] + '/800');
         }
         if(key == 'Italy') {
 
-            italy_count += 1;
-            $('#italy-progress').css('width', italy_count/800 + '%')
-            $('#italy-count').html(italy_count + '/800')
+            total_count += jsonified[key];
+            $('#italy-progress').css('width', jsonified[key]/800*100 + '%');
+            $('#italy-count').html(jsonified[key] + '/800');
         }
         if(key != 'Undefined') {
-            total_count += 1;
-            $('#total-progress').css('width', total_count/800 + '%')
-            $('#total-count').html(total_count + '/3200')
+
+            $('#total-progress').css('width', total_count/3200*100 + '%');
+            $('#total-count').html(total_count + '/3200');
         }
-        i = i + 1;
+        if(key == 'Undefined') {
+
+            $('#undefined-progress').css('width', jsonified[key]/220*100 + '%');
+            $('#undefined-count').html(jsonified[key] + '/220');
+        }
+        i += 1; 
     }
     if (country_completes_array.length >= 1) {
 
@@ -144,7 +151,7 @@ $(document).ready(function() {
         $('#country_completes').html('<h3>No users have completed the survey</h3>');
     }
 
-});
+}
 
 $(document).ready(function() {
 
@@ -298,6 +305,22 @@ $(document).ready(function() {
         <div class="progress progress-striped active">
           <div class="progress-bar" id='total-progress' role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
             <span id='total-count' class='label-span'></span>
+          </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class='row'>
+    <div class='col-md-12'>
+        <h3 style='text-align:center;'>Progress towards Undefined</h3>
+        <br>
+        <br>
+        <div class="progress progress-striped active">
+          <div class="progress-bar" id='undefined-progress' role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+            <span id='undefined-count' class='label-span'></span>
           </div>
         </div>
     </div>

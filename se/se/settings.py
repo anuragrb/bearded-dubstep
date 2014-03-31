@@ -69,24 +69,24 @@ USERNAME = environ.get('db_username')
 
 PASSWORD = environ.get('db_password')
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'se',
-        'HOST': 'sedbinstance.cy8n3rriujir.us-west-2.rds.amazonaws.com',
-        'PORT': '3306',
-        'USER': USERNAME,
-        'PASSWORD': PASSWORD,
-    },
-    'dev': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'se',
-    },
-    'prod': {
-
-        
+if DEBUG == False:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'se',
+            'HOST': 'sedbinstance.cy8n3rriujir.us-west-2.rds.amazonaws.com',
+            'PORT': '3306',
+            'USER': USERNAME,
+            'PASSWORD': PASSWORD,
+        },
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'se',
+        },
+    }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
