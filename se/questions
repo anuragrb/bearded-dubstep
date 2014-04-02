@@ -15,6 +15,7 @@ What are the names of three of the moons of Neptune? \4 \0
 What is the full name of the 81st element in the periodic table? \4 \0
 What is the address of your favorite restaurant located in the town where you were born? \4 \0
 What browser do you typically use? \Internet Explorer \Mozilla Firefox \Google Chrome \Safari \Opera \Other \I do not know \5 \1
+What operating system do you typically use? \Microsoft Windows \Mac OS X \Some flavor of Linux \Other \I don't know \5 \1
 What search engine do you typically use? \Google \Yahoo \Bing \Other \I do not know \5 \1
 Are you a member of a social networking site, such as Facebook? \Yes \No \5 \1
 Do you think the search engine you tested is easier to use than the search engine that you typically use? \5 \2
