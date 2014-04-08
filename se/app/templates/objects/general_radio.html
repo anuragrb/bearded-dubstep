@@ -1,15 +1,41 @@
-{% if q.options %}
-    <div class='radioGroupBelow' style='padding-left:10px;'>
-    {% for option in q.options %}
-    <div style='display: inline-block; text-align:center; width: 200px; word-wrap: break-word;'>
-        <label>{{ option.english }}<input type="radio" name="{{ q.question.id }}" value='{{ option.english }}' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' /></label>   
-    </div>
-    {% endfor %}
-    </div>
-    <br>
-    <br>
+{% if request.session.language == 'PO' %}
+    {% if q.options %}
+        <div class='radioGroupBelow' style='padding-left:10px;'>
+        {% for option in q.options %}
+        {% if option.polish == '' %}
+        {% else %}
+        <div style='display: inline-block; text-align:center; width: 200px; word-wrap: break-word;'>
+            <label>{{ option.polish }}<input type="radio" name="{{ q.question.id }}" value='{{ option.polish }}' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' /></label>   
+        </div>
+        {% endif %}
+        {% endfor %}
+        </div>
+        <br>
+        <br>
+    {% else %}
+        <input type='text' class='form-control' id='{{ q.question.id }}' name='{{ q.question.id }}' style='width: 500px;' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' />
+        <br>
+        <br>
+    {% endif %}
+{% elif request.session.language == 'DE' %}
+{% elif request.session.language == 'IT' %}
 {% else %}
-    <input type='text' class='form-control' id='{{ q.question.id }}' name='{{ q.question.id }}' style='width: 500px;' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' />
-    <br>
-    <br>
+    {% if q.options %}
+        <div class='radioGroupBelow' style='padding-left:10px;'>
+        {% for option in q.options %}
+        {% if option.english == '' %}
+        {% else %}
+        <div style='display: inline-block; text-align:center; width: 200px; word-wrap: break-word;'>
+            <label>{{ option.english }}<input type="radio" name="{{ q.question.id }}" value='{{ option.english }}' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' /></label>   
+        </div>
+        {% endif %}
+        {% endfor %}
+        </div>
+        <br>
+        <br>
+    {% else %}
+        <input type='text' class='form-control' id='{{ q.question.id }}' name='{{ q.question.id }}' style='width: 500px;' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' />
+        <br>
+        <br>
+    {% endif %}
 {% endif %}

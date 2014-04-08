@@ -38,8 +38,6 @@ def reporting(request):
 
     for user_profile in user_profiles:
 
-        #print ((datetime.strptime(strftime(str(datetime.now()), '%H:%M:%S')), '%H:%M:%S') - datetime.strptime(strftime(user_profile.start_time, '%H:%M:%S')), '%H:%M:%S').seconds
-
         time_start = user_profile.start_time
 
         now = now.replace(tzinfo=None)

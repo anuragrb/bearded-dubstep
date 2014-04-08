@@ -37,6 +37,15 @@ AWS_PRELOAD_METADATA = True
 
 # Application definition
 
+TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
+                                "django.core.context_processors.debug",
+                                "django.core.context_processors.i18n",
+                                "django.core.context_processors.media",
+                                "django.core.context_processors.static",
+                                "django.core.context_processors.tz",
+                                "django.contrib.messages.context_processors.messages",
+                                "django.core.context_processors.request")
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -61,7 +70,6 @@ ROOT_URLCONF = 'se.urls'
 
 WSGI_APPLICATION = 'se.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
@@ -80,6 +88,7 @@ if DEBUG == False:
             'PASSWORD': PASSWORD,
         },
     }
+
 else:
     DATABASES = {
         'default': {
@@ -100,7 +109,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/

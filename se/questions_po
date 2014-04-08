@@ -1,0 +1,69 @@
+Jaka jest data urodzin obecnej królowej Norwegii? \0 \0
+Jaka jest dziś temperatura w Hammamet w Tunezji? \0 \0
+Jak nazywa sie opera narodowa w Kijowie? \0 \0
+Kto jest obecnie Europejskim Komisarzem ds. Rozwoju? \0 \0
+Znajdź przepis na ciasto czekoladowe i wymień wszystkie składniki. \1 \0
+Kto wygrał Konkurs Piosenki Eurowizji w roku 1978? \1 \0
+Podaj nazwisko osoby publicznej lub innej sławnej osoby, która się urodziła w tym samym roku, co Ty. \1 \0
+Jaki jest adres urzędu pocztowego w Twojej miejscowości? \2 \0
+Podaj datę pierwszej pełni księżyca w roku 2017? \2 \0
+W jakim dniu zarejestrowano w USA najwyższą temperaturę powietrza? \2 \0
+W którym roku otwarto bank, z którego usług korzystasz? \3 \0
+W którym roku rozpoczęła się i zakończyła wojna krymska? \3 \0
+Która ze sztuk Szekspira została wystawiona po raz pierwszy w 1604 roku? \3 \0
+Jak nazywają się trzy księżyce Neptuna? \4 \0
+Podaj pełną nazwę 81. pierwiastka z tabeli Mendelejewa. \4 \0
+Jaki jest adres Twojej ulubionej restauracji w miejscu urodzenia? \4 \0
+Jakiej przeglądarki używasz najczęściej? \Internet Explorer \Mozilla Firefox \Google Chrome \Safari \Opera \Innej \Nie Wiem \5 \1
+Search Engine Question Here \5 \1
+Operating System Question Here \5 \1
+Czy korzystasz z portali społecznościowych, na przykład Facebooka? \Tak \Nie \5 \1
+Czy uważasz, że testowana wyszukiwarka jest łatwiejsza w obsłudze niż ta, której zwykle używasz? \5 \2
+Czy uważasz, że testowana wyszukiwarka jest bardziej skuteczna niż ta, której zwykle używasz? \5 \2
+Czy uważasz, że testowana wyszukiwarka pasuje do Twoich potrzeb lepiej niż ta, której zwykle używasz? \5 \2
+Czy uważasz, że testowana wyszukiwarka podaje bardziej bezpośrednie wyniki wyszukiwania niż ta, której zwykle używasz? \5 \2
+Czy kiedykolwiek uprawiałeś/aś seks z obecnym mężem, żoną lub partnerem przyjaciela? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek wyobrażałeś/aś sobie uprawianie brutalnego seksu bez zgody? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek uprawiałeś/aś seks z osobą, która była pod tak mocnym wpływem alkoholu, że nie była świadoma swoich działań? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek oglądałeś/aś materiały pornograficzne? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek przyznawałeś/aś się do wykształcenia, którego tak naprawdę nie posiadasz? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek byłeś/aś świadkiem poważnego przestępstwa lub wiedziałeś/aś o nim a mimo to nie powiadomiłeś/aś policji? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek komuś skłamałeś/aś na temat swoich dochodów? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek udawałeś/aś, że nie widzisz osoby żebrzącej, aby nie być uznanym za skąpca? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek wypiłeś/aś tak dużo alkoholu, że cierpiałeś/aś z powodu kaca? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek nie dałeś/aś napiwku kelnerowi w kraju, w którym zazwyczaj napiwki się daje? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Moje odpowiedzi na pytania wymagały ujawnienia informacji osobistych. \7 \2
+Czułem/am się komfortowo odpowiadając na osobiste pytania podczas tego badania. \7 \2
+Podczas badania miałem/am wrażenie, że ktoś mnie obserwuje. \7 \2
+Podczas badania czułem/am, że ktoś mnie monitoruje. \7 \2
+Strona internetowa wyszukiwarki była w stanie wykryć wiele informacji o mojej działalności w Internecie. \7 \2
+Odwiedzone strony Internetowe \8 \3
+Użyta przeglądarka \8 \3
+Użyte terminy wyszukiwania \8 \3
+Twój adres IP \8 \3
+Twoja lokalizacja \8 \3
+Twoje odpowiedzi na pytania dotyczące korzystania z Internetu \8 \3
+Godzina, o której badanie zostało rozpoczęte \8 \3
+Czas poświęcony na odpowiedź na pytania \8 \3
+Twoja data urodzenia \8 \3
+Twoja obecna lokalizacja \8 \3
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś coś niezwykłego w prawej części ekranu? Jeśli coś zauważyłeś/aś, opisz to. \9 \0
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś link do polityki prywatności wyszukiwarki? \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś kilka linków do adresów URL stron odwiedzonych przez ciebie wcześniej? \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś adres IP? \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś lokalizację? Czy była to lokalizacja, z której właśnie teraz łączysz się z Internetem? \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś nazwę przeglądarki? Czy była to przeglądarka, której używasz w tym momencie? \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś obraz kobiecej postaci? \9 \1
+Jesteś \Mężczyzną \Kobietą \Brak odpowiedzi \10 \1
+Ile masz lat? \66 i więcej \10 \1
+Poziom wykształcenia \Podstawowe \Średnie niepełne \Średnie \Wyższe niepełne \Wyższe \Studia podyplomowe lub doktorat \10 \1
+Sytuacja zawodowa \Student \Jestem samozatrudniony/a \Zajmuję się domem \Jestem zatrudniony/a \Jestem bezrobotny/a \Jestem na emeryturze \10 \1
+Wysokość dochodu netto (miesięcznie) \mniej niż 500€ \więcej niż 8000€ \10 \1
+Ilość osób w gospodarstwie domowym, wliczając Ciebie \10 i więcej \10 \1
+Wysokość dochodu netto gospodarstwa domowego (miesięcznie) \10 \1
+Na którą partię polityczną głosowałeś/aś w ostatnich wyborach? \10 \4 
+Czy wykonałeś/aś to badanie samodzielnie czy z kimś?  \Samodzielnie  \Z udziałem innych \11 \1
+Z jakiego miejsca łączysz się z Internetem? \Dom \Miejsce pracy \Miejsce publiczne \Inne \11 \1
+Question about laptop/tablet \11 \1
+Jaki był cel tego badania? \11 \0
+Czy masz jakieś komentarze lub sugestie na temat tego badania? \11 \0
