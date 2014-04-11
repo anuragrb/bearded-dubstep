@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 
 class Option(models.Model):
 
-    english = models.CharField(max_length=150)
-    italian = models.CharField(max_length=150)
-    polish = models.CharField(max_length=150)
-    german = models.CharField(max_length=150)
+    english = models.CharField(max_length=500)
+    italian = models.CharField(max_length=500)
+    polish = models.CharField(max_length=500)
+    german = models.CharField(max_length=500)
 
 
 class Question(models.Model):
@@ -24,7 +24,7 @@ class Question(models.Model):
 
 class Answer(models.Model):
 
-    text = models.CharField(max_length=150)
+    text = models.CharField(max_length=10000)
     user = models.ForeignKey(User)
     question = models.ForeignKey(Question)
     time_posted = models.DateTimeField(auto_now_add=True)
