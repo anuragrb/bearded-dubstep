@@ -169,10 +169,12 @@ def se(request):
         logger.exception(
             'No city in request.session or no browser in request.session. Traceback has more details')
         context['city'] = ''
+
     if request.user.is_authenticated():
 
         user_profile = User_Profile.objects.get(user=request.user)
-        context['search_results'] = []
+        context['search_results'] = []            
+
         for search_result in user_profile.results_clicked.all():
             context['search_results'].append(search_result)
 
@@ -184,6 +186,8 @@ def se(request):
             return render(request, 'objects/se.html', context)
 
         if not 'answered_index' in request.session:
+            user_profile.begin_time = datetime.now()
+            user_profile.save()
             request.session['answered_index'] = 1
 
         if not 'answered_group' in request.session or request.session['answered_index'] <= 4:
