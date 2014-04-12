@@ -15,8 +15,8 @@ Jak nazywają się trzy księżyce Neptuna? \4 \0
 Podaj pełną nazwę 81. pierwiastka z tabeli Mendelejewa. \4 \0
 Jaki jest adres Twojej ulubionej restauracji w miejscu urodzenia? \4 \0
 Jakiej przeglądarki używasz najczęściej? \Internet Explorer \Mozilla Firefox \Google Chrome \Safari \Opera \Innej \Nie Wiem \5 \1
-Search Engine Question Here \5 \1
-Operating System Question Here \5 \1
+Jaki system operacyjny zazwyczaj użyć? \Microsoft Windows \Mac OS X \Niektóre z dystrybucji Linuksa \Innej \Nie Wiem \5 \1
+Co wyszukiwarka ty zwykle używać? \Google \Yahoo \Bing \Innej \Nie Wiem \5 \1
 Czy korzystasz z portali społecznościowych, na przykład Facebooka? \Tak \Nie \5 \1
 Czy uważasz, że testowana wyszukiwarka jest łatwiejsza w obsłudze niż ta, której zwykle używasz? \5 \2
 Czy uważasz, że testowana wyszukiwarka jest bardziej skuteczna niż ta, której zwykle używasz? \5 \2
@@ -48,22 +48,22 @@ Czas poświęcony na odpowiedź na pytania \8 \3
 Twoja data urodzenia \8 \3
 Twoja obecna lokalizacja \8 \3
 Czy podczas odpowiadania na pytania quizu zauważyłeś/aś coś niezwykłego w prawej części ekranu? Jeśli coś zauważyłeś/aś, opisz to. \9 \0
-Czy podczas odpowiadania na pytania quizu zauważyłeś/aś link do polityki prywatności wyszukiwarki? \9 \1
-Czy podczas odpowiadania na pytania quizu zauważyłeś/aś kilka linków do adresów URL stron odwiedzonych przez ciebie wcześniej? \9 \1
-Czy podczas odpowiadania na pytania quizu zauważyłeś/aś adres IP? \9 \1
-Czy podczas odpowiadania na pytania quizu zauważyłeś/aś lokalizację? Czy była to lokalizacja, z której właśnie teraz łączysz się z Internetem? \9 \1
-Czy podczas odpowiadania na pytania quizu zauważyłeś/aś nazwę przeglądarki? Czy była to przeglądarka, której używasz w tym momencie? \9 \1
-Czy podczas odpowiadania na pytania quizu zauważyłeś/aś obraz kobiecej postaci? \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś link do polityki prywatności wyszukiwarki? \Zauważyłem go \Nie zauważyłem go \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś kilka linków do adresów URL stron odwiedzonych przez ciebie wcześniej? \Zauważyłem go \Nie zauważyłem go \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś adres IP? \Zauważyłem go \Nie zauważyłem go \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś lokalizację? Czy była to lokalizacja, z której właśnie teraz łączysz się z Internetem? \Zauważyłem to, i to było prawidłowe \Zauważyłem to, i to nie było prawidłowe \Nie zauważyłem go \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś nazwę przeglądarki? Czy była to przeglądarka, której używasz w tym momencie? \Zauważyłem to, i to było prawidłowe \Zauważyłem to, i to nie było prawidłowe \Nie zauważyłem go \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś obraz kobiecej postaci? \Zauważyłem ją, a jej oczy poruszały \Zauważyłem ją, a jej oczy nie były w ruchu \Ja jej nie zauważyć \9 \1
 Jesteś \Mężczyzną \Kobietą \Brak odpowiedzi \10 \1
-Ile masz lat? \66 i więcej \10 \1
-Poziom wykształcenia \Podstawowe \Średnie niepełne \Średnie \Wyższe niepełne \Wyższe \Studia podyplomowe lub doktorat \10 \1
-Sytuacja zawodowa \Student \Jestem samozatrudniony/a \Zajmuję się domem \Jestem zatrudniony/a \Jestem bezrobotny/a \Jestem na emeryturze \10 \1
-Wysokość dochodu netto (miesięcznie) \mniej niż 500€ \więcej niż 8000€ \10 \1
-Ilość osób w gospodarstwie domowym, wliczając Ciebie \10 i więcej \10 \1
-Wysokość dochodu netto gospodarstwa domowego (miesięcznie) \10 \1
-Na którą partię polityczną głosowałeś/aś w ostatnich wyborach? \10 \4 
+Ile masz lat? \18-25 \26-33 \34-41 \42-49 \50-57 \58-65 \66 i więcej \Brak odpowiedzi \10 \1
+Poziom wykształcenia \Podstawowe \Średnie niepełne \Średnie \Wyższe niepełne \Wyższe \Studia podyplomowe lub doktorat \Brak odpowiedzi \10 \1
+Sytuacja zawodowa \Student \Jestem samozatrudniony/a \Zajmuję się domem \Jestem zatrudniony/a \Jestem bezrobotny/a \Jestem na emeryturze \Brak odpowiedzi \10 \1
+Wysokość dochodu netto (miesięcznie) \mniej niż 500€ \501-800€ \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \więcej niż 8000€ \Brak odpowiedzi \10 \1
+Ilość osób w gospodarstwie domowym, wliczając Ciebie \1-3 \4-6 \7-9 \10 i więcej \Brak odpowiedzi \10 \1
+Wysokość dochodu netto gospodarstwa domowego (miesięcznie) \mniej niż 500€ \501-800€ \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \więcej niż 8000€ \Brak odpowiedzi \10 \1
+Na którą partię polityczną głosowałeś/aś w ostatnich wyborach? \Brak odpowiedzi \10 \4 
 Czy wykonałeś/aś to badanie samodzielnie czy z kimś?  \Samodzielnie  \Z udziałem innych \11 \1
 Z jakiego miejsca łączysz się z Internetem? \Dom \Miejsce pracy \Miejsce publiczne \Inne \11 \1
-Question about laptop/tablet \11 \1
+Co urządzenie nie używasz, aby skorzystać z tej ankiety? \Komputer stacjonarny \Laptop \Telefon komórkowy \Tablet \Innej \11 \1
 Jaki był cel tego badania? \11 \0
 Czy masz jakieś komentarze lub sugestie na temat tego badania? \11 \0
