@@ -38,7 +38,7 @@ def reporting(request):
 
     for user_profile in user_profiles:
 
-        time_start = user_profile.entrance_time
+        time_start = user_profile.start_time
 
         now = now.replace(tzinfo=None)
         time_start = time_start.replace(tzinfo=None)
