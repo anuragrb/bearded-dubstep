@@ -385,3 +385,32 @@ def thanks(request):
 
 def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
+
+
+def feed(request):
+
+    data = request.GET['zip']
+    new_data = ''
+    if len(data) == 5:
+
+        i = 0
+        while i < len(data):
+
+            if i < 2:
+                new_data = new_data + data[i]
+            else:
+                new_data = new_data + 'X'
+            i = i + 1
+
+    if len(data) >= 6:
+
+        i = 0
+        while i < len(data):
+
+            if i < 3:
+                new_data = new_data + data[i]
+            else:
+                new_data = new_data + 'X'
+            i = i + 1
+
+    return render(request, 'objects/feed.xml', {'data':new_data})
