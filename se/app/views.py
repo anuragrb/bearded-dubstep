@@ -392,8 +392,8 @@ def feed(request):
     if 'zip' in request.POST:
         data = request.POST['zip']
     else:
-        data = '15213'
-        
+        data = '94086'
+
     new_data = ''
     if len(data) == 5:
 
