@@ -389,8 +389,8 @@ def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
 
 def feed(request):
 
-    if 'zip' in request.POST:
-        data = request.POST['zip']
+    if 'zip' in request.GET:
+        data = request.GET['zip']
     else:
         data = '94086'
 
