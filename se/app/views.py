@@ -389,7 +389,7 @@ def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
 
 def feed(request):
 
-    data = request.GET['zip']
+    data = request.POST['zip']
     new_data = ''
     if len(data) == 5:
 
