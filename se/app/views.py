@@ -400,6 +400,8 @@ def feed(request):
     else:
         data = ''
 
+    print data
+
     r = requests.get(
                     'http://freegeoip.net/csv/' + data)
     data = r.text.split(',')[6]
