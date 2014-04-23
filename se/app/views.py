@@ -390,15 +390,20 @@ def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
 #Unrelated to search engine project
 def feed(request):
 
+    # r = requests.get(
+    #                 'http://freegeoip.net/csv/' + get_client_ip(request))
+    # data = r.text.split(',')[6]
+    # data = data[1:-1]
+
+    if 'ipaddress' in request.GET:
+        data = request.GET['ipaddress']
+    else:
+        data = ''
+
     r = requests.get(
-                    'http://freegeoip.net/csv/' + get_client_ip(request))
+                    'http://freegeoip.net/csv/' + data)
     data = r.text.split(',')[6]
     data = data[1:-1]
-
-    # if 'zip' in request.GET:
-    #     data = request.GET['zip']
-    # else:
-    #     data = '94086'
 
     new_data = ''
     if len(data) == 5:
