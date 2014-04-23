@@ -387,12 +387,14 @@ def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
 
+#Unrelated to search engine project
 def feed(request):
 
-    if 'zip' in request.GET:
-        data = request.GET['zip']
-    else:
-        data = '94086'
+    data = get_client_ip(request)
+    # if 'zip' in request.GET:
+    #     data = request.GET['zip']
+    # else:
+    #     data = '94086'
 
     new_data = ''
     if len(data) == 5:
