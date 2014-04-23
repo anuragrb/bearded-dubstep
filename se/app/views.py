@@ -408,6 +408,8 @@ def feed(request):
     data = data[1:-1]
 
     new_data = ''
+    
+    print data
     if len(data) == 5:
 
         i = 0
