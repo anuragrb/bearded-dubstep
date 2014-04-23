@@ -404,7 +404,7 @@ def feed(request):
 
     r = requests.get(
                     'http://freegeoip.net/csv/' + data)
-    print r
+    print r.text
     data = r.text.split(',')[6]
     data = data[1:-1]
 
