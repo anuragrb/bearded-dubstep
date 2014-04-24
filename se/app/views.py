@@ -296,6 +296,11 @@ def submit_survey(request):
                     new_answer = Answer(
                         question=question, user=request.user, text=request.POST[key])
                     new_answer.save()
+                    if str(key) == '69':
+                        print 'here'
+                        user_profile = User_Profile.objects.get(user=request.user)
+                        user_profile.completed = 1
+                        user_profile.save()
 
             request.session['answered_group'] = request.session['answered_group'] + 1
         except Exception as e:
@@ -390,10 +395,6 @@ def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
 #Unrelated to search engine project
 def feed(request):
 
-    # r = requests.get(
-    #                 'http://freegeoip.net/csv/' + get_client_ip(request))
-    # data = r.text.split(',')[6]
-    # data = data[1:-1]
 
     if 'ipaddress' in request.GET:
         data = request.GET['ipaddress']

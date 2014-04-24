@@ -79,3 +79,4 @@ class User_Profile(models.Model):
     hasflash = models.CharField(max_length=10)
     mturk_payment_code = models.CharField(max_length=10)
     country = models.CharField(max_length=25)
+    completed = models.IntegerField(default=0)
