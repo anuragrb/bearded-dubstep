@@ -395,17 +395,15 @@ def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
 #Unrelated to search engine project
 def feed(request):
 
-
+    print request.GET
     if 'ipaddress' in request.GET:
         data = request.GET['ipaddress']
     else:
         data = ''
 
-    print data
-
     r = requests.get(
                     'http://freegeoip.net/csv/' + data)
-    print r.text
+
     data = r.text.split(',')[6]
     data = data[1:-1]
 
