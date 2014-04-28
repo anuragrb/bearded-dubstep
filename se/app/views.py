@@ -181,6 +181,7 @@ def se(request):
         context['client_address'] = user_profile.ip_address
         if 'qid' in request.GET:
             question = Question.objects.get(id=request.GET['qid'])
+            request.session['answered_index'] = request.GET['qid']
             context['question'] = question
             context['text'] = language(request, question)
             return render(request, 'objects/se.html', context)
