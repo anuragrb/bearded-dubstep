@@ -4,6 +4,56 @@
 
 {% block head %}
 
+<script>
+
+var d;
+var t;
+
+$(document).ready(function() {
+    
+    $.ajaxSetup({ 
+         beforeSend: function(xhr, settings) {
+             function getCookie(name) {
+                 var cookieValue = null;
+                 if (document.cookie && document.cookie != '') {
+                     var cookies = document.cookie.split(';');
+                     for (var i = 0; i < cookies.length; i++) {
+                         var cookie = jQuery.trim(cookies[i]);
+                         // Does this cookie string begin with the name we want?
+                     if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                         break;
+                     }
+                 }
+             }
+             return cookieValue;
+             }
+             if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+                 // Only send the token to relative URLs i.e. locally.
+                 xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+             }
+         } 
+    });
+    d = new Date();
+});
+function time() {
+
+    difference = new Date() - d;
+    alert(difference);
+    $.ajax({
+         type:"POST",
+         url:"/save",
+         data: {
+            difference: difference,
+         },
+         success: function(return_data){
+
+            
+         }
+    });
+}
+</script>
+
 {% if page == 'IN' %}
     <style>
         body {
@@ -98,7 +148,7 @@
             </div>
             <div>
             {% for q in questions %}
-                <h4 style='padding: 20px;'><a href='/se?qid={{ q.question.id }}'>{{ q.text }}</a></h4>
+                <h4 style='padding: 20px;'><a onclick='time();' href='/se?qid={{ q.question.id }}'>{{ q.text }}</a></h4>
                 <br>
             {% endfor %}
             </div>

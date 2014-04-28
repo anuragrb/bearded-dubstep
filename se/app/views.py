@@ -231,7 +231,11 @@ def submit_answer(request):
         if Answer.objects.filter(question=question, user=request.user):
             return redirect('/')
 
-        new_answer = Answer(question=question, user=request.user, text=answer, clicktime=clicktime)
+        if 'difference' in request.session:
+            new_answer = Answer(question=question, user=request.user, text=answer, clicktime=clicktime, select_time=request.session['difference'])
+        else:
+            new_answer = Answer(question=question, user=request.user, text=answer, clicktime=clicktime)
+
         new_answer.save()
         user_profile.questions_answered.add(question)
         user_profile.answers.add(new_answer)
@@ -353,6 +357,9 @@ def save(request):
                 user_profile.hasflash = request.POST['hasflash']
                 user_profile.save()
                 return HttpResponse("Successfully checked for flash in user's browser.")
+            elif 'difference' in request.POST:
+                request.session['difference'] = request.POST['difference']
+                return HttpResponse("Saved current difference to session.")
             else:
                 time = datetime.now()
                 user_profile.end_time = time
@@ -396,7 +403,6 @@ def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
 #Unrelated to search engine project
 def feed(request):
 
-    print request.GET
     if 'ipaddress' in request.GET:
         data = request.GET['ipaddress']
     else:
@@ -410,7 +416,6 @@ def feed(request):
 
     new_data = ''
 
-    print data
     if len(data) == 5:
 
         i = 0

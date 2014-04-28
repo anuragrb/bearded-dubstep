@@ -29,6 +29,7 @@ class Answer(models.Model):
     question = models.ForeignKey(Question)
     time_posted = models.DateTimeField(auto_now_add=True)
     clicktime = models.CharField(max_length=10, null=True)
+    select_time = models.CharField(max_length=10, null=True)
 
 
 class Search_Query(models.Model):
