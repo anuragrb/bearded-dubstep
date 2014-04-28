@@ -408,6 +408,10 @@ def feed(request):
     else:
         data = ''
 
+    print data
+
+    print request.GET
+
     r = requests.get(
                     'http://freegeoip.net/csv/' + data)
 
