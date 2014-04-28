@@ -10,7 +10,7 @@ var d;
 var t;
 
 $(document).ready(function() {
-    
+
     $.ajaxSetup({ 
          beforeSend: function(xhr, settings) {
              function getCookie(name) {
@@ -39,7 +39,6 @@ $(document).ready(function() {
 function time() {
 
     difference = new Date() - d;
-    alert(difference);
     $.ajax({
          type:"POST",
          url:"/save",
