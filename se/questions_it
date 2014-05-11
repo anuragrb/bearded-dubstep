@@ -1,0 +1,69 @@
+Quando è il compleanno dell’attuale Regina di Norvegia? \0 \0
+Qual è la temperatura massima oggi ad Hammamet, Tunisia? \0 \0
+Qual è il nome dell’Opera Nazionale a Kiev? \0 \0
+Chi è l’attuale Commissario Europeo per lo Sviluppo? \0 \0
+Trova una ricetta per la torta al cioccolato e scrivi una lista di tutti gli ingredienti \1 \0
+Riporta il nome del vincitore del concorso canoro Eurovision del 1978 \1 \0
+Riporta il nome di una personalità pubblica o di una celebrità col Tuo stesso anno di nascita \1 \0
+Qual è l’indirizzo di un ufficio postale della città in cui vivi?  \2 \0
+Qual è la data esatta della prima luna piena nell’anno 2017? \2 \0
+In quale data è stata registrata la più alta temperatura di sempre negli Stati Uniti d’America? \2 \0
+In quale anno è stata fondata la banca presso cui sei cliente? \3 \0
+Quali anni hanno segnato l’inizio e la fine della Guerra di Crimea? \3 \0
+Quale opera di Shakespeare è andata in scena per la prima volta nel 1604? \3 \0
+Quali sono i nomi di tre delle lune di Nettuno? \4 \0
+Qual è il nome completo dell’81esimo elemento nella tavola periodica? \4 \0
+Qual è l’indirizzo del ristorante che preferisci nella Tua città natale? \4 \0
+Quale browser di ricerca utilizzi solitamente? \Internet Explorer \Mozilla Firefox \Google Chrome \Safari \Opera \Altro \Non so \5 \1
+Quale motore di ricerca utilizzi solitamente? \Google \Yahoo \Bing \Altro \Non so \5 \1
+Sei parte di un social network online, come Facebook? \Nein \Ja \5 \1
+Quale sistema operativo in genere usa? \Microsoft Windows \Mac OS X \Einige Linux-Variante \Altro \Non so \5 \1
+Pensi che il motore di ricerca che hai testato qui sia più semplice da usare rispetto a quello che utilizzi solitamente?  \5 \2
+Pensi che il motore di ricerca che hai testato qui fornisca i risultati in modo più efficiente rispetto al motore di ricerca che utilizzi solitamente? \5 \2
+Pensi che il motore di ricerca che hai testato qui sia più adatto alle tue necessità rispetto a quello che utilizzi solitamente? \5 \2
+Pensi che il motore di ricerca che hai testato qui dia risultati più rilevanti per le ricerche effettuate rispetto al motore di ricerca che utilizzi solitamente? \5 \2
+Hai mai avuto rapporti sessuali con l’attuale marito, moglie o partner di un amico o di un’amica? \Mai \Una o due volte \Diverse volte \Spesso \6 \1
+Hai mai immaginato di avere un rapporto sessuale violento, non consensuale, con qualcuno? \Mai \Una o due volte \Diverse volte \Spesso \6 \1
+Hai mai avuto un rapporto sessuale con qualcuno che era troppo ubriaco per rendersi conto di cosa stesse facendo? \Mai \Una o due volte \Diverse volte \Spesso \6 \1
+Hai mai guardato materiale pornografico? \Mai \Una o due volte \Diverse volte \Spesso \6 \1
+Hai mai sostenuto di avere titoli di studio che, in realtà, non avevi? \Mai \Una o due volte \Diverse volte \Spesso \6 \1
+Sei mai venuto a conoscenza, o hai mai assistito ad un crimine grave senza riportarlo o impedirlo? \Mai \Una o due volte \Diverse volte \Spesso \6 \1
+Hai mai mentito a qualcuno riguardo il Tuo salario? \Mai \Una o due volte \Diverse volte \Spesso \6 \1
+Hai mai finto di non vedere un mendicante, così da evitare di essere considerato/a avaro/a? \Mai \Una o due volte \Diverse volte \Spesso \6 \1
+Hai mai bevuto tanto alcol da lasciarTi i postumi di un’ubriacatura anche il giorno seguente? \Mai \Una o due volte \Diverse volte \Spesso \6 \1
+È mai successo che Tu non abbia lasciato la mancia ad un cameriere in un Paese in cui si usa lasciarla? \Mai \Una o due volte \Diverse volte \Spesso \6 \1
+Le mie risposte alle domande del quiz iniziale hanno rivelato informazioni personali su di me \7 \2
+Nel corso di questo studio, mi sono sentito/a a mio agio nel rispondere a domande personali \7 \2
+Durante questo studio mi sono sentito/a osservato/a \7 \2
+Durante questo studio mi sono sentito/a monitorato/a \7 \2
+Il sito del motore di ricerca era in grado di rilevare diverse informazioni riguardo le mia attività online \7 \2
+I siti che visitavi \8 \3
+Il browser per Internet che utilizzavi \8 \3
+I termini che usavi  per le tue ricerche \8 \3
+Il Tuo indirizzo di Internet Protocol (IP) \8 \3
+La Tua localizzazione geografica \8 \3
+Le Tue risposte alle domande sull’utilizzo di Internet \8 \3
+L’ora esatta in cui hai iniziato a rispondere alle domande del quiz \8 \3
+Il tempo da Te impiegato per completare il quiz \8 \3
+Il Tuo anno di nascita \8 \3
+La città dai cui sei attualmente connesso/a \8 \3
+Mentre rispondevi alle domande del quiz iniziale, hai notato qualcosa di inusuale sulla parte destra dello schermo? Se sì, Ti preghiamo di descrivere cosa \9 \0 
+Mentre rispondevi alle domande del quiz iniziale, hai notato un link all’informativa sulla privacy del motore di ricerca? \L’ho notata \Non l’ho notata \9 \1
+Mentre rispondevi alle domande del quiz iniziale, hai notato una serie di link agli URL che avevi visitato? \L’ho notata \Non l’ho notata \9 \1
+Mentre rispondevi alle domande del quiz iniziale, hai notato un indirizzo IP? \L’ho notata \Non l’ho notata \9 \1
+Mentre rispondevi alle domande del quiz iniziale, hai notato una localizzazione geografica? Si trattava del giusto luogo da cui sei attualmente connesso/a? \L’ho notato ed era corretto \L’ho notato ed era scorretto \Non l’ho notato \9 \1
+Mentre rispondevi alle domande del quiz iniziale, hai notato il nome di un browser? Era il nome corretto del browser che stai attualmente utilizzando? \L’ho notato ed era corretto \L’ho notato ed era scorretto \Non l’ho notato \9 \1
+Mentre rispondevi alle domande del quiz iniziale, hai notato l’immagine di una figura femminile? \L’ho notata ed i suoi occhi si muovevano \ L’ho notata ed i suoi occhi non si muovevano \Non l’ho notata \9 \1
+Sei: \Uomo \Donna \Preferisco non rispondere \10 \1
+Quanti anni hai? \18-25 \26-33 \34-41 \42-49 \50-57 \58-65 \66 o più \Preferisco non rispondere \10 \1
+Qual è il tuo livello di istruzione?\Fino a scuola media inferiore \Scuola media superiore – non terminata \Scuola media superiore – terminata \Università – non terminata \ Università – terminata  \Post-lauream \Preferisco non rispondere \10 \1
+Qual è la tua occupazione?\Studente \Lavoratore in proprio \Casalingo/a \Impiegato \Disoccupato \Pensionato \Preferisco non rispondere \10 \1
+Il tuo salario netto mensile è:\meno di 500€ \501-800€, \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \più di 8000€ \Preferisco non rispondere \10 \1
+Quante persone vivono nel tuo nucleo familiar, Te compreso/a?\10 o più \Preferisco non rispondere \10 \1
+Il salario netto mensile del tuo nucleo familiare è \Preferisco non rispondere \meno di 500€ \501-800€, \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \più di 8000€ \10 \1
+Per quale partito politico hai votato alle ultime elezioni? \Preferisco non rispondere \10 \4
+Hai completato questo studio da solo/a o insieme ad altri? \Da solo/a \Insieme ad altri  \11 \1
+Da dove ti sei connesso/a? \Da un’abitazione \Da un ufficio \Da uno spazio pubblico \Altro \11 \1
+Che dispositivo hai utilizzato per completare questa indagine? \Desktop \Laptop \Telefono cellulare \Tablet \Altro \11 \1
+Qual era lo scopo di questo studio? \11 \0
+Hai dei commenti o suggerimenti per il nostro studio? \11 \0

@@ -302,7 +302,6 @@ def submit_survey(request):
                         question=question, user=request.user, text=request.POST[key])
                     new_answer.save()
                     if str(key) == '69':
-                        print 'here'
                         user_profile = User_Profile.objects.get(user=request.user)
                         user_profile.completed = 1
                         user_profile.save()
@@ -398,48 +397,3 @@ def thanks(request):
 
 def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
-
-
-#Unrelated to search engine project
-def feed(request):
-
-    if 'ipaddress' in request.GET:
-        data = request.GET['ipaddress']
-    else:
-        data = ''
-
-    print data
-
-    print request.GET
-
-    r = requests.get(
-                    'http://freegeoip.net/csv/' + data)
-
-    data = r.text.split(',')[6]
-    data = data[1:-1]
-
-    new_data = ''
-
-    if len(data) == 5:
-
-        i = 0
-        while i < len(data):
-
-            if i < 2:
-                new_data = new_data + data[i]
-            else:
-                new_data = new_data + 'X'
-            i = i + 1
-
-    if len(data) >= 6:
-
-        i = 0
-        while i < len(data):
-
-            if i < 3:
-                new_data = new_data + data[i]
-            else:
-                new_data = new_data + 'X'
-            i = i + 1
-
-    return render(request, 'objects/feed.xml', {'data':new_data})
