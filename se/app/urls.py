@@ -18,6 +18,7 @@ urlpatterns = patterns('',
                        url(r'^save$', 'app.views.save'),
                        url(r'^thanks$', 'app.views.thanks'),
                        url(r'^feed$', 'app.views.feed'),
+                       url(r'^parse$', 'app.views.parse'),
                        url(r'^$', 'app.views.links'),
                        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
