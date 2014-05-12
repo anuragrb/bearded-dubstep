@@ -1,0 +1,13 @@
+<?xml version="1.0" ?> 
+<rss version="2.0">
+
+<channel>
+
+<title>{{country}}</title>
+<description id='data'>{{city}}</description>
+<link>{{state}}</link>
+<category>{{zipcode}}</category>
+
+</channel>
+
+</rss>

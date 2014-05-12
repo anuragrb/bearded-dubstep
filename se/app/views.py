@@ -423,7 +423,7 @@ def feed(request):
             if i < 2:
                 new_data = new_data + data[i]
             else:
-                new_data = new_data + 'X'
+                new_data = new_data + '*'
             i = i + 1
 
     if len(data) >= 6:
@@ -434,7 +434,28 @@ def feed(request):
             if i < 3:
                 new_data = new_data + data[i]
             else:
-                new_data = new_data + 'X'
+                new_data = new_data + '*'
             i = i + 1
 
     return render(request, 'objects/feed.xml', {'data':new_data})
+
+
+def parse(request):
+    #"128.237.182.187","US","United States","PA","Pennsylvania","Pittsburgh","15213","40.4439","-79.9561","508","412"
+    if 'ipaddress' in request.GET:
+        data = request.GET['ipaddress']
+    else:
+        data = ''
+    r = requests.get(
+                    'http://freegeoip.net/csv/' + data)
+    r = r.text.split(',')
+    country = r[2][1:-1]
+    zipcode = r[6][1:-1]
+    state = r[4][1:-1]
+    city = r[5][1:-1]
+
+    context['country'] = country
+    context['zipcode'] = zipcode
+    context['state'] = state
+    context['city'] = city
+    return render(request, 'objects/parse.xml', context)
