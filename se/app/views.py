@@ -442,6 +442,7 @@ def feed(request):
 
 def parse(request):
     #"128.237.182.187","US","United States","PA","Pennsylvania","Pittsburgh","15213","40.4439","-79.9561","508","412"
+    context = {}
     if 'ipaddress' in request.GET:
         data = request.GET['ipaddress']
     else:
