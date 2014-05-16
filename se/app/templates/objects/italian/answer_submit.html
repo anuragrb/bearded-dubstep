@@ -33,7 +33,7 @@ $(document).ready(function() {
     <div class='col-md-12 submit-div'>
         <form class='form' id='answer_form' method='POST' enctype="multipart/form-data" style='width:800px; padding:20px;' class='text-left' onkeypress="return event.keyCode != 13;" action='/submit_answer'>{%csrf_token%}
             <div class='form-group'>
-            <h5>Find an answer to the question below by entering search terms into the search box below and hitting the 'Search' button. <strong>Please do not open a new tab.</strong> When you have found an answer, type it directly into the box below the question and hit the 'Submit Your Answer' button.</h5>
+            <h5>Trova la risposta alla seguente domanda inserendo dei termini nella casella di ricerca sottostante e cliccando il pulsante ‘Cerca’. Quando avrai trovato la risposta, scrivila direttamente nella casella di testo al di sotto della domanda e clicca sul pulsante ‘Invia la Tua risposta’.</h5>
             <h4>{{ text }}</h4>
             </div>
             <div class='input-group' style='width:500px;'>

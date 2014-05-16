@@ -1,21 +1,21 @@
 {% if current_group == 5 %}
-<h3>Thank you for having made it so far. Now, please complete this Internet use questionnaire (all questions are voluntary)</h3>
+<h3>Grazie per essere arrivato/a fin qui. Ti preghiamo ora di rispondere al seguente questionario sull’utilizzo di Internet (tutte le domande sono facoltative).</h3>
 {% elif current_group == 6 %}
-<h3>Now, please answer this questionnaire about personal behaviors (please note: all questions are voluntary)</h3>
+<h3>Ti preghiamo ora di rispondere al seguente questionario riguardante comportamenti personali (nota bene: tutte le domande sono facoltative)</h3>
 {% elif current_group == 9 %}
-<h3>Please answer the following questions (all questions are compulsory)</h3>
+<h3>Ti preghiamo di rispondere alle seguenti domande (tutte le domande sono obbligatorie)</h3>
 {% elif current_group == 7 %}
-<h3>Please indicate your agreement with the following statements (all questions are compulsory)</h3>
+<h3>Ti preghiamo di indicare se sei d’accordo con le seguenti affermazioni (tutte le domande sono obbligatorie)</h3>
 {% elif current_group == 8 %}
-<h3>Please indicate the likelihood that the following items were collected by the search engine (all questions are compulsory)</h3>
+<h3>Ti preghiamo di indicare con che probabilità il motore di ricerca ha raccolto ciasuna delle seguenti informazioni (tutte le domande sono obbligatorie)</h3>
 {% elif current_group == 11 %}
-<h3>We are almost done. Please answer these final questions (all questions are compulsory)</h3>
+<h3>Abbiamo quasi terminato. Ti preghiamo di rispondere a queste domande finali (tutte le domande sono obbligatorie).</h3>
 {% elif current_group == 12 %}
 <div id='disclosure' style='text-align: center;'>
-    <h3>Thank you for participating in this study! The study is now complete.
+    <h3>Grazie per aver partecipato! Hai completato questo studio.
     <br>
     <br>
-    This study is part of a European non-profit research project aimed at investigating privacy-related behaviour and attitudes. The results of this study will only be used for research purposes, and all answers will be kept anonymous.
+    Questo studio fa parte di un progetto di ricerca no-profit Europeo, volto ad esplorare comportamenti ed attitudini relative alla privacy. I risultati di questo studio saranno utilizzati esclusivamente a scopi di ricerca e tutte le risposte saranno mantenute anonime. 
     <br>
     <br>
     <img src='{{STATIC_URL}}download.jpg' />
@@ -23,5 +23,5 @@
     <br>
 </div>
 {% elif current_group == 10 %}
-<h3>Finally, please provide additional information, answering the following questions (all questions are compulsory)</h3>
+<h3>Infine, Ti preghiamo di fornirci qualche informazione in più rispondendo alle seguenti domande (tutte le domande sono obbligatorie)</h3>
 {% endif %}

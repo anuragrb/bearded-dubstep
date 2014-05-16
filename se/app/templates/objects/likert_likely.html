@@ -25,7 +25,57 @@
 <br>
 <br>
 {% elif request.session.language == 'DE' %}
+<div class='radioGroupBelow' style='padding-left:10px;'>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label>Sehr unwahrscheinlich<input type="radio" name="{{ q.question.id }}" value='Very Unlikely' /></label>
+    </div>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Unlikely' /></label>
+    </div>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Somewhat Unlikely' /></label>
+    </div>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Neutral' /></label>
+    </div>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Somewhat Likely' /></label>
+    </div>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Likely' /></label>
+    </div>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label>Sehr wahrscheinlich<input type="radio" name="{{ q.question.id }}" value='Very Likely' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page'/></label>
+    </div>
+</div>
+<br>
+<br>
 {% elif request.session.language == 'IT' %}
+<div class='radioGroupBelow' style='padding-left:10px;'>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label>Molto improbabile<input type="radio" name="{{ q.question.id }}" value='Very Unlikely' /></label>
+    </div>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Unlikely' /></label>
+    </div>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Somewhat Unlikely' /></label>
+    </div>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Neutral' /></label>
+    </div>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Somewhat Likely' /></label>
+    </div>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label class='blank'><br><input type="radio" name="{{ q.question.id }}" class='blank' value='Likely' /></label>
+    </div>
+    <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
+        <label>Molto probabile<input type="radio" name="{{ q.question.id }}" value='Very Likely' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page'/></label>
+    </div>
+</div>
+<br>
+<br>
 {% else %}
 <div class='radioGroupBelow' style='padding-left:10px;'>
     <div style='display: inline-block; text-align:center; width: 100px; word-wrap: break-word;'>
