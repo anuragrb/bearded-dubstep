@@ -1,0 +1,130 @@
+{% extends "pages/base.html" %}
+
+{% block title %}Landing Page{% endblock %}
+
+{% block head %}
+
+<script type="text/javascript">
+
+function yesvalidator() {
+
+    if($('input[name=18older]:checked').val() == 'No') {
+
+        window.location.replace('/thanks');
+        return false;
+    }
+    if($('input[name=country]:checked').val() == 'No') {
+
+        window.location.replace('/thanks');
+        return false;
+    }
+    if($('input[name=minutes]:checked').val() == 'No') {
+
+        window.location.replace('/thanks');
+        return false;
+    }
+    if($('input[name=internet]:checked').val() == 'No') {
+
+        window.location.replace('/thanks');
+        return false;
+    }
+    if($('input[name=device]:checked').val() == 'No') {
+
+        window.location.replace('/thanks');
+        return false;
+    }
+    return true;
+}
+$(document).ready(function() {
+    var optionsBootstrap = {
+        classNamePrefix: 'bvalidator_bootstrap_',
+        position: {x:'top', y:'center'},
+        offset:     {x:15, y:0},
+        singleError: true,
+        template: '<div class="{errMsgClass}"><div class="bvalidator_bootstrap_arrow"></div><div class="bvalidator_bootstrap_cont1">{message}</div></div>',    
+        templateCloseIcon: '<div style="display:table"><div style="display:table-cell">{message}</div><div style="display:table-cell"><div class="{closeIconClass}">&#215;</div></div></div>'
+    };
+    
+    $('#beginform').bValidator(optionsBootstrap);
+
+});
+</script>
+
+<script src='{{ STATIC_URL }}js/ajax_submit.js'></script>
+
+{% endblock %}
+
+{% block content %}
+
+<div id='text' style='padding-top: 60px;' class='row'>
+
+    <div class='col-md-3'>
+
+    </div>
+
+    <div class='col-md-6'>
+
+        <h1>Welcome!</h1>
+        
+        <p>In this exercise you are called to evaluate a new search engine (Re-Search Engine). In the next pages, you will be asked a series of questions. Please use the Re-Search Engine, provided right below the question, in order to find the answers to those questions. This way, you will have a chance to experience the Re-Search Engine and evaluate its performance.</p>
+
+        <p>At the end of this searching exercise you will be asked to answer a brief questionnaire on your Internet use. This will help us in providing a better service.</p>
+
+        <p>The whole test will take approximately 30 minutes.</p>
+
+        <p>Please ensure that you have a reliable Internet connection before starting the test. If you abandon the test before the end, you will not be paid.</p>
+
+        <p>Thank you for your collaboration!</p>
+
+        <p>In order to participate in this study, you must be 18 years old or older, you must be connecting from the U.S.A., you must have at least 30 uninterrupted minutes to complete the study, and at the moment you must be using a reliable Internet connection that will make it possible for you to complete the study.</p>
+
+        <p>You will also be asked some non-mandatory questions about personal behaviors.</p>
+
+        <br>
+        <form id='beginform' onsubmit='return yesvalidator();' action='/se' method='POST'>{% csrf_token %}
+
+            <p>1. Are you 18 years old or older?
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="18older" value='Yes'  />
+                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="18older" value='No'/></p>
+            <br>
+
+            <p>2. Are you connecting from the U.S.A.?
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="country" value='Yes' />
+                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="country" value='No'/></p>
+            <br>
+
+            <p>3. Do you have at least 30 uninterrupted minutes to complete the study? 
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="minutes" value='Yes'  />
+                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="minutes" value='No'/></p>
+            <br>
+
+            <p>4. At the moment, do you have a reliable Internet connection that will make it possible for you to complete the study?
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="internet" value='Yes'  />
+                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="internet" value='No'/></p>
+            <br>
+
+            <p>5. Are you currently using a desktop or a laptop?
+                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="device" value='Yes'  />
+                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="device" value='No'/></p>
+            <br>
+
+            <input type='Submit' value='Begin' class='btn btn-primary'/>
+
+        </form>
+
+    </div>
+
+</div>
+
+<noscript>
+<style>
+#text {
+
+    display: none;
+}
+</style>
+
+You need to have javascript enabled on your browser to continue. Please see instructions on how to do so for your browser <a href="http://enable-javascript.com/">here.</a> Once enabled, you can refresh this page to continue.
+</noscript>
+
+{% endblock %}

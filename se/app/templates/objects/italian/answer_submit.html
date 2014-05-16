@@ -1,0 +1,49 @@
+<script>
+
+var d;
+var t;
+
+$(document).ready(function() {
+
+    d = new Date();
+});
+function savetime() {
+
+    difference = new Date() - d;
+    document.getElementById('clicktime').value = difference;
+}
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    var optionsBootstrap = {
+        classNamePrefix: 'bvalidator_bootstrap_',
+        position: {x:'top', y:'center'},
+        offset:     {x:15, y:0},
+        singleError: true,
+        template: '<div class="{errMsgClass}"><div class="bvalidator_bootstrap_arrow"></div><div class="bvalidator_bootstrap_cont1">{message}</div></div>',    
+        templateCloseIcon: '<div style="display:table"><div style="display:table-cell">{message}</div><div style="display:table-cell"><div class="{closeIconClass}">&#215;</div></div></div>'
+    };
+        
+    $('#answer_form').bValidator(optionsBootstrap);
+});
+</script>
+
+<div class='row'>
+    <div class='col-md-12 submit-div'>
+        <form class='form' id='answer_form' method='POST' enctype="multipart/form-data" style='width:800px; padding:20px;' class='text-left' onkeypress="return event.keyCode != 13;" action='/submit_answer'>{%csrf_token%}
+            <div class='form-group'>
+            <h5>Find an answer to the question below by entering search terms into the search box below and hitting the 'Search' button. <strong>Please do not open a new tab.</strong> When you have found an answer, type it directly into the box below the question and hit the 'Submit Your Answer' button.</h5>
+            <h4>{{ text }}</h4>
+            </div>
+            <div class='input-group' style='width:500px;'>
+                <textarea id='answer' name='answer' onfocus='savetime();' class='form-control' placeholder='Your answer' autocomplete="off" data-bvalidator='required' data-bvalidator-msg='Please do not submit a blank answer'></textarea>
+                <br>
+                <br>
+                <input type='submit' id='submitanswer' class='btn btn-primary' value='Submit Your Answer' />
+            </div>
+            <input type="hidden" value='{{ question.id }}' id='questionid' name='questionid' />
+            <input type="hidden" value='' id='clicktime' name='clicktime' />
+        </form>
+    </div>
+</div>

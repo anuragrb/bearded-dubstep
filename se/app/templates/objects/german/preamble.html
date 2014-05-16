@@ -1,0 +1,27 @@
+{% if current_group == 5 %}
+<h3>Danke, dass Sie so weit gekommen sind. Bitte beantworten Sie jetzt die Fragen zu Ihren Internetnutzungsgewohnheiten (die Beantwortung dieser Fragen ist freiwillig).</h3>
+{% elif current_group == 6 %}
+<h3>Bitte beantworten Sie jetzt die folgenden Fragen zu persönlichen Verhaltensgewohnheiten (die Beantwortung der Fragen ist freiwillig).</h3>
+{% elif current_group == 9 %}
+<h3>Bitte antworten Sie folgende Fragen (alle Fragen sind verpflichtend)</h3>
+{% elif current_group == 7 %}
+<h3>Bitte geben Sie an, inwieweit Sie den folgenden Aussagen zustimmen (alle Fragen sind verpflichtend)</h3>
+{% elif current_group == 8 %}
+<h3>Bitte geben Sie die Wahrscheinlichkeit an, mit der folgende Informationen von der Suchmaschine aufgezeichnet wurden (alle Fragen sind verpflichtend)</h3>
+{% elif current_group == 11 %}
+<h3>Sie sind fast fertig. Bitte beantworten Sie noch die folgenden Fragen (alle Fragen sind verpflichtend).</h3>
+{% elif current_group == 12 %}
+<div id='disclosure' style='text-align: center;'>
+    <h3>Vielen Dank, dass Sie an unserer Studie teilgenommen haben! Die Studie ist jetzt abgeschlossen. 
+    <br>
+    <br>
+    Diese Studie ist Teil eines europäischen gemeinnützigen Forschungsprojekts, das datenschutzbezogene Verhaltensweisen und Einstellungen untersucht. Die Ergebnisse dieser Studie werden nur zu Forschungszwecken eingesetzt, und alle Antworten werden anonym gehalten. 
+    <br>
+    <br>
+    <img src='{{STATIC_URL}}download.jpg' />
+    <br>
+    <br>
+</div>
+{% elif current_group == 10 %}
+<h3>Bitte beantworten Sie noch folgende Zusatzinformationen (alle Fragen sind verpflichtend).</h3>
+{% endif %}

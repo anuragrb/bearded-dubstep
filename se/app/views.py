@@ -44,7 +44,7 @@ def links(request):
             request.session['username'] = tick
             try:
                 r = requests.get(
-                    'http://freegeoip.net/csv/' + get_client_ip(request))
+                    'http://theresearchgroup.org:8080/csv/' + get_client_ip(request))
                 city = r.text.split(',')[5]
                 city = city[1:-1]
                 if len(city) < 1:
@@ -53,7 +53,7 @@ def links(request):
                     request.session['city'] = city
             except Exception as e:
                 logger.exception(
-                    'There was a key error while retrieving a city or country from freegeoip.net')
+                    'There was a key error while retrieving a city or country from theresearchgroup.org:8080')
                 city = ''
                 request.session['city'] = ''
             new_profile = User_Profile(user=new_user, tick=tick, ip_address=get_client_ip(request), privacy_clicked=0, city=city)
@@ -63,26 +63,27 @@ def links(request):
                 country = str(request.GET['C'])
                 if country == '1':
                     request.session['country'] = 'UK'
+                    request.session['redirect'] = 'english'
                     request.session['language'] = 'EN'
                 elif country == '2':
                     request.session['country'] = 'Germany'
+                    request.session['redirect'] = 'german'
                     request.session['language'] = 'DE'
                 elif country == '3':
                     request.session['country'] = 'Poland'
+                    request.session['redirect'] = 'polish'
                     request.session['language'] = 'PO'
                 elif country == '4':
                     request.session['country'] = 'Italy'
+                    request.session['redirect'] = 'italian'
                     request.session['language'] = 'IT'
             else:
                 request.session['country'] = 'Undefined'
+                request.session['redirect'] = 'english'
                 request.session['language'] = 'EN'
             condition = random.randint(1, 8)
             request.session['conint'] = condition
             return redirect('/landing')
-
-    elif 'workerId' in request.GET:
-
-        return render(request, 'objects/mturk_landing.html')
 
     else:        
         if request.user.is_authenticated():
@@ -136,7 +137,7 @@ def landing(request):
             user_profile.browser = request.session['browser']
 
         user_profile.save()
-        return render(request, "objects/landing.html", context)
+        return render(request, "objects/{0}/landing.html".format(request.session['redirect']), context)
     else:
         return redirect('/')
 
@@ -184,7 +185,7 @@ def se(request):
             request.session['answered_index'] = request.GET['qid']
             context['question'] = question
             context['text'] = language(request, question)
-            return render(request, 'objects/se.html', context)
+            return render(request, 'objects/{0}/se.html'.format(request.session['redirect']), context)
 
         if not 'answered_index' in request.session:
             user_profile.begin_time = datetime.now()
@@ -197,7 +198,7 @@ def se(request):
                 id=request.session['answered_index'])
             context['question'] = question
             context['text'] = language(request, question)
-            return render(request, 'objects/se.html', context)
+            return render(request, 'objects/{0}/se.html'.format(request.session['redirect']), context)
 
         elif request.session['answered_index'] > 4:
             questions = Question.objects.filter(
@@ -208,7 +209,7 @@ def se(request):
                 q['question'] = question
                 q['text'] = text
                 context['questions'].append(q)
-            return render(request, 'objects/select.html', context)
+            return render(request, 'objects/{0}/select.html'.format(request.session['redirect']), context)
     else:
         return redirect('/')
 
@@ -261,12 +262,12 @@ def submit_answer(request):
 
 def privacy(request):
     context = {'page': 'privacy'}
-    return render(request, "objects/privacy.html")
+    return render(request, "objects/{0}/privacy.html".format(request.session['redirect']))
 
 
 def privacy_simplified(request):
     context = {'page': 'privacy'}
-    return render(request, "objects/privacy.html")
+    return render(request, "objects/{0}/privacy.html".format(request.session['redirect']))
 
 
 def survey(request):
@@ -286,7 +287,7 @@ def survey(request):
         q['category'] = question.category
         context['questions'].append(q)
 
-    return render(request, 'objects/survey.html', context)
+    return render(request, 'objects/{0}/survey.html'.format(request.session['redirect']), context)
 
 
 def submit_survey(request):
@@ -407,7 +408,7 @@ def feed(request):
     else:
         data = ''
     r = requests.get(
-                    'http://freegeoip.net/csv/' + data)
+                    'http://theresearchgroup.org:8080/csv/' + data)
 
     print r
     data = r.text.split(',')[6]
@@ -441,14 +442,13 @@ def feed(request):
 
 
 def parse(request):
-    #"128.237.182.187","US","United States","PA","Pennsylvania","Pittsburgh","15213","40.4439","-79.9561","508","412"
     context = {}
     if 'ipaddress' in request.GET:
         data = request.GET['ipaddress']
     else:
         data = ''
     r = requests.get(
-                    'http://freegeoip.net/csv/' + data)
+                    'http://theresearchgroup.org:8080/csv/' + data)
     r = r.text.split(',')
     country = r[2][1:-1]
     zipcode = r[6][1:-1]

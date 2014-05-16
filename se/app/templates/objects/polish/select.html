@@ -1,0 +1,186 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}Choose your question{% endblock %}
+
+{% block head %}
+
+<script>
+
+var d;
+var t;
+
+$(document).ready(function() {
+
+    $.ajaxSetup({ 
+         beforeSend: function(xhr, settings) {
+             function getCookie(name) {
+                 var cookieValue = null;
+                 if (document.cookie && document.cookie != '') {
+                     var cookies = document.cookie.split(';');
+                     for (var i = 0; i < cookies.length; i++) {
+                         var cookie = jQuery.trim(cookies[i]);
+                         // Does this cookie string begin with the name we want?
+                     if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                         break;
+                     }
+                 }
+             }
+             return cookieValue;
+             }
+             if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+                 // Only send the token to relative URLs i.e. locally.
+                 xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+             }
+         } 
+    });
+    d = new Date();
+});
+function time() {
+
+    difference = new Date() - d;
+    $.ajax({
+         type:"POST",
+         url:"/save",
+         data: {
+            difference: difference,
+         },
+         success: function(return_data){
+
+            
+         }
+    });
+}
+</script>
+
+{% if page == 'IN' %}
+    <style>
+        body {
+            font-family: 'Comic Sans MS';
+            background-color: #f39c12;
+        }
+        h4, h5 {
+            font-family: 'Comic Sans MS';
+            color: red;
+        }
+    </style>
+    <style>
+        #image-div {
+
+            background-color:#FFD801;
+        }
+        .form-div {
+
+            background-color:#FFD801;
+            padding-right:20px; border-right: 5px solid #f39c12;
+            min-height:800px;
+        }
+        .submit-div {
+
+            background-color:#FFD801;
+        }
+    </style>
+    <script type='text/javascript'>
+        window.setInterval(function() {
+            $('.gs-title').css('font-family', 'Comic Sans MS');
+            $('.gs-snippet').css('font-family', 'Comic Sans MS');
+            $('.gsc-url-bottom').css('font-family', 'Comic Sans MS');
+            $('.gsc-cursor-page').css('font-family', 'Comic Sans MS');
+            $('.gsc-control-cse').css('background-color', '#FFD801');
+            $('#results').css('background-color', '#FFD801');
+            $('#___gsce_0').css('background-color', '#FFD801');
+            $('.gsc-control-cse').css('border', '0px');
+        }, 1);
+    </script>
+{% else %}
+    <style>
+    #VHSS {
+
+        width:350px;
+    }
+    * {
+      -webkit-border-radius: 0 !important;
+         -moz-border-radius: 0 !important;
+              border-radius: 0 !important;
+    }
+    #image-div {
+
+        background-color: #009999;
+    }
+    .modal-dialog
+    {
+      width: 800px;/* your width */
+    }
+    .form-div {
+
+        background-color:#CEECF5;
+        padding-right:20px; border-right: 5px solid #FFF;
+        min-height:800px;
+    }
+    .submit-div {
+
+        background-color:#CEECF5;
+    }
+    </style>
+    <script type='text/javascript'>
+    window.setInterval(function() {
+            $('.gsc-control-cse').css('background-color', '#CEECF5');
+            $('.gsc-control-cse').css('border', '0px');
+            $('#results').css('background-color', '#CEECF5');
+            $('#___gsce_0').css('background-color', '#CEECF5');
+            $('#gsc-resultbox-visible').css('background-color', '#CEECF5');
+        }, 1);
+    </script>
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+{% include 'objects/header.html' %}
+<br>
+<div class='row'>
+    <div class='col-md-8 form-div form-group'>
+        <div class='form-group'>
+            <h4 style='padding-left:20px;'>Please select one of the following three questions to answer. You can choose the question to answer by clicking on the question itself. After you click on the question, you will be asked to provide your answer to that question in a text box</h4>
+            <br>
+            </div>
+            <div>
+            {% for q in questions %}
+                <h4 style='padding: 20px;'><a onclick='time();' href='/se?qid={{ q.question.id }}'>{{ q.text }}</a></h4>
+                <br>
+            {% endfor %}
+            </div>
+    </div>
+    <div class='col-md-4 form-div' id='condition' style='padding-left: 10px; '>
+        {% if page == 'AN' %}
+            <div style='text-align:center;'>
+            {% include 'objects/anthropomorphic.html' %}
+            </div>
+        {% endif %}
+        {% if page == 'IP' %}
+            {% include 'objects/english/ip.html' %}
+        {% endif %}
+        {% if page == 'CL' %}
+        {% include 'objects/english/tracking.html' %}
+        {% else %}
+            <script>
+                $(document).ready(function() {
+                    $('#results').on('click', 'a', function (event) {
+                        result_text = $(this).text();
+                        result_href = $(this).attr('href');
+                        submit_search(result_text, result_href);
+                    });
+                });
+            </script>
+        {% endif %}
+        {% if page == 'ST' %}
+            <div style='text-align:center;'>
+            {% include 'objects/static.html' %}
+            </div>
+        {% endif %}
+        {% include 'objects/english/footer.html' %}
+    </div>
+</div>
+
+{% endblock %}

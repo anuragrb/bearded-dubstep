@@ -1,0 +1,20 @@
+{% block head %}
+
+{% endblock %}
+
+<div class="modal fade" id="privacy_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h1 class="modal-title" id="myModalLabel">Privacy Policy</h1>
+      </div>
+      <div class="modal-body">
+       {% include 'objects/english/privacy.html' %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

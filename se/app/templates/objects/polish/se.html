@@ -1,0 +1,153 @@
+{% extends 'pages/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Welcome to Research Engine{% endblock %}
+
+{% block head %}
+<script src='{{ STATIC_URL }}js/ajax_submit.js'></script>
+
+{% endblock %}
+
+{% if error %}
+
+{% else %}
+
+{% block content %}
+
+{% if page == 'IN' %}
+    <style>
+        body {
+            font-family: 'Comic Sans MS';
+            background-color: #f39c12;
+        }
+        h1, h2, h4, h5 {
+            font-family: 'Comic Sans MS';
+            color: green;
+        }
+    </style>
+    <style>
+        #image-div {
+
+            background-color:green;
+        }
+        .form-div {
+
+            background-color:#FFD801;
+            padding-right:20px; border-right: 5px solid #f39c12;
+            min-height:800px;
+        }
+        .submit-div {
+
+            background-color:#FFD801;
+        }
+    </style>
+    <script type='text/javascript'>
+
+        
+        window.setInterval(function() {
+            $('.gs-title').css('font-family', 'Comic Sans MS');
+            $('.gs-snippet').css('font-family', 'Comic Sans MS');
+            $('.gsc-url-bottom').css('font-family', 'Comic Sans MS');
+            $('.gsc-cursor-page').css('font-family', 'Comic Sans MS');
+            $('.gsc-control-cse').css('background-color', '#FFD801');
+            $('#results').css('background-color', '#FFD801');
+            $('#___gsce_0').css('background-color', '#FFD801');
+            $('.gsc-control-cse').css('border', '0px');
+        }, 1);
+    </script>
+{% else %}
+    <style>
+    #VHSS {
+
+        width:350px;
+    }
+    * {
+      -webkit-border-radius: 0 !important;
+         -moz-border-radius: 0 !important;
+              border-radius: 0 !important;
+    }
+    #image-div {
+
+        background-color: #009999;
+    }
+    .modal-dialog
+    {
+      width: 800px;/* your width */
+    }
+    .form-div {
+
+        background-color:#CEECF5;
+        padding-right:20px; border-right: 5px solid #FFF;
+        min-height:800px;
+    }
+    .submit-div {
+
+        background-color:#CEECF5;
+    }
+    </style>
+    <script type='text/javascript'>
+    window.setInterval(function() {
+            $('.gsc-control-cse').css('background-color', '#CEECF5');
+            $('.gsc-control-cse').css('border', '0px');
+            $('#results').css('background-color', '#CEECF5');
+            $('#___gsce_0').css('background-color', '#CEECF5');
+            $('#gsc-resultbox-visible').css('background-color', '#CEECF5');
+        }, 1);
+    </script>
+{% endif %}
+    {% include 'objects/header.html' %}
+    <br>
+    {% include 'objects/english/answer_submit.html' %}
+    <hr>
+    <div class='row' id='search-div' oncontextmenu='return false'>
+        <div class='col-md-8 form-div form-group'>
+            <h4 style='padding-left:20px; padding-top:20px;'>Please use our search engine box below to answer the question</h4>
+            <form onsubmit="return executeQuery();" id="cse-search-box-form-id" class='form-inline' style='width:800px; padding-left:20px; padding-top:6px;' class='text-left'>
+                <div class='input-group' style='width:500px;'>
+                    <input type="text" class='form-control' placeholder='Search' onkeydown="if (event.keyCode == 13) document.getElementById('searchbtn').click()" id="cse-search-input-box-id" onkeypress="return event.keyCode != 13;" size="25" autocomplete="off"/><span class="input-group-btn"><a href="#" id='searchbtn' onclick="submit_query();return executeQuery();" class='btn btn-success'><span class="glyphicon glyphicon-search"></span> Search</a></span>
+                </div>
+            </form>
+            <div class="row" id="results">
+                <gcse:searchresults-only></gcse:searchresults-only>
+            </div>
+        </div>
+        <div class='col-md-4 form-div' id='condition' style='padding-left: 10px; '>
+            {% if page == 'AN' %}
+            <div style='text-align:center;'>
+                {% include 'objects/anthropomorphic.html' %}
+                <p><h4>What would you like to search for?</h4></p>
+            </div>
+            {% endif %}
+            {% if page == 'IP' %}
+                {% include 'objects//english/ip.html' %}
+            {% endif %}
+            {% if page == 'CL' %}
+            {% include 'objects//english/tracking.html' %}
+            {% else %}
+                <script>
+                    $(document).ready(function() {
+                        $('#results').on('click', 'a', function (event) {
+                            result_text = $(this).text();
+                            result_href = $(this).attr('href');
+                            submit_search(result_text, result_href);
+                        });
+                    });
+                </script>
+            {% endif %}
+            {% if page == 'ST' %}
+            <div style='text-align:center;'>
+                {% include 'objects/static.html' %}
+                <p><h4>What would you like to search for?</h4></p>
+            </div>
+            {% endif %}
+            {% include 'objects/english/footer.html' %}
+        </div>
+    </div>
+{% endblock %}
+
+{% endif %}
+
+{% block footer %}
+
+{% endblock %}

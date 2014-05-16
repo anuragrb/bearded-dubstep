@@ -1,0 +1,15 @@
+<div id='search_results'>
+    <h4 style='padding: 10px;' id='click_history'>Click history:</h4>
+    <script>
+        $(document).ready(function() {
+            $('#results').on('click', 'a', function (event) {
+                result_text = $(this).text();
+                result_href = $(this).attr('href');
+                submit_search(result_text, result_href);
+            });
+        });
+    </script>
+    {% for result in search_results reversed %}
+        <h5 style='padding-left: 10px;'>{{ result.href }}</h5>
+    {% endfor %}
+</div>
