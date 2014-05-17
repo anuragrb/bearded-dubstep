@@ -142,7 +142,7 @@ function time() {
 <div class='row'>
     <div class='col-md-8 form-div form-group'>
         <div class='form-group'>
-            <h4 style='padding-left:20px;'>Please select one of the following three questions to answer. You can choose the question to answer by clicking on the question itself. After you click on the question, you will be asked to provide your answer to that question in a text box</h4>
+            <h4 style='padding-left:20px;'>Wybierz jedno spośród trzech pytań poniżej i odpowiedz na nie. Wyboru można dokonać klikając w odpowiednie pytanie. Po kliknięci w pytanie, pojawi się pod nim okno tekstowe, w które należy wpisać odpowiedź.</h4>
             <br>
             </div>
             <div>
@@ -159,10 +159,10 @@ function time() {
             </div>
         {% endif %}
         {% if page == 'IP' %}
-            {% include 'objects/english/ip.html' %}
+            {% include 'objects/polish/ip.html' %}
         {% endif %}
         {% if page == 'CL' %}
-        {% include 'objects/english/tracking.html' %}
+        {% include 'objects/polish/tracking.html' %}
         {% else %}
             <script>
                 $(document).ready(function() {
@@ -179,7 +179,7 @@ function time() {
             {% include 'objects/static.html' %}
             </div>
         {% endif %}
-        {% include 'objects/english/footer.html' %}
+        {% include 'objects/polish/footer.html' %}
     </div>
 </div>
 

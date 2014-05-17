@@ -64,48 +64,48 @@ $(document).ready(function() {
 
     <div class='col-md-6'>
 
-        <h1>Welcome!</h1>
+        <h1>Witaj!</h1>
         
-        <p>In this exercise you are called to evaluate a new search engine (Re-Search Engine). In the next pages, you will be asked a series of questions. Please use the Re-Search Engine, provided right below the question, in order to find the answers to those questions. This way, you will have a chance to experience the Re-Search Engine and evaluate its performance.</p>
+        <p>Podczas tego ćwiczenia będziesz oceniać nową wyszukiwarkę (Re-Search Engine). Kilka kolejnych stron zawiera serię pytań. Znajdź na nie odpowiedzi posługując się wyszukiwarką Re-Search, której okno znajduje się pod każdym pytaniem.  W ten sposób możesz wypróbować, jak działa Re-Search Engine i ocenić jej skuteczność.</p>
 
-        <p>At the end of this searching exercise you will be asked to answer a brief questionnaire on your Internet use. This will help us in providing a better service.</p>
+        <p>Pod koniec tego ćwiczenia zamieściliśmy krótki kwestionariusz dotyczący korzystania z Internetu. Pomoże nam on w zapewnieniu lepszej obsługi.</p>
 
-        <p>The whole test will take approximately 30 minutes.</p>
+        <p>Całość powinna zająć około 30 minut.</p>
 
-        <p>Please ensure that you have a reliable Internet connection before starting the test. If you abandon the test before the end, you will not be paid.</p>
+        <p>Przed rozpoczęciem ćwiczenia upewnij się, że połączenie Internetowe, z którego korzystasz jest stabilne. W przypadku przerwania testu przed jego zakończeniem, wynagrodzenie nie zostanie wypłacone.</p>
 
-        <p>Thank you for your collaboration!</p>
+        <p>Dziękujemy za współpracę.</p>
 
-        <p>In order to participate in this study, you must be 18 years old or older, you must be connecting from the U.S.A., you must have at least 30 uninterrupted minutes to complete the study, and at the moment you must be using a reliable Internet connection that will make it possible for you to complete the study.</p>
+        <p>IAby wziąć udział w tym badaniu, musisz mieć ukończone 18 lat i łączyć sie z Internetem z terenu Polski lub Niemiec. Czas trwania badania to 30 minut i przez ten czas nie może nastąpić przerwa w połączeniu z Internetem, dlatego przed jego rozpoczęciem upewnij się, że połączenie, z którego korzystasz jest stabilne.</p>
 
-        <p>You will also be asked some non-mandatory questions about personal behaviors.</p>
+        <p>Możesz również zostać poproszony niektóre nieobowiązkowe pytania dotyczące zachowań osobistych.</p>
 
         <br>
         <form id='beginform' onsubmit='return yesvalidator();' action='/se' method='POST'>{% csrf_token %}
 
-            <p>1. Are you 18 years old or older?
-                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="18older" value='Yes'  />
-                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="18older" value='No'/></p>
+            <p>1. Czy masz ukończone 18 lat?
+                <label style='padding-left:10px; padding-right:10px;'>Tak</label><input type="radio" name="18older" value='Yes'  />
+                <label style='padding-left:10px; padding-right:10px;'>Nie</label><input type="radio" name="18older" value='No'/></p>
             <br>
 
-            <p>2. Are you connecting from the U.S.A.?
-                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="country" value='Yes' />
-                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="country" value='No'/></p>
+            <p>2. Czy łączysz się z Internetem z terenu Niemiec / Polski?
+                <label style='padding-left:10px; padding-right:10px;'>Tak</label><input type="radio" name="country" value='Yes' />
+                <label style='padding-left:10px; padding-right:10px;'>Nie</label><input type="radio" name="country" value='No'/></p>
             <br>
 
-            <p>3. Do you have at least 30 uninterrupted minutes to complete the study? 
-                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="minutes" value='Yes'  />
-                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="minutes" value='No'/></p>
+            <p>3. Czy dysponujesz w tym momencie czasem 30 minut, aby ukończyć badanie?
+                <label style='padding-left:10px; padding-right:10px;'>Tak</label><input type="radio" name="minutes" value='Yes'  />
+                <label style='padding-left:10px; padding-right:10px;'>Nie</label><input type="radio" name="minutes" value='No'/></p>
             <br>
 
-            <p>4. At the moment, do you have a reliable Internet connection that will make it possible for you to complete the study?
-                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="internet" value='Yes'  />
-                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="internet" value='No'/></p>
+            <p>4. Czy masz w tej chwili stabilne połączenie z Internetem, które umożliwi ci ukończenie badania?
+                <label style='padding-left:10px; padding-right:10px;'>Tak</label><input type="radio" name="internet" value='Yes'  />
+                <label style='padding-left:10px; padding-right:10px;'>Nie</label><input type="radio" name="internet" value='No'/></p>
             <br>
 
-            <p>5. Are you currently using a desktop or a laptop?
-                <label style='padding-left:10px; padding-right:10px;'>Yes</label><input type="radio" name="device" value='Yes'  />
-                <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="device" value='No'/></p>
+            <p>5. Czy obecnie za pomocą komputera stacjonarnego lub laptopa?
+                <label style='padding-left:10px; padding-right:10px;'>Tak</label><input type="radio" name="device" value='Yes'  />
+                <label style='padding-left:10px; padding-right:10px;'>Nie</label><input type="radio" name="device" value='No'/></p>
             <br>
 
             <input type='Submit' value='Begin' class='btn btn-primary'/>

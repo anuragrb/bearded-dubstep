@@ -1,21 +1,21 @@
 {% if current_group == 5 %}
-<h3>Thank you for having made it so far. Now, please complete this Internet use questionnaire (all questions are voluntary)</h3>
+<h3>Dziękujemy za dotychczas poświęcony czas. Prosimy teraz o wypełnienie kwestionariusza korzystania z Internetu (wszystkie pytania są dobrowolne)</h3>
 {% elif current_group == 6 %}
-<h3>Now, please answer this questionnaire about personal behaviors (please note: all questions are voluntary)</h3>
+<h3>Teraz prosimy o wypełnienie ankiety dotyczącej zachowań osobowych (ważne: wszystkie pytania są dobrowolne)</h3>
 {% elif current_group == 9 %}
-<h3>Please answer the following questions (all questions are compulsory)</h3>
+<h3>Odpowiedz na pytania poniżej (wszystkie pytania są obowiązkowe)</h3>
 {% elif current_group == 7 %}
-<h3>Please indicate your agreement with the following statements (all questions are compulsory)</h3>
+<h3>Zaznacz, czy zgadzasz się ze stwierdzeniami poniżej (wszystkie pytania są obowiązkowe)</h3>
 {% elif current_group == 8 %}
-<h3>Please indicate the likelihood that the following items were collected by the search engine (all questions are compulsory)</h3>
+<h3>Wskaż jakie twoim zdaniem informacje zostały zebrane przez wyszukiwarkę (wszystkie pytania są obowiązkowe)</h3>
 {% elif current_group == 11 %}
-<h3>We are almost done. Please answer these final questions (all questions are compulsory)</h3>
+<h3>Badanie jest prawie ukończone. Odpowiedz na ostatnie pytania poniżej (wszystkie pytania są obowiązkowe)</h3>
 {% elif current_group == 12 %}
 <div id='disclosure' style='text-align: center;'>
-    <h3>Thank you for participating in this study! The study is now complete.
+    <h3>Dziękujemy za wzięcie udziału w badaniu. Badanie zostało zakończone.
     <br>
     <br>
-    This study is part of a European non-profit research project aimed at investigating privacy-related behaviour and attitudes. The results of this study will only be used for research purposes, and all answers will be kept anonymous.
+    Badanie jest częścią europejskiego projektu badawczego non-profit, którego celem jest badanie zachowań i postaw dotyczących ochrony prywatności. Wyniki zostaną wykorzystane wyłącznie do celów badawczych a wszystkie odpowiedzi będą przechowywane anonimowo.
     <br>
     <br>
     <img src='{{STATIC_URL}}download.jpg' />
@@ -23,5 +23,5 @@
     <br>
 </div>
 {% elif current_group == 10 %}
-<h3>Finally, please provide additional information, answering the following questions (all questions are compulsory)</h3>
+<h3>Na koniec, podaj informacje dodatkowe odpowiadając na pytania poniżej (wszystkie pytania są obowiązkowe)</h3>
 {% endif %}
