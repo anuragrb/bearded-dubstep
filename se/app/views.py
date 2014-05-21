@@ -393,7 +393,7 @@ def language(request, question):
 
 
 def thanks(request):
-    return render(request, 'objects/thanks.html')
+    return render(request, 'objects/{0}/thanks.html'.format(request.session['redirect']))
 
 
 def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
