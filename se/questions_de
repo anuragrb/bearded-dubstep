@@ -1,11 +1,11 @@
 Was ist der Geburtstag der aktuellen Königin von Norwegen? \0 \0
 Was ist die Tageshöchsttemperatur heute in Hammamet, Tunesien? \0 \0
-Wie lautet der Name der National-Oper in Kiew? \0 \0
+Wie lautet der Name der National Oper in Kiew \0 \0
 Wer ist der aktuelle europäische Kommissar für Entwicklung? \0 \0
 Finden Sie ein Rezept für Schokoladenkuchen, und listen Sie alle Zutaten auf. \1 \0
 Finden Sie den Name des Siegers des Eurovision Song Contests im Jahr 1978. \1 \0
 Finden Sie den Namen einer berühmten öffentlichen Person, oder eines Prominenten, der/die im selben Jahr wie Sie geboren ist. \1 \0
-Finden Sie die Postadresse einer Postfiliale an Ihrem Wohnort.  \2 \0
+Finden Sie die Postadresse einer Postfiliale in Ihrem Wohnort.  \2 \0
 Was ist das Datum des ersten Vollmonds im Jahr 2017? \2 \0
 An welchem Datum wurde die höchste Temperatur überhaupt in den USA aufgezeichnet? \2 \0
 In welchem Jahr wurde die Geschäftsbank, bei der Sie Kunde sind, gegründet? \3 \0
@@ -13,7 +13,7 @@ In welchen Jahren begann und endete der Krimkrieg? \3 \0
 Welches Shakespeare Stück wurde erstmalig im Jahr 1604 aufgeführt? \3 \0
 Was sind die Namen der drei Monde des Planeten Neptun? \4 \0
 Was ist der volle Name des 81ten Elements des Periodensystems? \4 \0
-Was ist die Adresse ihres Lieblingsrestaurants an Ihrem Geburtsort? \4 \0
+Was ist die Adresse ihres Lieblingsrestaurants in Ihrem Geburtsort? \4 \0
 Welchen Internet-Browser nutzen Sie meistens? \Internet Explorer \Mozilla Firefox \Google Chrome \Safari \Opera \Andere \Ich weiß es nicht \5 \1
 Welche Internet-Suchmaschine nutzen Sie meistens? \Google \Yahoo \Bing \Andere \Ich weiß es nicht \5 \1
 Sind Sie Mitglied in einem sozialen Netzwerk, wie z.B. Facebook? \Nein \Ja \5 \1
@@ -33,11 +33,11 @@ Sind Sie jemals einem Bettler aus dem Weg gegangen, um nicht als geizig angesehe
 Haben Sie jemals so viel getrunken, dass Sie einen Kater hatten?  \Niemals \Ein-oder Zweimal \Manchmal \Häufig \6 \1
 Haben Sie jemals einem Kellner kein Trinkgeld gegeben in einem Land, in dem dies eigentlich üblich ist?  \Niemals \Ein-oder Zweimal \Manchmal \Häufig \6 \1
 Meine Antworten zu den Fragen enthalten persönliche Informationen oder personenbezogene Daten über mich \7 \2
-Ich habe mich wohl gefühlt bei der Beantwortung persönlicher Fragen während dieser Studie \7 \2
-Ich habe mich beobachtet gefühlt während dieser Studie \7 \2
-Ich habe mich überwacht/monitored gefühlt während dieser Studie \7 \2
+Ich habe mich während dieser Studie wohl gefühlt bei der Beantwortung persönlicher Fragen \7 \2
+Ich habe mich während dieser Studie beobachtet gefühlt \7 \2
+Ich habe mich während dieser Studie überwacht/monitored gefühlt \7 \2
 Die Suchmaschinen-Webseite war in der Lage, verschiedene Informationen über meine Online-Aktivitäten zu erkennen \7 \2
-Die Webseiten, die Sie besucht haben <Sehr unwahrscheinlich> <Sehr wahrscheinlich>  \8 \3
+Die Webseiten, die Sie besucht haben \8 \3
 Der Internet-Browser, den Sie benutzt haben  \8 \3
 Die angegebenen Suchbegriffe \8 \3
 Ihre Internet Protocol (IP) Adresse \8 \3
@@ -49,8 +49,8 @@ Ihr Geburtsjahr \8 \3
 Die Stadt, aus der Sie aktuell mit dem Internet verbunden sind \8 \3
 Ist Ihnen etwas Ungewöhnliches auf der rechten Bildschirmseite aufgefallen, als Sie die Fragen beantwortet haben? Wenn ja, bitte beschreiben. \9 \0
 Haben Sie einen Link zu einer Datenschutzrichtlinie wahrgenommen, während Sie die Fragen beantwortet haben? \Ich habe ihn wahrgenommen \Ich habe ihn nicht wahrgenommen \9 \1
-Während Sie die Fragen beantwortet haben, haben Sie dabei verschiedene Links zu URLs wahrgenommen, die Sie besucht hatten? \Ich habe ihn nicht wahrgenommen \9 \1
-Haben Sie eine IP-Adresse wahrgenommen, während Sie die Fragen beantwortet haben? \Ich habe ihn nicht wahrgenommen \9 \1
+Während Sie die Fragen beantwortet haben, haben Sie dabei verschiedene Links zu URLs wahrgenommen, die Sie besucht hatten? \Ich habe ihn wahrgenommen \Ich habe ihn nicht wahrgenommen \9 \1
+Haben Sie eine IP-Adresse wahrgenommen, während Sie die Fragen beantwortet haben? \Ich habe ihn wahrgenommen \Ich habe ihn nicht wahrgenommen \9 \1
 Haben Sie wahrgenommen, dass ein geographischer Standort angezeigt wurde, während Sie die Fragen beantwortet haben? War es der richtige Standort, von dem Sie aktuell mit dem Internet verbunden sind? \Ich habe ihn wahrgenommen und er war korrekt \Ich habe ihn wahrgenommen und er war nicht korrekt \Ich habe ihn nicht wahrgenommen \9 \1
 Ist Ihnen der Browsername aufgefallen, mit dem Sie gearbeitet haben, während Sie die Fragen beantwortet haben? War es der richtige Name des Browsers, den Sie aktuell benutzen? \Ich habe ihn wahrgenommen und er war nicht korrekt \Ich habe ihn nicht wahrgenommen \9 \1
 Ist Ihnen eine weibliche Figur aufgefallen, während Sie die Fragen beantwortet haben? \Sie ist mir aufgefallen, und sie hat die Augen bewegt \Sie ist mir aufgefallen, und sie hat die Augen nicht bewegt \Sie ist mir nicht aufgefallen \9 \1
@@ -62,8 +62,8 @@ Ihr persönliches Einkommen (monatliches Nettogehalt) beträgt: \weniger als 500
 Wie viele Personen leben in Ihrem Haushalt, Sie eingeschlossen? \1-3 \4-6 \7-9 \10 und mehr \Ich möchte nicht antworten \10 \1
 Das durchschnittliche Einkommen Ihres gesamten Haushalts (monatliches Nettogehalt) beträgt: \weniger als 500€ \501-800€ \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \mehr als 8000€ \Ich möchte nicht antworten \10 \1
 Welche politische Partei haben Sie bei den letzten Wahlen gewählt? \Ich möchte nicht antworten \10 \4
-Haben Sie die Fragen allein oder zusammen mit anderen ausgefüllt?  \Allein>  \Mit anderen>  \11 \1
-Von wo aus haben Sie die Fragen ausgefüllt? \Zu Hause \Büro \Öffentlicher Bereich \Andere \11 \1
-Welches Gerät haben Sie verwenden, um diese Umfrage zu beantworten? \Desktop \Laptop \Mobiltelepnon \Tablet \Andere \11 \1
+Haben Sie die Fragen allein oder zusammen mit anderen ausgefüllt?  \Allein  \Mit anderen  \11 \1
+Von wo aus haben Sie die Fragen ausgefüllt? \Zu Hause \Büro \Öffentlicher Bereich \Anderswo \11 \1
+Welches Gerät haben Sie verwenden, um diese Umfrage zu beantworten? \Desktop \Laptop \Mobiltelepnon \Tablet \Anderes \11 \1
 Was war das Ziel dieser Studie? \11 \0
 Haben Sie Kommentare oder Verbesserungsvorschläge für unsere Studie? \11 \0
