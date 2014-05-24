@@ -67,7 +67,7 @@ $(document).ready(function() {
                             {% if request.session.language == 'PO' %}
                             <div class='radioGroupBelow' style='padding-bottom: 20px;'>
                                 <label class='blank'>{{ option.polish }}<input type="radio" id='option' name="{{ q.question.id }}" style='display:none;' class='blank' value='{{ option.polish }}'><input type='text' class='form-control' name="{{ q.question.id }}" onclick='document.getElementById("option").checked=true;'/></label>
-                                <label class='blank'>{{ option.polish }}<input type="radio" name="{{ q.question.id }}" class='blank' value='{{ option.polish }}' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' />I prefer not to answer</label>
+                                <label class='blank'>{{ option.polish }}<input type="radio" name="{{ q.question.id }}" class='blank' value='{{ option.polish }}' data-bvalidator='required' data-bvalidator-msg='Please answer all questions on this page' />Wolę nie odpowiadać</label>
                             </div>
                             {% elif request.session.language == 'DE' %}
                             <div class='radioGroupBelow' style='padding-bottom: 20px;'>
