@@ -37,10 +37,10 @@ $(document).ready(function() {
             <h4>{{ text }}</h4>
             </div>
             <div class='input-group' style='width:500px;'>
-                <textarea id='answer' name='answer' onfocus='savetime();' class='form-control' placeholder='Your answer' autocomplete="off" data-bvalidator='required' data-bvalidator-msg='Please do not submit a blank answer'></textarea>
+                <textarea id='answer' name='answer' onfocus='savetime();' class='form-control' placeholder='La tua risposta' autocomplete="off" data-bvalidator='required' data-bvalidator-msg='Please do not submit a blank answer'></textarea>
                 <br>
                 <br>
-                <input type='submit' id='submitanswer' class='btn btn-primary' value='Submit Your Answer' />
+                <input type='submit' id='submitanswer' class='btn btn-primary' value='Invia la tua risposta' />
             </div>
             <input type="hidden" value='{{ question.id }}' id='questionid' name='questionid' />
             <input type="hidden" value='' id='clicktime' name='clicktime' />
