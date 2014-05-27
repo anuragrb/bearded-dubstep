@@ -43,7 +43,7 @@ def reporting(request):
         now = now.replace(tzinfo=None)
         if time_start == None:
 
-             if user_country in country_incompletes.iterkeys():
+            if user_country in country_incompletes.iterkeys():
                 country_incompletes[user_country] += 1
             else:
                 if len(user_country) > 1:
