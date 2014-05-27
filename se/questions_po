@@ -1,69 +1,69 @@
-Jaka jest data urodzin obecnej kr\u00F3lowej Norwegii? \0 \0
-Jaka jest dzi\u015B temperatura w Hammamet w Tunezji? \0 \0
+Jaka jest data urodzin obecnej królowej Norwegii? \0 \0
+Jaka jest dziś temperatura w Hammamet w Tunezji? \0 \0
 Jak nazywa sie opera narodowa w Kijowie? \0 \0
 Kto jest obecnie Europejskim Komisarzem ds. Rozwoju? \0 \0
-Znajd\u017A przepis na ciasto czekoladowe i wymie\u0144 wszystkie sk\u0142adniki. \1 \0
-Kto wygra\u0142 Konkurs Piosenki Eurowizji w roku 1978? \1 \0
-Podaj nazwisko osoby publicznej lub innej s\u0142awnej osoby, kt\u00F3ra si\u0119 urodzi\u0142a w tym samym roku, co Ty. \1 \0
-Jaki jest adres urz\u0119du pocztowego w Twojej miejscowo\u015Bci? \2 \0
-Podaj dat\u0119 pierwszej pe\u0142ni ksi\u0119\u017Cyca w roku 2017? \2 \0
-W jakim dniu zarejestrowano w USA najwy\u017Csz\u0105 temperatur\u0119 powietrza? \2 \0
-W kt\u00F3rym roku otwarto bank, z kt\u00F3rego us\u0142ug korzystasz? \3 \0
-W kt\u00F3rym roku rozpocz\u0119\u0142a si\u0119 i zako\u0144czy\u0142a wojna krymska? \3 \0
-Kt\u00F3ra ze sztuk Szekspira zosta\u0142a wystawiona po raz pierwszy w 1604 roku? \3 \0
-Jak nazywaj\u0105 si\u0119 trzy ksi\u0119\u017Cyce Neptuna? \4 \0
-Podaj pe\u0142n\u0105 nazw\u0119 81. pierwiastka z tabeli Mendelejewa. \4 \0
+Znajdź przepis na ciasto czekoladowe i wymień wszystkie składniki. \1 \0
+Kto wygrał Konkurs Piosenki Eurowizji w roku 1978? \1 \0
+Podaj nazwisko osoby publicznej lub innej sławnej osoby, która się urodziła w tym samym roku, co Ty. \1 \0
+Jaki jest adres urzędu pocztowego w Twojej miejscowości? \2 \0
+Podaj datę pierwszej pełni księżyca w roku 2017? \2 \0
+W jakim dniu zarejestrowano w USA najwyższą temperaturę powietrza? \2 \0
+W którym roku otwarto bank, z którego usług korzystasz? \3 \0
+W którym roku rozpoczęła się i zakończyła wojna krymska? \3 \0
+Która ze sztuk Szekspira została wystawiona po raz pierwszy w 1604 roku? \3 \0
+Jak nazywają się trzy księżyce Neptuna? \4 \0
+Podaj pełną nazwę 81. pierwiastka z tabeli Mendelejewa. \4 \0
 Jaki jest adres Twojej ulubionej restauracji w miejscu urodzenia? \4 \0
-Jakiej przegl\u0105darki u\u017Cywasz najcz\u0119\u015Bciej? \Internet Explorer \Mozilla Firefox \Google Chrome \Safari \Opera \Innej \Nie Wiem \5 \1
-Jaki system operacyjny zazwyczaj u\u017Cy\u0107? \Microsoft Windows \Mac OS X \Niekt\u00F3re z dystrybucji Linuksa \Innej \Nie Wiem \5 \1
-Co wyszukiwarka ty zwykle u\u017Cywa\u0107? \Google \Yahoo \Bing \Innej \Nie Wiem \5 \1
-Czy korzystasz z portali spo\u0142eczno\u015Bciowych, na przyk\u0142ad Facebooka? \Tak \Nie \5 \1
-Czy uwa\u017Casz, \u017Ce testowana wyszukiwarka jest \u0142atwiejsza w obs\u0142udze ni\u017C ta, kt\u00F3rej zwykle u\u017Cywasz? \5 \2
-Czy uwa\u017Casz, \u017Ce testowana wyszukiwarka jest bardziej skuteczna ni\u017C ta, kt\u00F3rej zwykle u\u017Cywasz? \5 \2
-Czy uwa\u017Casz, \u017Ce testowana wyszukiwarka pasuje do Twoich potrzeb lepiej ni\u017C ta, kt\u00F3rej zwykle u\u017Cywasz? \5 \2
-Czy uwa\u017Casz, \u017Ce testowana wyszukiwarka podaje bardziej bezpo\u015Brednie wyniki wyszukiwania ni\u017C ta, kt\u00F3rej zwykle u\u017Cywasz? \5 \2
-Czy kiedykolwiek uprawia\u0142e\u015B/a\u015B seks z obecnym m\u0119\u017Cem, \u017Con\u0105 lub partnerem przyjaciela? \Nigdy \Jeden lub dwa razy \Czasami \Cz\u0119sto \6 \2
-Czy kiedykolwiek wyobra\u017Ca\u0142e\u015B/a\u015B sobie uprawianie brutalnego seksu bez zgody? \Nigdy \Jeden lub dwa razy \Czasami \Cz\u0119sto \6 \2
-Czy kiedykolwiek uprawia\u0142e\u015B/a\u015B seks z osob\u0105, kt\u00F3ra by\u0142a pod tak mocnym wp\u0142ywem alkoholu, \u017Ce nie by\u0142a \u015Bwiadoma swoich dzia\u0142a\u0144? \Nigdy \Jeden lub dwa razy \Czasami \Cz\u0119sto \6 \2
-Czy kiedykolwiek ogl\u0105da\u0142e\u015B/a\u015B materia\u0142y pornograficzne? \Nigdy \Jeden lub dwa razy \Czasami \Cz\u0119sto \6 \2
-Czy kiedykolwiek przyznawa\u0142e\u015B/a\u015B si\u0119 do wykszta\u0142cenia, kt\u00F3rego tak naprawd\u0119 nie posiadasz? \Nigdy \Jeden lub dwa razy \Czasami \Cz\u0119sto \6 \2
-Czy kiedykolwiek by\u0142e\u015B/a\u015B \u015Bwiadkiem powa\u017Cnego przest\u0119pstwa lub wiedzia\u0142e\u015B/a\u015B o nim a mimo to nie powiadomi\u0142e\u015B/a\u015B policji? \Nigdy \Jeden lub dwa razy \Czasami \Cz\u0119sto \6 \2
-Czy kiedykolwiek komu\u015B sk\u0142ama\u0142e\u015B/a\u015B na temat swoich dochod\u00F3w? \Nigdy \Jeden lub dwa razy \Czasami \Cz\u0119sto \6 \2
-Czy kiedykolwiek udawa\u0142e\u015B/a\u015B, \u017Ce nie widzisz osoby \u017Cebrz\u0105cej, aby nie by\u0107 uznanym za sk\u0105pca? \Nigdy \Jeden lub dwa razy \Czasami \Cz\u0119sto \6 \2
-Czy kiedykolwiek wypi\u0142e\u015B/a\u015B tak du\u017Co alkoholu, \u017Ce cierpia\u0142e\u015B/a\u015B z powodu kaca? \Nigdy \Jeden lub dwa razy \Czasami \Cz\u0119sto \6 \2
-Czy kiedykolwiek nie da\u0142e\u015B/a\u015B napiwku kelnerowi w kraju, w kt\u00F3rym zazwyczaj napiwki si\u0119 daje? \Nigdy \Jeden lub dwa razy \Czasami \Cz\u0119sto \6 \2
-Moje odpowiedzi na pytania wymaga\u0142y ujawnienia informacji osobistych. \7 \2
-Czu\u0142em/am si\u0119 komfortowo odpowiadaj\u0105c na osobiste pytania podczas tego badania. \7 \2
-Podczas badania mia\u0142em/am wra\u017Cenie, \u017Ce kto\u015B mnie obserwuje. \7 \2
-Podczas badania czu\u0142em/am, \u017Ce kto\u015B mnie monitoruje. \7 \2
-Strona internetowa wyszukiwarki by\u0142a w stanie wykry\u0107 wiele informacji o mojej dzia\u0142alno\u015Bci w Internecie. \7 \2
+Jakiej przeglądarki używasz najczęściej? \Internet Explorer \Mozilla Firefox \Google Chrome \Safari \Opera \Innej \Nie Wiem \5 \1
+Jaki system operacyjny zazwyczaj użyć? \Microsoft Windows \Mac OS X \Niektóre z dystrybucji Linuksa \Innej \Nie Wiem \5 \1
+Co wyszukiwarka ty zwykle używać? \Google \Yahoo \Bing \Innej \Nie Wiem \5 \1
+Czy korzystasz z portali społecznościowych, na przykład Facebooka? \Tak \Nie \5 \1
+Czy uważasz, że testowana wyszukiwarka jest łatwiejsza w obsłudze niż ta, której zwykle używasz? \5 \2
+Czy uważasz, że testowana wyszukiwarka jest bardziej skuteczna niż ta, której zwykle używasz? \5 \2
+Czy uważasz, że testowana wyszukiwarka pasuje do Twoich potrzeb lepiej niż ta, której zwykle używasz? \5 \2
+Czy uważasz, że testowana wyszukiwarka podaje bardziej bezpośrednie wyniki wyszukiwania niż ta, której zwykle używasz? \5 \2
+Czy kiedykolwiek uprawiałeś/aś seks z obecnym mężem, żoną lub partnerem przyjaciela? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek wyobrażałeś/aś sobie uprawianie brutalnego seksu bez zgody? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek uprawiałeś/aś seks z osobą, która była pod tak mocnym wpływem alkoholu, że nie była świadoma swoich działań? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek oglądałeś/aś materiały pornograficzne? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek przyznawałeś/aś się do wykształcenia, którego tak naprawdę nie posiadasz? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek byłeś/aś świadkiem poważnego przestępstwa lub wiedziałeś/aś o nim a mimo to nie powiadomiłeś/aś policji? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek komuś skłamałeś/aś na temat swoich dochodów? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek udawałeś/aś, że nie widzisz osoby żebrzącej, aby nie być uznanym za skąpca? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek wypiłeś/aś tak dużo alkoholu, że cierpiałeś/aś z powodu kaca? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Czy kiedykolwiek nie dałeś/aś napiwku kelnerowi w kraju, w którym zazwyczaj napiwki się daje? \Nigdy \Jeden lub dwa razy \Czasami \Często \6 \2
+Moje odpowiedzi na pytania wymagały ujawnienia informacji osobistych. \7 \2
+Czułem/am się komfortowo odpowiadając na osobiste pytania podczas tego badania. \7 \2
+Podczas badania miałem/am wrażenie, że ktoś mnie obserwuje. \7 \2
+Podczas badania czułem/am, że ktoś mnie monitoruje. \7 \2
+Strona internetowa wyszukiwarki była w stanie wykryć wiele informacji o mojej działalności w Internecie. \7 \2
 Odwiedzone strony Internetowe \8 \3
-U\u017Cyta przegl\u0105darka \8 \3
-U\u017Cyte terminy wyszukiwania \8 \3
-Tw\u00F3j adres IP \8 \3
+Użyta przeglądarka \8 \3
+Użyte terminy wyszukiwania \8 \3
+Twój adres IP \8 \3
 Twoja lokalizacja \8 \3
-Twoje odpowiedzi na pytania dotycz\u0105ce korzystania z Internetu \8 \3
-Godzina, o kt\u00F3rej badanie zosta\u0142o rozpocz\u0119te \8 \3
-Czas po\u015Bwi\u0119cony na odpowied\u017A na pytania \8 \3
+Twoje odpowiedzi na pytania dotyczące korzystania z Internetu \8 \3
+Godzina, o której badanie zostało rozpoczęte \8 \3
+Czas poświęcony na odpowiedź na pytania \8 \3
 Twoja data urodzenia \8 \3
 Twoja obecna lokalizacja \8 \3
-Czy podczas odpowiadania na pytania quizu zauwa\u017Cy\u0142e\u015B/a\u015B co\u015B niezwyk\u0142ego w prawej cz\u0119\u015Bci ekranu? Je\u015Bli co\u015B zauwa\u017Cy\u0142e\u015B/a\u015B, opisz to. \9 \0
-Czy podczas odpowiadania na pytania quizu zauwa\u017Cy\u0142e\u015B/a\u015B link do polityki prywatno\u015Bci wyszukiwarki? \Zauwa\u017Cy\u0142em go \Nie zauwa\u017Cy\u0142em go \9 \1
-Czy podczas odpowiadania na pytania quizu zauwa\u017Cy\u0142e\u015B/a\u015B kilka link\u00F3w do adres\u00F3w URL stron odwiedzonych przez ciebie wcze\u015Bniej? \Zauwa\u017Cy\u0142em go \Nie zauwa\u017Cy\u0142em go \9 \1
-Czy podczas odpowiadania na pytania quizu zauwa\u017Cy\u0142e\u015B/a\u015B adres IP? \Zauwa\u017Cy\u0142em go \Nie zauwa\u017Cy\u0142em go \9 \1
-Czy podczas odpowiadania na pytania quizu zauwa\u017Cy\u0142e\u015B/a\u015B lokalizacj\u0119? Czy by\u0142a to lokalizacja, z kt\u00F3rej w\u0142a\u015Bnie teraz \u0142\u0105czysz si\u0119 z Internetem? \Zauwa\u017Cy\u0142em to, i to by\u0142o prawid\u0142owe \Zauwa\u017Cy\u0142em to, i to nie by\u0142o prawid\u0142owe \Nie zauwa\u017Cy\u0142em go \9 \1
-Czy podczas odpowiadania na pytania quizu zauwa\u017Cy\u0142e\u015B/a\u015B nazw\u0119 przegl\u0105darki? Czy by\u0142a to przegl\u0105darka, kt\u00F3rej u\u017Cywasz w tym momencie? \Zauwa\u017Cy\u0142em to, i to by\u0142o prawid\u0142owe \Zauwa\u017Cy\u0142em to, i to nie by\u0142o prawid\u0142owe \Nie zauwa\u017Cy\u0142em go \9 \1
-Czy podczas odpowiadania na pytania quizu zauwa\u017Cy\u0142e\u015B/a\u015B obraz kobiecej postaci? \Zauwa\u017Cy\u0142em j\u0105, a jej oczy porusza\u0142y \Zauwa\u017Cy\u0142em j\u0105, a jej oczy nie by\u0142y w ruchu \Ja jej nie zauwa\u017Cy\u0107 \9 \1
-Jeste\u015B \M\u0119\u017Cczyzn\u0105 \Kobiet\u0105 \Brak odpowiedzi \10 \1
-Ile masz lat? \18-25 \26-33 \34-41 \42-49 \50-57 \58-65 \66 i wi\u0119cej \Brak odpowiedzi \10 \1
-Poziom wykszta\u0142cenia \Podstawowe \\u015Arednie niepe\u0142ne \\u015Arednie \Wy\u017Csze niepe\u0142ne \Wy\u017Csze \Studia podyplomowe lub doktorat \Brak odpowiedzi \10 \1
-Sytuacja zawodowa \Student \Jestem samozatrudniony/a \Zajmuj\u0119 si\u0119 domem \Jestem zatrudniony/a \Jestem bezrobotny/a \Jestem na emeryturze \Brak odpowiedzi \10 \1
-Wysoko\u015B\u0107 dochodu netto (miesi\u0119cznie) \mniej ni\u017C 500€ \501-800€ \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \wi\u0119cej ni\u017C 8000€ \Brak odpowiedzi \10 \1
-Ilo\u015B\u0107 os\u00F3b w gospodarstwie domowym, wliczaj\u0105c Ciebie \1-3 \4-6 \7-9 \10 i wi\u0119cej \Brak odpowiedzi \10 \1
-Wysoko\u015B\u0107 dochodu netto gospodarstwa domowego (miesi\u0119cznie) \mniej ni\u017C 500€ \501-800€ \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \wi\u0119cej ni\u017C 8000€ \Brak odpowiedzi \10 \1
-Na kt\u00F3r\u0105 parti\u0119 polityczn\u0105 g\u0142osowa\u0142e\u015B/a\u015B w ostatnich wyborach? \Brak odpowiedzi \10 \4 
-Czy wykona\u0142e\u015B/a\u015B to badanie samodzielnie czy z kim\u015B?  \Samodzielnie  \Z udzia\u0142em innych \11 \1
-Z jakiego miejsca \u0142\u0105czysz si\u0119 z Internetem? \Dom \Miejsce pracy \Miejsce publiczne \Inne \11 \1
-Co urz\u0105dzenie nie u\u017Cywasz, aby skorzysta\u0107 z tej ankiety? \Komputer stacjonarny \Laptop \Telefon kom\u00F3rkowy \Tablet \Innej \11 \1
-Jaki by\u0142 cel tego badania? \11 \0
-Czy masz jakie\u015B komentarze lub sugestie na temat tego badania? \11 \0
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś coś niezwykłego w prawej części ekranu? Jeśli coś zauważyłeś/aś, opisz to. \9 \0
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś link do polityki prywatności wyszukiwarki? \Zauważyłem go \Nie zauważyłem go \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś kilka linków do adresów URL stron odwiedzonych przez ciebie wcześniej? \Zauważyłem go \Nie zauważyłem go \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś adres IP? \Zauważyłem go \Nie zauważyłem go \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś lokalizację? Czy była to lokalizacja, z której właśnie teraz łączysz się z Internetem? \Zauważyłem to, i to było prawidłowe \Zauważyłem to, i to nie było prawidłowe \Nie zauważyłem go \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś nazwę przeglądarki? Czy była to przeglądarka, której używasz w tym momencie? \Zauważyłem to, i to było prawidłowe \Zauważyłem to, i to nie było prawidłowe \Nie zauważyłem go \9 \1
+Czy podczas odpowiadania na pytania quizu zauważyłeś/aś obraz kobiecej postaci? \Zauważyłem ją, a jej oczy poruszały \Zauważyłem ją, a jej oczy nie były w ruchu \Ja jej nie zauważyć \9 \1
+Jesteś \Mężczyzną \Kobietą \Brak odpowiedzi \10 \1
+Ile masz lat? \18-25 \26-33 \34-41 \42-49 \50-57 \58-65 \66 i więcej \Brak odpowiedzi \10 \1
+Poziom wykształcenia \Podstawowe \Średnie niepełne \Średnie \Wyższe niepełne \Wyższe \Studia podyplomowe lub doktorat \Brak odpowiedzi \10 \1
+Sytuacja zawodowa \Student \Jestem samozatrudniony/a \Zajmuję się domem \Jestem zatrudniony/a \Jestem bezrobotny/a \Jestem na emeryturze \Brak odpowiedzi \10 \1
+Wysokość dochodu netto (miesięcznie) \mniej niż 500€ \501-800€ \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \więcej niż 8000€ \Brak odpowiedzi \10 \1
+Ilość osób w gospodarstwie domowym, wliczając Ciebie \1-3 \4-6 \7-9 \10 i więcej \Brak odpowiedzi \10 \1
+Wysokość dochodu netto gospodarstwa domowego (miesięcznie) \mniej niż 500€ \501-800€ \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \więcej niż 8000€ \Brak odpowiedzi \10 \1
+Na którą partię polityczną głosowałeś/aś w ostatnich wyborach? \Brak odpowiedzi \10 \4 
+Czy wykonałeś/aś to badanie samodzielnie czy z kimś?  \Samodzielnie  \Z udziałem innych \11 \1
+Z jakiego miejsca łączysz się z Internetem? \Dom \Miejsce pracy \Miejsce publiczne \Inne \11 \1
+Co urządzenie nie używasz, aby skorzystać z tej ankiety? \Komputer stacjonarny \Laptop \Telefon komórkowy \Tablet \Innej \11 \1
+Jaki był cel tego badania? \11 \0
+Czy masz jakieś komentarze lub sugestie na temat tego badania? \11 \0
