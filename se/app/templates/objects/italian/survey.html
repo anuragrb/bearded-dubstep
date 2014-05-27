@@ -48,7 +48,7 @@ $(document).ready(function() {
             </div>
         {% else %}
             <div id='preamble'>
-                {% include 'objects/english/preamble.html' %}
+                {% include 'objects/italian/preamble.html' %}
             </div>
             <form id='survey_form' method='POST' action='/submit_survey'>{% csrf_token %}
                 <div class='form-group' style='padding: 20px;'>
@@ -62,7 +62,7 @@ $(document).ready(function() {
                         {% elif q.category == '3' %}
                             {% include 'objects/likert_likely.html' %}
                         {% elif q.category == '0' %}
-                            {% include 'objects/english/textarea.html' %}
+                            {% include 'objects/italian/textarea.html' %}
                         {% elif q.category == '4' %}
                             {% if request.session.language == 'PO' %}
                             <div class='radioGroupBelow' style='padding-bottom: 20px;'>

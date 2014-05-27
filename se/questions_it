@@ -16,8 +16,8 @@ Qual è il nome completo dell’81esimo elemento nella tavola periodica? \4 \0
 Qual è l’indirizzo del ristorante che preferisci nella Tua città natale? \4 \0
 Quale browser di ricerca utilizzi solitamente? \Internet Explorer \Mozilla Firefox \Google Chrome \Safari \Opera \Altro \Non so \5 \1
 Quale motore di ricerca utilizzi solitamente? \Google \Yahoo \Bing \Altro \Non so \5 \1
-Sei parte di un social network online, come Facebook? \Nein \Ja \5 \1
-Quale sistema operativo in genere usa? \Microsoft Windows \Mac OS X \Einige Linux-Variante \Altro \Non so \5 \1
+Sei parte di un social network online, come Facebook? \Si \No \5 \1
+Quale sistema operativo usi in genere? \Microsoft Windows \Mac OS X \Einige Linux-Variante \Altro \Non so \5 \1
 Pensi che il motore di ricerca che hai testato qui sia più semplice da usare rispetto a quello che utilizzi solitamente?  \5 \2
 Pensi che il motore di ricerca che hai testato qui fornisca i risultati in modo più efficiente rispetto al motore di ricerca che utilizzi solitamente? \5 \2
 Pensi che il motore di ricerca che hai testato qui sia più adatto alle tue necessità rispetto a quello che utilizzi solitamente? \5 \2
@@ -59,7 +59,7 @@ Quanti anni hai? \18-25 \26-33 \34-41 \42-49 \50-57 \58-65 \66 o più \Preferisc
 Qual è il tuo livello di istruzione?\Fino a scuola media inferiore \Scuola media superiore – non terminata \Scuola media superiore – terminata \Università – non terminata \ Università – terminata  \Post-lauream \Preferisco non rispondere \10 \1
 Qual è la tua occupazione?\Studente \Lavoratore in proprio \Casalingo/a \Impiegato \Disoccupato \Pensionato \Preferisco non rispondere \10 \1
 Il tuo salario netto mensile è:\meno di 500€ \501-800€, \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \più di 8000€ \Preferisco non rispondere \10 \1
-Quante persone vivono nel tuo nucleo familiar, Te compreso/a?\10 o più \Preferisco non rispondere \10 \1
+Quante persone vivono nel tuo nucleo familiar, Te compreso/a? \1-3 \4-6 \7-9 \10 o più \Preferisco non rispondere \10 \1
 Il salario netto mensile del tuo nucleo familiare è \Preferisco non rispondere \meno di 500€ \501-800€, \801-1200€ \1201-1500€ \1501-2000€ \2001-3000€ \3001-4000€ \4001-6000€ \6001-8000€ \più di 8000€ \10 \1
 Per quale partito politico hai votato alle ultime elezioni? \Preferisco non rispondere \10 \4
 Hai completato questo studio da solo/a o insieme ad altri? \Da solo/a \Insieme ad altri  \11 \1

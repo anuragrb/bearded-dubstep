@@ -77,10 +77,8 @@ $(document).ready(function() {
         <p>Grazie per la Tua collaborazione!</p>
 
         <p>Per poter partecipare a questo studio devi avere almeno 18 anni, devi essere connesso/a dall’Italia, devi avere a disposizione almeno 30 minuti per completare lo studio senza interruzioni, e devi disporre, al momento, di una connessione ad Internet stabile, così da poter terminare lo studio.</p>
-
-        <p>Ti Pyou verrà inoltre chiesto alcune domande non obbligatorie sui comportamenti personali.</p>
-
         <br>
+
         <form id='beginform' onsubmit='return yesvalidator();' action='/se' method='POST'>{% csrf_token %}
 
             <p>1. Hai almeno 18 anni?
@@ -108,7 +106,7 @@ $(document).ready(function() {
                 <label style='padding-left:10px; padding-right:10px;'>No</label><input type="radio" name="device" value='No'/></p>
             <br>
 
-            <input type='Submit' value='Iniziare' class='btn btn-primary'/>
+            <input type='Submit' value='Inizia' class='btn btn-primary'/>
 
         </form>
 

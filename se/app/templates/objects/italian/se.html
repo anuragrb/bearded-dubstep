@@ -98,7 +98,7 @@
 {% endif %}
     {% include 'objects/header.html' %}
     <br>
-    {% include 'objects/english/answer_submit.html' %}
+    {% include 'objects/italian/answer_submit.html' %}
     <hr>
     <div class='row' id='search-div' oncontextmenu='return false'>
         <div class='col-md-8 form-div form-group'>
@@ -120,10 +120,10 @@
             </div>
             {% endif %}
             {% if page == 'IP' %}
-                {% include 'objects//english/ip.html' %}
+                {% include 'objects/italian/ip.html' %}
             {% endif %}
             {% if page == 'CL' %}
-            {% include 'objects//english/tracking.html' %}
+            {% include 'objects/italian/tracking.html' %}
             {% else %}
                 <script>
                     $(document).ready(function() {
@@ -141,7 +141,7 @@
                 <p><h4>Cosa vorresti cercare?</h4></p>
             </div>
             {% endif %}
-            {% include 'objects/english/footer.html' %}
+            {% include 'objects/italian/footer.html' %}
         </div>
     </div>
 {% endblock %}
