@@ -39,6 +39,12 @@ def reporting(request):
     for user_profile in user_profiles:
 
         time_start = user_profile.begin_time
+        time_start = time_start.replace(tzinfo=None)
+
+        difference = now - time_start
+
+        minutes = difference.seconds/60
+        user_country = user_profile.country
 
         now = now.replace(tzinfo=None)
         if time_start == None:
@@ -49,14 +55,6 @@ def reporting(request):
                 if len(user_country) > 1:
                     country_incompletes[user_country] = 1
         else:
-
-            time_start = time_start.replace(tzinfo=None)
-
-            difference = now - time_start
-
-            minutes = difference.seconds/60
-
-            user_country = user_profile.country
 
             if minutes > 30:
 
