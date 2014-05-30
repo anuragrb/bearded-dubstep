@@ -76,9 +76,9 @@ $(document).ready(function() {
 
         <p>Dziękujemy za współpracę.</p>
 
-        <p>IAby wziąć udział w tym badaniu, musisz mieć ukończone 18 lat i łączyć sie z Internetem z terenu Polski lub Niemiec. Czas trwania badania to 30 minut i przez ten czas nie może nastąpić przerwa w połączeniu z Internetem, dlatego przed jego rozpoczęciem upewnij się, że połączenie, z którego korzystasz jest stabilne.</p>
+        <p>IAby wziąć udział w tym badaniu, musisz mieć ukończone 18 lat i łączyć sie z Internetem z terenu Polski. Czas trwania badania to 30 minut i przez ten czas nie może nastąpić przerwa w połączeniu z Internetem, dlatego przed jego rozpoczęciem upewnij się, że połączenie, z którego korzystasz jest stabilne.</p>
 
-        <p>Możesz również zostać poproszony niektóre nieobowiązkowe pytania dotyczące zachowań osobistych.</p>
+        <p>Możesz również zostać poproszony o niektóre nieobowiązkowe pytania dotyczące zachowań osobistych.</p>
 
         <br>
         <form id='beginform' onsubmit='return yesvalidator();' action='/se' method='POST'>{% csrf_token %}
@@ -88,7 +88,7 @@ $(document).ready(function() {
                 <label style='padding-left:10px; padding-right:10px;'>Nie</label><input type="radio" name="18older" value='No'/></p>
             <br>
 
-            <p>2. Czy łączysz się z Internetem z terenu Niemiec / Polski?
+            <p>2. Czy łączysz się z Internetem z terenu Polski?
                 <label style='padding-left:10px; padding-right:10px;'>Tak</label><input type="radio" name="country" value='Yes' />
                 <label style='padding-left:10px; padding-right:10px;'>Nie</label><input type="radio" name="country" value='No'/></p>
             <br>

@@ -16,7 +16,7 @@ Podaj pełną nazwę 81. pierwiastka z tabeli Mendelejewa. \4 \0
 Jaki jest adres Twojej ulubionej restauracji w miejscu urodzenia? \4 \0
 Jakiej przeglądarki używasz najczęściej? \Internet Explorer \Mozilla Firefox \Google Chrome \Safari \Opera \Innej \Nie Wiem \5 \1
 Jaki system operacyjny zazwyczaj użyć? \Microsoft Windows \Mac OS X \Niektóre z dystrybucji Linuksa \Innej \Nie Wiem \5 \1
-Co wyszukiwarka ty zwykle używać? \Google \Yahoo \Bing \Innej \Nie Wiem \5 \1
+Jakiej wyszukiwarki ty zwykle używasz? \Google \Yahoo \Bing \Innej \Nie Wiem \5 \1
 Czy korzystasz z portali społecznościowych, na przykład Facebooka? \Tak \Nie \5 \1
 Czy uważasz, że testowana wyszukiwarka jest łatwiejsza w obsłudze niż ta, której zwykle używasz? \5 \2
 Czy uważasz, że testowana wyszukiwarka jest bardziej skuteczna niż ta, której zwykle używasz? \5 \2
@@ -64,6 +64,6 @@ Wysokość dochodu netto gospodarstwa domowego (miesięcznie) \mniej niż 500€
 Na którą partię polityczną głosowałeś/aś w ostatnich wyborach? \Brak odpowiedzi \10 \4 
 Czy wykonałeś/aś to badanie samodzielnie czy z kimś?  \Samodzielnie  \Z udziałem innych \11 \1
 Z jakiego miejsca łączysz się z Internetem? \Dom \Miejsce pracy \Miejsce publiczne \Inne \11 \1
-Co urządzenie nie używasz, aby skorzystać z tej ankiety? \Komputer stacjonarny \Laptop \Telefon komórkowy \Tablet \Innej \11 \1
+Jakie urządzenie używasz, aby skorzystać z tej ankiety? \Komputer stacjonarny \Laptop \Telefon komórkowy \Tablet \Innej \11 \1
 Jaki był cel tego badania? \11 \0
 Czy masz jakieś komentarze lub sugestie na temat tego badania? \11 \0
