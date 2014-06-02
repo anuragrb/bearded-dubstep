@@ -1,0 +1,25 @@
+{% extends 'pages/base.html' %}
+
+{% block head %}
+
+<script type="text/javascript">   
+$(document).ready(function() {
+    document.getElementById('content').innerHTML = '<img src="{{STATIC_URL}}loading3.gif"/><br><br><br><p>You will be redirected to Harris Interactive in five seconds. Please click <a href="http://www.samplicio.us/router2/ClientCallBack.aspx?ris=10&rid={{rid}}">here</a> if you would like to be redirected immediately.<br>Thank you for taking our survey.';
+
+    window.setTimeout(function(){
+        window.location.href = "http://www.samplicio.us/router2/ClientCallBack.aspx?ris=10&rid={{rid}}";
+    }, 5000);
+});
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+<div id='content'>
+
+
+
+</div>
+
+{% endblock %}

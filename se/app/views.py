@@ -9,6 +9,7 @@ from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpRequest, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.utils import timezone
 import requests
 import logging
 
@@ -313,6 +314,13 @@ def submit_survey(request):
         return redirect('/survey')
 
 
+def redirector(request):
+    context = {'page': 'redirect'}
+    user_profile = User_Profile.objects.get(user=request.user)
+    context['rid'] = user_profile.tick
+    return render(request, 'objects/redirect.html', context)
+
+
 def save(request):
     user_profile = User_Profile.objects.get(user=request.user)
     if 'answered_index' in request.session:
@@ -328,7 +336,7 @@ def save(request):
                     text=request.POST['result_text'], href=new_href.group(0)[:-1], user=request.user, question=question)
                 search_result.save()
                 user_profile.results_clicked.add(search_result)
-                return HttpResponse(new_href.group(0)[:-1])
+                return HttpResponse('Done')
             elif 'screenresolution' in request.POST:
                 screen_resolution = request.POST['screenresolution']
                 browser_resolution = request.POST['browserresolution']
@@ -361,10 +369,9 @@ def save(request):
                 request.session['difference'] = request.POST['difference']
                 return HttpResponse("Saved current difference to session.")
             else:
-                time = datetime.now()
+                time = timezone.now()
                 user_profile.end_time = time
                 user_profile.privacy_clicked = request.session['privacy_clicked']
-                user_profile.mturk_payment_code = id_generator()
                 user_profile.save()
                 request.session['mturk_payment_code'] = user_profile.mturk_payment_code
                 return HttpResponse("Successfully completed the survey for the current user.")
@@ -396,8 +403,6 @@ def thanks(request):
     return render(request, 'objects/{0}/thanks.html'.format(request.session['redirect']))
 
 
-def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
-    return ''.join(random.choice(chars) for _ in range(size))
 
 
 #Unrelated to search engine project
