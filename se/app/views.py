@@ -318,6 +318,9 @@ def redirector(request):
     context = {'page': 'redirect'}
     user_profile = User_Profile.objects.get(user=request.user)
     context['rid'] = user_profile.tick
+    if not user_profile.end_time:
+        user_profile.end_time = timezone.now()
+    user_profile.save() 
     return render(request, 'objects/redirect.html', context)
 
 
