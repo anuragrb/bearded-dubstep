@@ -36,8 +36,8 @@ def links(request):
 
             new_user = User.objects.create_user(username=request.GET['tick'], password='')
             new_user.save()
-            if len(request.GET['tick']) > 30:
-                tick = request.GET['tick'][0:30]
+            if len(request.GET['tick']) > 50:
+                tick = request.GET['tick'][0:50]
             else:
                 tick = request.GET['tick']
             user = authenticate(username=tick, password='')
