@@ -189,7 +189,7 @@ def se(request):
             return render(request, 'objects/{0}/se.html'.format(request.session['redirect']), context)
 
         if not 'answered_index' in request.session:
-            user_profile.begin_time = datetime.now()
+            user_profile.begin_time = timezone.now()
             user_profile.save()
             request.session['answered_index'] = 1
 
