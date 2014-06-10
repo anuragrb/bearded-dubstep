@@ -110,30 +110,30 @@ function update_progress_bars() {
 
             total_count += jsonified[key];
             $('#uk-progress').css('width', jsonified[key]/820*100 + '%');
-            $('#uk-count').html(jsonified[key] + '/820');
+            $('#uk-count').html(jsonified[key] + '/805');
         }
         if(key == 'Poland') {
 
             total_count += jsonified[key];
             $('#poland-progress').css('width', jsonified[key]/820*100 + '%');
-            $('#poland-count').html(jsonified[key] + '/820');
+            $('#poland-count').html(jsonified[key] + '/805');
         }
         if(key == 'Germany') {
 
             total_count += jsonified[key];
             $('#germany-progress').css('width', jsonified[key]/820*100 + '%');
-            $('#germany-count').html(jsonified[key] + '/820');
+            $('#germany-count').html(jsonified[key] + '/805');
         }
         if(key == 'Italy') {
 
             total_count += jsonified[key];
             $('#italy-progress').css('width', jsonified[key]/820*100 + '%');
-            $('#italy-count').html(jsonified[key] + '/820');
+            $('#italy-count').html(jsonified[key] + '/805');
         }
         if(key != 'Undefined') {
 
             $('#total-progress').css('width', total_count/3200*100 + '%');
-            $('#total-count').html(total_count + '/3200');
+            $('#total-count').html(total_count + '/3220');
         }
         if(key == 'Undefined') {
 
