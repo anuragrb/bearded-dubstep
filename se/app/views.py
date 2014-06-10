@@ -45,7 +45,7 @@ def links(request):
             request.session['username'] = tick
             try:
                 r = requests.get(
-                    'http://theresearchgroup.org:8080/csv/' + get_client_ip(request))
+                    'http://freegeoip.net/csv/' + get_client_ip(request))
                 city = r.text.split(',')[5]
                 city = city[1:-1]
                 if len(city) < 1:
@@ -54,7 +54,7 @@ def links(request):
                     request.session['city'] = city
             except Exception as e:
                 logger.exception(
-                    'There was a key error while retrieving a city or country from theresearchgroup.org:8080')
+                    'There was a key error while retrieving a city or country from http://freegeoip.net')
                 city = ''
                 request.session['city'] = ''
             new_profile = User_Profile(user=new_user, tick=tick, ip_address=get_client_ip(request), privacy_clicked=0, city=city)
